@@ -4,7 +4,7 @@
 		<path fill="#44CC11" d="M40 0h55v20H40z"/>
 	</g>
 	<g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="110">
-		<text x="190" y="140" transform="scale(.1)">build</text>
+		<text x="195" y="140" transform="scale(.1)">build</text>
 		<text x="675" y="140" transform="scale(.1)">passing</text>
 	</g>
 </svg>
