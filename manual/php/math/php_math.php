@@ -7,13 +7,13 @@ declare(strict_types = 1);
 | abs
 |----------------------------------------------------------------------
 |
-| Returns the absolute value of number.
+| Returns the absolute value of the variable.
 |
 */
 
 $abs = abs(-4.2); // $abs = 4.2;
+$abs = abs(0);    // $abs = 0;
 $abs = abs(5);    // $abs = 5;
-$abs = abs(-5);   // $abs = 5;
 
 /*
 |----------------------------------------------------------------------
@@ -24,9 +24,9 @@ $abs = abs(-5);   // $abs = 5;
 |
 */
 
-$acos = acos(0.64); // $acos = 0.87629806116834;
-$acos = acos(0);    // $acos = 1.5707963267949;
-$acos = acos(1);    // $acos = 0;
+$acos = acos(-1); // $acos = 3.1415926535898;
+$acos = acos(0);  // $acos = 1.5707963267949;
+$acos = acos(1);  // $acos = 0;
 
 /*
 |----------------------------------------------------------------------
@@ -50,9 +50,9 @@ $acosh = acosh(20); // $acosh = 3.6882538673613;
 |
 */
 
-$asin = asin(0.64); // $asin = 0.69449826562656;
-$asin = asin(0);    // $asin = 0;
-$asin = asin(1);    // $asin = 1.5707963267949;
+$asin = asin(-1); // $asin = -1.5707963267949;
+$asin = asin(0);  // $asin = 0;
+$asin = asin(1);  // $asin = 1.5707963267949;
 
 /*
 |----------------------------------------------------------------------
@@ -76,9 +76,9 @@ $asinh = asinh(1);  // $asinh = 0.88137358701954;
 |
 */
 
-$atan2 = atan2(0.5, 0.5);   // $atan2 = 0.78539816339745;
-$atan2 = atan2(-0.5, -0.5); // $atan2 = -2.3561944901923;
-$atan2 = atan2(10, 20);     // $atan2 = 0.46364760900081;
+$atan2 = atan2(-1, -1); // $atan2 = -2.3561944901923;
+$atan2 = atan2(1, 1);   // $atan2 = 0.78539816339745;
+$atan2 = atan2(10, 20); // $atan2 = 0.46364760900081;
 
 /*
 |----------------------------------------------------------------------
@@ -89,16 +89,16 @@ $atan2 = atan2(10, 20);     // $atan2 = 0.46364760900081;
 |
 */
 
-$atan = atan(0.5);  // $atan = 0.46364760900081;
-$atan = atan(5);    // $atan = 1.373400766945;
-$atan = atan(10);   // $atan = 1.4711276743037;
+$atan = atan(-1); // $atan = -0.78539816339745;
+$atan = atan(0);  // $atan = 0;
+$atan = atan(1);  // $atan = 0.78539816339745;
 
 /*
 |----------------------------------------------------------------------
 | atanh
 |----------------------------------------------------------------------
 |
-| Returns the inverse hyperbolic tangent of variable.
+| Returns the inverse hyperbolic tangent of the variable.
 |
 */
 
@@ -141,9 +141,9 @@ $bindec = bindec(111111); // $bindec = 63;
 |
 */
 
+$ceil = ceil(-3.14); // $ceil = -3;
 $ceil = ceil(4.3);   // $ceil = 5;
 $ceil = ceil(9.999); // $ceil = 10;
-$ceil = ceil(-3.14); // $ceil = -3;
 
 /*
 |----------------------------------------------------------------------
@@ -154,9 +154,9 @@ $ceil = ceil(-3.14); // $ceil = -3;
 |
 */
 
-$cos = cos(0);    // $cos = 1;
-$cos = cos(3);    // $cos = -0.98999249660045;
-$cos = cos(M_PI); // $cos = -1;
+$cos = cos(-1); // $cos = 0.54030230586814;
+$cos = cos(0);  // $cos = 1;
+$cos = cos(1);  // $cos = 0.54030230586814;
 
 /*
 |----------------------------------------------------------------------
@@ -167,9 +167,9 @@ $cos = cos(M_PI); // $cos = -1;
 |
 */
 
-$cosh = cosh(0);    // $cosh = 1;
-$cosh = cosh(3);    // $cosh = 10.067661995778;
-$cosh = cosh(M_PI); // $cosh = 11.591953275522;
+$cosh = cosh(-1); // $cosh = 1.5430806348152;
+$cosh = cosh(0);  // $cosh = 1;
+$cosh = cosh(1);  // $cosh = 1.5430806348152;
 
 /*
 |----------------------------------------------------------------------
@@ -219,16 +219,16 @@ $decoct = decoct(264); // $decoct = '410';
 |
 */
 
-$deg2rad = deg2rad(30); // $deg2rad = 0.5235987755983;
-$deg2rad = deg2rad(45); // $deg2rad = 0.78539816339745;
-$deg2rad = deg2rad(90); // $deg2rad = 1.5707963267949;
+$deg2rad = deg2rad(30);  // $deg2rad = 0.5235987755983;
+$deg2rad = deg2rad(90);  // $deg2rad = 1.5707963267949;
+$deg2rad = deg2rad(180); // $deg2rad = 3.1415926535898;
 
 /*
 |----------------------------------------------------------------------
 | exp
 |----------------------------------------------------------------------
 |
-| Calculates the exponent of e.
+| Calculates the exponent of e(2.718282).
 |
 */
 
@@ -259,8 +259,8 @@ $expm1 = expm1(12);  // $expm1 = 162753.791419
 */
 
 $floor = floor(-3.14); // $floor = -4;
-$floor = floor(9.999); // $floor = 9;
 $floor = floor(4.3);   // $floor = 4;
+$floor = floor(9.999); // $floor = 9;
 
 /*
 |----------------------------------------------------------------------
@@ -284,7 +284,7 @@ $fmod = fmod(5.7, 1.3); // $fmod = 0.5;
 |
 */
 
-$getrandmax = getrandmax(); // $getrandmax = 2147483647;
+$getrandmax = getrandmax();
 
 /*
 |----------------------------------------------------------------------
@@ -334,8 +334,8 @@ $intdiv = intdiv(3, 2);   // $intdiv = 1;
 |
 */
 
-$is_finite = is_finite(2);      // $is_finite = true;
 $is_finite = is_finite(log(0)); // $is_finite = false;
+$is_finite = is_finite(2);      // $is_finite = true;
 $is_finite = is_finite(100);    // $is_finite = true;
 
 /*
@@ -347,8 +347,8 @@ $is_finite = is_finite(100);    // $is_finite = true;
 |
 */
 
-$is_infinite = is_infinite(2);      // $is_infinite = false;
 $is_infinite = is_infinite(log(0)); // $is_infinite = true;
+$is_infinite = is_infinite(2);      // $is_infinite = false;
 $is_infinite = is_infinite(100);    // $is_infinite = false;
 
 /*
@@ -360,9 +360,9 @@ $is_infinite = is_infinite(100);    // $is_infinite = false;
 |
 */
 
+$is_nan = is_nan(acos(8)); // $is_nan = true;
 $is_nan = is_nan(0);       // $is_nan = false;
 $is_nan = is_nan(1);       // $is_nan = false;
-$is_nan = is_nan(acos(8)); // $is_nan = true;
 
 /*
 |----------------------------------------------------------------------
@@ -410,9 +410,9 @@ $log1p = log1p(2); // $log1p = 1.0986122886681;
 |
 */
 
-$log = log(1); // $log = 1;
-$log = log(2); // $log = 0.69314718055995;
-$log = log(3); // $log = 1.0986122886681;
+$log = log(1);    // $log = 0;
+$log = log(1, 2); // $log = 0;
+$log = log(2, 2); // $log = 1;
 
 /*
 |----------------------------------------------------------------------
@@ -459,7 +459,7 @@ $min = min('hello', [2, 5, 7], 42);  // $min = 'hello';
 |
 */
 
-$mt_getrandmax = mt_getrandmax(); // $mt_getrandmax = 2147483647;
+$mt_getrandmax = mt_getrandmax();
 
 /*
 |----------------------------------------------------------------------
@@ -482,7 +482,7 @@ $mt_rand = mt_rand(5, 15); // $mt_rand = 5 ~ 15;
 |
 */
 
-mt_srand(intval(microtime(true) * 10000)); //
+mt_srand(intval(microtime(true) * 10000));
 
 /*
 |----------------------------------------------------------------------
@@ -507,7 +507,6 @@ $octdec = octdec(777); // $octdec = 511;
 */
 
 $pi = pi(); // $pi = 3.1415926535898;
-$pi = M_PI; // $pi = 3.1415926535898;
 
 /*
 |----------------------------------------------------------------------
@@ -531,9 +530,9 @@ $pow = pow(2, 8);   // $pow = 256;
 |
 */
 
-$rad2deg = rad2deg(M_PI);            // $rad2deg = 180;
 $rad2deg = rad2deg(0.5235987755983); // $rad2deg = 30;
 $rad2deg = rad2deg(1.5707963267949); // $rad2deg = 90;
+$rad2deg = rad2deg(3.1415926535898); // $rad2deg = 180;
 
 /*
 |----------------------------------------------------------------------
@@ -575,9 +574,9 @@ $round = round(9.5, 0, PHP_ROUND_HALF_ODD);  // $round = 9;
 |
 */
 
-$sin = sin(-10); // $sin = 0.54402111088937;
-$sin = sin(-1);  // $sin = -0.8414709848079;
-$sin = sin(2);   // $sin = 0.90929742682568;
+$sin = sin(-1); // $sin = -0.8414709848079;
+$sin = sin(0);  // $sin = 0;
+$sin = sin(1);  // $sin = 0.8414709848079;
 
 /*
 |----------------------------------------------------------------------
@@ -588,16 +587,16 @@ $sin = sin(2);   // $sin = 0.90929742682568;
 |
 */
 
-$sinh = sinh(-3); // $sinh = -10.01787492741;
+$sinh = sinh(-1); // $sinh = -1.1752011936438;
+$sinh = sinh(0);  // $sinh = 0;
 $sinh = sinh(1);  // $sinh = 1.1752011936438;
-$sinh = sinh(10); // $sinh = 11013.232874703;
 
 /*
 |----------------------------------------------------------------------
 | sqrt
 |----------------------------------------------------------------------
 |
-| Returns the square root of variable.
+| Returns the square root of the variable.
 |
 */
 
@@ -614,7 +613,7 @@ $sqrt = sqrt(10); // $sqrt = 3.1622776601684;
 |
 */
 
-srand(intval(microtime(true)  * 10000)); //
+srand(intval(microtime(true)  * 10000));
 
 /*
 |----------------------------------------------------------------------
@@ -626,8 +625,8 @@ srand(intval(microtime(true)  * 10000)); //
 */
 
 $tan = tan(-1); // $tan = -1.5574077246549;
-$tan = tan(2);  // $tan = -2.1850398632615;
-$tan = tan(10); // $tan = 0.64836082745909;
+$tan = tan(0);  // $tan = 0;
+$tan = tan(1);  // $tan = 1.5574077246549;
 
 /*
 |----------------------------------------------------------------------
@@ -639,5 +638,5 @@ $tan = tan(10); // $tan = 0.64836082745909;
 */
 
 $tanh = tanh(-1); // $tanh = -0.76159415595576;
-$tanh = tanh(2);  // $tanh = 0.96402758007582;
-$tanh = tanh(10); // $tanh = 0.99999999587769;
+$tanh = tanh(0);  // $tanh = 0;
+$tanh = tanh(1);  // $tanh = 0.76159415595576;
