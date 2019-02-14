@@ -1,6 +1,8 @@
-# Math
+# Math Functions
 
 > see [https://secure.php.net/manual/en/ref.math.php](https://secure.php.net/manual/en/ref.math.php) for more information.
+
+## Table of contents
 
 ### abs
 
