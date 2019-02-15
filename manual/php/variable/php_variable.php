@@ -368,12 +368,12 @@ $isset = isset($variable);                // $isset = true;
 $variable = 0;
 $isset = isset($variable);                // $isset = true;
 
-$variable_2 = null;
-$isset = isset($variable_1, $variable_2); // $isset = false;
+$variable2 = null;
+$isset = isset($variable1, $variable2);   // $isset = false;
 
-$variable_3 = '';
-$variable_4 = 0;
-$isset = isset($variable_3, $variable_4); // $isset = true;
+$variable3 = '';
+$variable4 = 0;
+$isset = isset($variable3, $variable4);   // $isset = true;
 
 /*
 |----------------------------------------------------------------------
@@ -463,17 +463,17 @@ $unserialize = unserialize('O:8:"stdClass":0:{}');            // $unserialize = 
 */
 
 $variable = 0;
-unset($variable); // $variable is undefined.
+unset($variable);              // $variable is undefined.
 
 $variable = [0, 1, 2];
-unset($variable[0]); // $variable = [1 => 1, 2 => 2];
+unset($variable[0]);           // $variable = [1 => 1, 2 => 2];
 
 $variable = new stdClass;
-unset($variable);  // $variable is undefined.
+unset($variable);              // $variable is undefined.
 
-$variable_1 = 0;
-$variable_2 = [0, 1, 2];
-unset($variable_1, $variable_2); // $variable_1 and $variable_2 is undefined.
+$variable1 = 0;
+$variable2 = [0, 1, 2];
+unset($variable1, $variable2); // $variable1 and $variable2 is undefined.
 
 /*
 |----------------------------------------------------------------------
