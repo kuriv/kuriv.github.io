@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="95" height="20">
-	<g shape-rendering="crispEdges">
-		<path fill="#555" d="M0 0h40v20H0z"/>
-		<path fill="#44CC11" d="M40 0h55v20H40z"/>
-	</g>
-	<g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="110">
-		<text x="195" y="140" transform="scale(.1)">build</text>
-		<text x="675" y="140" transform="scale(.1)">passing</text>
-	</g>
+    <g shape-rendering="crispEdges">
+        <path fill="#555" d="M0 0h40v20H0z"/>
+        <path fill="#44CC11" d="M40 0h55v20H40z"/>
+    </g>
+    <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="110">
+        <text x="195" y="140" transform="scale(.1)">build</text>
+        <text x="675" y="140" transform="scale(.1)">passing</text>
+    </g>
 </svg>
