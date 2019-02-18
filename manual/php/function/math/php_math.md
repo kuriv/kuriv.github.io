@@ -2,7 +2,59 @@
 
 > see [https://secure.php.net/manual/en/ref.math.php](https://secure.php.net/manual/en/ref.math.php) for more information.
 
+[![build][build-image]][build-url]
+
 ## Table of contents
+
+* [abs](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#abs) - Returns the absolute value of the variable.
+* [acos](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#acos) - Returns the arc cosine of the variable in radians.
+* [acosh](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#acosh) - Returns the inverse hyperbolic cosine of the variable.
+* [asin](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#asin) - Returns the arc sine of the variable in radians.
+* [asinh](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#asinh) - Returns the inverse hyperbolic sine of the variable.
+* [atan2](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#atan2) - Returns the arc tangent of the two variables in radians.
+* [atan](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#atan) - Returns the arc tangent of the variable in radians.
+* [atanh](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#atanh) - Returns the inverse hyperbolic tangent of the variable.
+* [base_convert](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#base_convert) - Convert a number between arbitrary bases.
+* [bindec](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#bindec) - Binary to decimal.
+* [ceil](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#ceil) - Returns the next highest integer by rounding up if necessary.
+* [cos](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#cos) - Returns the cosine of the variable.
+* [cosh](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#cosh) - Returns the hyperbolic cosine of the variable.
+* [decbin](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#decbin) - Decimal to binary.
+* [dechex](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#dechex) - Decimal to hexadecimal.
+* [decoct](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#decoct) - Decimal to octal.
+* [deg2rad](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#deg2rad) - Converts the number in degrees to the radian equivalent.
+* [exp](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#exp) - Calculates the exponent of e(2.718282).
+* [expm1](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#expm1) - Returns exp(number) - 1.
+* [floor](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#floor) - Returns the next lowest integer by rounding down if necessary.
+* [fmod](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#fmod) - Returns the floating point remainder of the division of the variable.
+* [getrandmax](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#getrandmax) - Show the largest possible random value.
+* [hexdec](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#hexdec) - Hexadecimal to decimal.
+* [hypot](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#hypot) - Calculate the length of the hypotenuse of a right-angle triangle.
+* [intdiv](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#intdiv) - Returns the integer quotient of the division of dividend by divisor.
+* [is_finite](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#is_finite) - Finds whether a value is a legal finite number.
+* [is_infinite](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#is_infinite) - Finds whether a value is infinite.
+* [is_nan](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#is_nan) - Finds whether a value is not a number.
+* [lcg_value](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#lcg_value) - Returns a pseudo random number in the range of (0, 1).
+* [log10](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#log10) - Returns the base-10 logarithm of the variable.
+* [log1p](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#log1p) - Returns log(1 + number).
+* [log](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#log) - Returns the natural logarithm.
+* [max](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#max) - Find the highest value.
+* [min](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#min) - Find the lowest value.
+* [mt_getrandmax](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#mt_getrandmax) - Show the largest possible random value.
+* [mt_rand](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#mt_rand) - Generate a better random integer.
+* [mt_srand](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#mt_srand) - Sowing a better random number generator seed.
+* [octdec](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#octdec) - Octal to decimal.
+* [pi](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#pi) - Returns the value of pi.
+* [pow](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#pow) - Returns the power of the exponential expression.
+* [rad2deg](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#rad2deg) - Converts the radian number to the equivalent number in degrees.
+* [rand](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#rand) - Generate a random integer.
+* [round](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#round) - Rounds a float.
+* [sin](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#sin) - Returns the sine of the variable.
+* [sinh](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#sinh) - Returns the hyperbolic sine of the variable.
+* [sqrt](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#sqrt) - Returns the square root of the variable.
+* [srand](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#srand) - Sowing a random number generator seed.
+* [tan](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#tan) - Returns the tangent of the variable.
+* [tanh](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/math/php_math.md#tanh) - Returns the hyperbolic tangent of the variable.
 
 ### abs
 
@@ -99,9 +151,9 @@ $base_convert = base_convert('A37334', 16, 2); // $base_convert = '1010001101110
 > Binary to decimal.
 
 ```php
-$bindec = bindec(11);     // $bindec = 3;
-$bindec = bindec(110011); // $bindec = 51;
-$bindec = bindec(111111); // $bindec = 63;
+$bindec = bindec('11');     // $bindec = 3;
+$bindec = bindec('110011'); // $bindec = 51;
+$bindec = bindec('111111'); // $bindec = 63;
 ```
 
 ### ceil
@@ -330,9 +382,9 @@ $max = max([2, 4, 5]);               // $max = 5;
 $max = max('hello', 0);              // $max = 'hello';
 $max = max(0, 'hello');              // $max = 0;
 $max = max('42', 3);                 // $max = '42';
-$max = max([2, 4, 8], [2, 5, 7]);    // $max = [2, 5, 7];
-$max = max([2, 2, 2], [1, 1, 1, 1]); // $max = [1, 1, 1, 1];
-$max = max('hello', [2, 5, 7], 42);  // $max = [2, 5, 7];
+$max = max([2, 4, 8], [2, 5, 7]);    // $max = [0 => 2, 1 => 5, 2 => 7];
+$max = max([2, 2, 2], [1, 1, 1, 1]); // $max = [0 => 1, 1 => 1, 2 => 1, 3 => 1];
+$max = max('hello', [2, 5, 7], 42);  // $max = [0 => 2, 1 => 5, 2 => 7];
 ```
 
 ### min
@@ -345,8 +397,8 @@ $min = min([2, 4, 5]);               // $min = 2;
 $min = min('hello', 0);              // $min = hello;
 $min = min(0, 'hello');              // $min = 0;
 $min = min('42', -1);                // $min = -1;
-$min = min([2, 4, 8], [2, 5, 1]);    // $min = [2, 4, 8];
-$min = min([2, 2, 2], [2, 1, 1, 1]); // $min = [2, 2, 2];
+$min = min([2, 4, 8], [2, 5, 1]);    // $min = [0 => 2, 1 => 4, 2 => 8];
+$min = min([2, 2, 2], [2, 1, 1, 1]); // $min = [0 => 2, 1 => 2, 2 => 2];
 $min = min('hello', [2, 5, 7], 42);  // $min = 'hello';
 ```
 
@@ -380,9 +432,9 @@ mt_srand(intval(microtime(true) * 10000));
 > Octal to decimal.
 
 ```php
-$octdec = octdec(77);  // $octdec = 63;
-$octdec = octdec(100); // $octdec = 64;
-$octdec = octdec(777); // $octdec = 511;
+$octdec = octdec('77');  // $octdec = 63;
+$octdec = octdec('100'); // $octdec = 64;
+$octdec = octdec('777'); // $octdec = 511;
 ```
 
 ### pi
@@ -495,3 +547,8 @@ $tanh = tanh(-1); // $tanh = -0.76159415595576;
 $tanh = tanh(0);  // $tanh = 0;
 $tanh = tanh(1);  // $tanh = 0.76159415595576;
 ```
+
+
+
+[build-image]: https://raw.githubusercontent.com/kuriv/kuriv.github.io/master/.cloud/kuriv.github.io/b0979b5893ae07e68ffb8edea2fdce8c.svg?sanitize=true
+[build-url]: https://github.com/kuriv/kuriv.github.io

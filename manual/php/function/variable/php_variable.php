@@ -159,7 +159,9 @@ function is_callable_func()
 {
 }
 
-$is_callable = is_callable('is_callable_func'); // $is_callable = true;
+$is_callable = is_callable('is_callable_some_func');                       // $is_callable = false;
+$is_callable = is_callable('is_callable_func', false, $callable_name);     // $is_callable = true; $callable_name = 'is_callable_func';
+$is_callable = is_callable('is_callable_some_func', true, $callable_name); // $is_callable = true; $callable_name = 'is_callable_some_func';
 
 /*
 |----------------------------------------------------------------------
@@ -170,9 +172,10 @@ $is_callable = is_callable('is_callable_func'); // $is_callable = true;
 |
 */
 
-$is_countable = is_countable(0);            // $is_countable = false;
-$is_countable = is_countable([]);           // $is_countable = true;
-$is_countable = is_countable(new stdClass); // $is_countable = false;
+$is_countable = is_countable(0);                 // $is_countable = false;
+$is_countable = is_countable([]);                // $is_countable = true;
+$is_countable = is_countable(new stdClass);      // $is_countable = false;
+$is_countable = is_countable(new ArrayIterator); // $is_countable = true;
 
 /*
 |----------------------------------------------------------------------
@@ -236,9 +239,10 @@ $is_integer = is_integer(23.5); // $is_integer = false;
 |
 */
 
-$is_iterable = is_iterable(0);            // $is_iterable = false;
-$is_iterable = is_iterable([0, 1, 2]);    // $is_iterable = true;
-$is_iterable = is_iterable(new stdClass); // $is_iterable = false;
+$is_iterable = is_iterable(0);                 // $is_iterable = false;
+$is_iterable = is_iterable([0, 1, 2]);         // $is_iterable = true;
+$is_iterable = is_iterable(new stdClass);      // $is_iterable = false;
+$is_iterable = is_iterable(new ArrayIterator); // $is_iterable = true;
 
 /*
 |----------------------------------------------------------------------
@@ -409,23 +413,23 @@ $serialize = serialize(new stdClass); // $serialize = 'O:8:"stdClass":0:{}';
 |
 */
 
-$variable = 0;
-settype($variable, 'string');  // $variable = '0';
+$variable = 0;                            // $variable = '0';
+$settype = settype($variable, 'string');  // $settype = true;
 
-$variable = true;
-settype($variable, 'string');  // $variable = '1';
+$variable = true;                         // $variable = '1';
+$settype = settype($variable, 'string');  // $settype = true;
 
-$variable = '122.34343abc';
-settype($variable, 'integer'); // $variable = 122;
+$variable = '122.34343abc';               // $variable = 122;
+$settype = settype($variable, 'integer'); // $settype = true;
 
-$variable = 'abc122.34343';
-settype($variable, 'integer'); // $variable = 0;
+$variable = 'abc122.34343';               // $variable = 0;
+$settype = settype($variable, 'integer'); // $settype = true;
 
-$variable = 'true';
-settype($variable, 'bool');    // $variable = true;
+$variable = 'true';                       // $variable = true;
+$settype = settype($variable, 'bool');    // $settype = true;
 
-$variable = 'false';
-settype($variable, 'bool');    // $variable = true;
+$variable = 'false';                      // $variable = true;
+$settype = settype($variable, 'bool');    // $settype = true;
 
 /*
 |----------------------------------------------------------------------
@@ -450,7 +454,7 @@ $strval = strval(0.0001); // $strval = '0.0001';
 */
 
 $unserialize = unserialize('i:0;');                           // $unserialize = 0;
-$unserialize = unserialize('a:3:{i:0;i:0;i:1;i:1;i:2;i:2;}'); // $unserialize = [0, 1, 2];
+$unserialize = unserialize('a:3:{i:0;i:0;i:1;i:1;i:2;i:2;}'); // $unserialize = [0 => 0, 1 => 1, 2 => 2];
 $unserialize = unserialize('O:8:"stdClass":0:{}');            // $unserialize = new stdClass;
 
 /*
@@ -462,18 +466,18 @@ $unserialize = unserialize('O:8:"stdClass":0:{}');            // $unserialize = 
 |
 */
 
-$variable = 0;
-unset($variable);              // $variable is undefined.
+$variable = 0;            // $variable = null;
+unset($variable);
 
-$variable = [0, 1, 2];
-unset($variable[0]);           // $variable = [1 => 1, 2 => 2];
+$variable = [0, 1, 2];    // $variable = [1 => 1, 2 => 2];
+unset($variable[0]);
 
-$variable = new stdClass;
-unset($variable);              // $variable is undefined.
+$variable = new stdClass; // $variable = null;
+unset($variable);
 
-$variable1 = 0;
-$variable2 = [0, 1, 2];
-unset($variable1, $variable2); // $variable1 and $variable2 is undefined.
+$variable1 = 0;           // $variable1 = null;
+$variable2 = [0, 1, 2];   // $variable2 = null;
+unset($variable1, $variable2);
 
 /*
 |----------------------------------------------------------------------
@@ -498,4 +502,4 @@ var_dump(0, [0, 1, 2], new stdClass);
 */
 
 var_export([0, 1, 2]);
-$var_export = var_export([0, 1, 2], true);
+$var_export = var_export([0, 1, 2], true); // $var_export = [0 => 0, 1 => 1, 2 => 2];

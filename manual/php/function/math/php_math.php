@@ -128,9 +128,9 @@ $base_convert = base_convert('A37334', 16, 2); // $base_convert = '1010001101110
 |
 */
 
-$bindec = bindec(11);     // $bindec = 3;
-$bindec = bindec(110011); // $bindec = 51;
-$bindec = bindec(111111); // $bindec = 63;
+$bindec = bindec('11');     // $bindec = 3;
+$bindec = bindec('110011'); // $bindec = 51;
+$bindec = bindec('111111'); // $bindec = 63;
 
 /*
 |----------------------------------------------------------------------
@@ -428,9 +428,9 @@ $max = max([2, 4, 5]);               // $max = 5;
 $max = max('hello', 0);              // $max = 'hello';
 $max = max(0, 'hello');              // $max = 0;
 $max = max('42', 3);                 // $max = '42';
-$max = max([2, 4, 8], [2, 5, 7]);    // $max = [2, 5, 7];
-$max = max([2, 2, 2], [1, 1, 1, 1]); // $max = [1, 1, 1, 1];
-$max = max('hello', [2, 5, 7], 42);  // $max = [2, 5, 7];
+$max = max([2, 4, 8], [2, 5, 7]);    // $max = [0 => 2, 1 => 5, 2 => 7];
+$max = max([2, 2, 2], [1, 1, 1, 1]); // $max = [0 => 1, 1 => 1, 2 => 1, 3 => 1];
+$max = max('hello', [2, 5, 7], 42);  // $max = [0 => 2, 1 => 5, 2 => 7];
 
 /*
 |----------------------------------------------------------------------
@@ -446,8 +446,8 @@ $min = min([2, 4, 5]);               // $min = 2;
 $min = min('hello', 0);              // $min = hello;
 $min = min(0, 'hello');              // $min = 0;
 $min = min('42', -1);                // $min = -1;
-$min = min([2, 4, 8], [2, 5, 1]);    // $min = [2, 4, 8];
-$min = min([2, 2, 2], [2, 1, 1, 1]); // $min = [2, 2, 2];
+$min = min([2, 4, 8], [2, 5, 1]);    // $min = [0 => 2, 1 => 4, 2 => 8];
+$min = min([2, 2, 2], [2, 1, 1, 1]); // $min = [0 => 2, 1 => 2, 2 => 2];
 $min = min('hello', [2, 5, 7], 42);  // $min = 'hello';
 
 /*
@@ -493,9 +493,9 @@ mt_srand(intval(microtime(true) * 10000));
 |
 */
 
-$octdec = octdec(77);  // $octdec = 63;
-$octdec = octdec(100); // $octdec = 64;
-$octdec = octdec(777); // $octdec = 511;
+$octdec = octdec('77');  // $octdec = 63;
+$octdec = octdec('100'); // $octdec = 64;
+$octdec = octdec('777'); // $octdec = 511;
 
 /*
 |----------------------------------------------------------------------

@@ -2,7 +2,43 @@
 
 > see [https://secure.php.net/manual/en/ref.var.php](https://secure.php.net/manual/en/ref.var.php) for more information.
 
+[![build][build-image]][build-url]
+
 ## Table of contents
+
+* [boolval](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#boolval) - Get the boolean value of the variable.
+* [doubleval](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#doubleval) - Get the float value of the variable.
+* [empty](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#empty) - Determine whether a variable is empty.
+* [floatval](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#floatval) - Get the float value of the variable.
+* [get_defined_vars](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#get_defined_vars) - Returns an array of all defined variables.
+* [get_resource_type](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#get_resource_type) - Returns the resource type.
+* [intval](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#intval) - Get the integer value of the variable.
+* [is_array](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_array) - Finds whether a variable is an array.
+* [is_bool](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_bool) - Finds out whether a variable is a boolean.
+* [is_callable](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_callable) - Verify that the contents of a variable can be called as a function.
+* [is_countable](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_countable) - Verify that the contents of a variable is a countable value.
+* [is_double](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_double) - Finds whether the type of a variable is float.
+* [is_float](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_float) - Finds whether the type of a variable is float.
+* [is_int](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_int) - Find whether the type of a variable is integer.
+* [is_integer](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_integer) - Find whether the type of a variable is integer.
+* [is_iterable](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_iterable) - Verify that the contents of a variable is an iterable value.
+* [is_long](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_long) - Find whether the type of a variable is integer.
+* [is_null](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_null) - Finds whether a variable is null.
+* [is_numeric](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_numeric) - Finds whether a variable is a number or a numeric string.
+* [is_object](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_object) - Finds whether a variable is an object.
+* [is_real](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_real) - Finds whether the type of a variable is float.
+* [is_resource](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_resource) - Finds whether a variable is a resource.
+* [is_scalar](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_scalar) - Finds whether a variable is a scalar.
+* [is_string](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#is_string) - Find whether the type of a variable is string.
+* [isset](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#isset) - Determine if a variable is set and is not null.
+* [print_r](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#print_r) - Prints human-readable information about a variable.
+* [serialize](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#serialize) - Generates a storable representation of a value.
+* [settype](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#settype) - Set the type of the variable.
+* [strval](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#strval) - Get string value of the variable.
+* [unserialize](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#unserialize) - Creates a PHP value from a stored representation.
+* [unset](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#unset) - Unset a given variable.
+* [var_dump](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#var_dump) - Dumps information about a variable.
+* [var_export](https://github.com/kuriv/kuriv.github.io/blob/master/manual/php/function/variable/php_variable.md#var_export) - Outputs or returns a parsable string representation of the variable.
 
 ### boolval
 
@@ -130,7 +166,9 @@ function is_callable_func()
 {
 }
 
-$is_callable = is_callable('is_callable_func'); // $is_callable = true;
+$is_callable = is_callable('is_callable_some_func');                       // $is_callable = false;
+$is_callable = is_callable('is_callable_func', false, $callable_name);     // $is_callable = true; $callable_name = 'is_callable_func';
+$is_callable = is_callable('is_callable_some_func', true, $callable_name); // $is_callable = true; $callable_name = 'is_callable_some_func';
 ```
 
 ### is_countable
@@ -138,9 +176,10 @@ $is_callable = is_callable('is_callable_func'); // $is_callable = true;
 > Verify that the contents of a variable is a countable value.
 
 ```php
-$is_countable = is_countable(0);            // $is_countable = false;
-$is_countable = is_countable([]);           // $is_countable = true;
-$is_countable = is_countable(new stdClass); // $is_countable = false;
+$is_countable = is_countable(0);                 // $is_countable = false;
+$is_countable = is_countable([]);                // $is_countable = true;
+$is_countable = is_countable(new stdClass);      // $is_countable = false;
+$is_countable = is_countable(new ArrayIterator); // $is_countable = true;
 ```
 
 ### is_double
@@ -188,9 +227,10 @@ $is_integer = is_integer(23.5); // $is_integer = false;
 > Verify that the contents of a variable is an iterable value.
 
 ```php
-$is_iterable = is_iterable(0);            // $is_iterable = false;
-$is_iterable = is_iterable([0, 1, 2]);    // $is_iterable = true;
-$is_iterable = is_iterable(new stdClass); // $is_iterable = false;
+$is_iterable = is_iterable(0);                 // $is_iterable = false;
+$is_iterable = is_iterable([0, 1, 2]);         // $is_iterable = true;
+$is_iterable = is_iterable(new stdClass);      // $is_iterable = false;
+$is_iterable = is_iterable(new ArrayIterator); // $is_iterable = true;
 ```
 
 ### is_long
@@ -325,23 +365,23 @@ $serialize = serialize(new stdClass); // $serialize = 'O:8:"stdClass":0:{}';
 > Set the type of the variable.
 
 ```php
-$variable = 0;
-settype($variable, 'string');  // $variable = '0';
+$variable = 0;                            // $variable = '0';
+$settype = settype($variable, 'string');  // $settype = true;
 
-$variable = true;
-settype($variable, 'string');  // $variable = '1';
+$variable = true;                         // $variable = '1';
+$settype = settype($variable, 'string');  // $settype = true;
 
-$variable = '122.34343abc';
-settype($variable, 'integer'); // $variable = 122;
+$variable = '122.34343abc';               // $variable = 122;
+$settype = settype($variable, 'integer'); // $settype = true;
 
-$variable = 'abc122.34343';
-settype($variable, 'integer'); // $variable = 0;
+$variable = 'abc122.34343';               // $variable = 0;
+$settype = settype($variable, 'integer'); // $settype = true;
 
-$variable = 'true';
-settype($variable, 'bool');    // $variable = true;
+$variable = 'true';                       // $variable = true;
+$settype = settype($variable, 'bool');    // $settype = true;
 
-$variable = 'false';
-settype($variable, 'bool');    // $variable = true;
+$variable = 'false';                      // $variable = true;
+$settype = settype($variable, 'bool');    // $settype = true;
 ```
 
 ### strval
@@ -360,7 +400,7 @@ $strval = strval(0.0001); // $strval = '0.0001';
 
 ```php
 $unserialize = unserialize('i:0;');                           // $unserialize = 0;
-$unserialize = unserialize('a:3:{i:0;i:0;i:1;i:1;i:2;i:2;}'); // $unserialize = [0, 1, 2];
+$unserialize = unserialize('a:3:{i:0;i:0;i:1;i:1;i:2;i:2;}'); // $unserialize = [0 => 0, 1 => 1, 2 => 2];
 $unserialize = unserialize('O:8:"stdClass":0:{}');            // $unserialize = new stdClass;
 ```
 
@@ -369,18 +409,18 @@ $unserialize = unserialize('O:8:"stdClass":0:{}');            // $unserialize = 
 > Unset a given variable.
 
 ```php
-$variable = 0;
-unset($variable);              // $variable is undefined.
+$variable = 0;            // $variable = null;
+unset($variable);
 
-$variable = [0, 1, 2];
-unset($variable[0]);           // $variable = [1 => 1, 2 => 2];
+$variable = [0, 1, 2];    // $variable = [1 => 1, 2 => 2];
+unset($variable[0]);
 
-$variable = new stdClass;
-unset($variable);              // $variable is undefined.
+$variable = new stdClass; // $variable = null;
+unset($variable);
 
-$variable1 = 0;
-$variable2 = [0, 1, 2];
-unset($variable1, $variable2); // $variable1 and $variable2 is undefined.
+$variable1 = 0;           // $variable1 = null;
+$variable2 = [0, 1, 2];   // $variable2 = null;
+unset($variable1, $variable2);
 ```
 
 ### var_dump
@@ -399,5 +439,10 @@ var_dump(0, [0, 1, 2], new stdClass);
 
 ```php
 var_export([0, 1, 2]);
-$var_export = var_export([0, 1, 2], true);
+$var_export = var_export([0, 1, 2], true); // $var_export = [0 => 0, 1 => 1, 2 => 2];
 ```
+
+
+
+[build-image]: https://raw.githubusercontent.com/kuriv/kuriv.github.io/master/.cloud/kuriv.github.io/b0979b5893ae07e68ffb8edea2fdce8c.svg?sanitize=true
+[build-url]: https://github.com/kuriv/kuriv.github.io
