@@ -6,6 +6,7 @@
 * [floatval - 获取变量的浮点值](#floatval)
 * [get_defined_vars - 返回由所有已定义变量所组成的数组](#get_defined_vars)
 * [get_resource_type - 返回资源（resource）类型](#get_resource_type)
+* [gettype - 获取变量的类型](#gettype)
 * [intval - 获取变量的整数值](#intval)
 * [is_array - 检测变量是否是数组](#is_array)
 * [is_bool - 检测变量是否是布尔型](#is_bool)
@@ -133,6 +134,26 @@ $get_defined_vars = get_defined_vars();
 declare(strict_types = 1);
 
 $get_resource_type = get_resource_type(tmpfile()); // $get_resource_type = 'stream';
+
+```
+
+
+
+## gettype
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+$gettype = gettype(false);        // $gettype = 'boolean';
+$gettype = gettype(0);            // $gettype = 'integer';
+$gettype = gettype(-0.0001);      // $gettype = 'double';
+$gettype = gettype('foo');        // $gettype = 'string';
+$gettype = gettype([]);           // $gettype = 'array';
+$gettype = gettype(new stdClass); // $gettype = 'object';
+$gettype = gettype(tmpfile());    // $gettype = 'resource';
+$gettype = gettype(null);         // $gettype = 'NULL';
 
 ```
 
