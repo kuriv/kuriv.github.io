@@ -879,6 +879,10 @@ $array_sum = array_sum([1.2, 2.3, 3.4]); // $array_sum = 6.9;
 ## array_udiff_assoc
 
 ```php
+<?php
+
+declare(strict_types = 1);
+
 function array_udiff_assoc_func($a, $b)
 {
     return ($a <=> $b);
@@ -889,6 +893,7 @@ $array_udiff_assoc = array_udiff_assoc([2, 4, 5], [2], 'array_udiff_assoc_func')
 $array_udiff_assoc = array_udiff_assoc([2, 4, 5], ['2', '04', '05'], 'array_udiff_assoc_func');                                                                           // $array_udiff_assoc = [];
 $array_udiff_assoc = array_udiff_assoc(['foo' => 'cat'], ['bar' => 'dog'], 'array_udiff_assoc_func');                                                                     // $array_udiff_assoc = ['foo' => 'cat'];
 $array_udiff_assoc = array_udiff_assoc(['foo' => 'cat', 'bar' => 'dog'], ['bar' => 'dog', 'baz' => 'bird'], ['foo' => 'cat', 'baz' => 'bird'], 'array_udiff_assoc_func'); // $array_udiff_assoc = [];
+
 ```
 
 
@@ -1857,7 +1862,7 @@ $usort = uksort($foo, 'uksort_desc_func'); // $uksort = true;
 
 declare(strict_types = 1);
 
-function usort_one_func($a, $b)
+function usort_asc_func($a, $b)
 {
     return ($a <=> $b);
 }
@@ -1868,7 +1873,7 @@ function usort_cmp_func($a, $b)
 }
 
 $foo = [2, 4, 5, 0, 1, 2];                                      // $foo = [0 => 0, 1 => 1, 2 => 2, 3 => 2, 4 => 4, 5 => 5];
-$usort = usort($foo, 'usort_one_func');                         // $usort = true;
+$usort = usort($foo, 'usort_asc_func');                         // $usort = true;
 
 $foo = [['foo' => 'cat'], ['foo' => 'dog'], ['foo' => 'bird']]; // $foo = [0 => ['foo' => 'bird'], 1 => ['foo' => 'cat'], 2 => ['foo' => 'dog']];
 $usort = usort($foo, 'usort_cmp_func');                         // $usort = true;

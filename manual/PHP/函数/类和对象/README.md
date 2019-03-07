@@ -72,12 +72,24 @@ declare(strict_types = 1);
 
 class Foo
 {
-    public static function getCalledClass()
+    /**
+     * Get the class name of the late static binding.
+     *
+     * @param  void
+     * @return string
+     */
+    public static function getCalledClass(): string
     {
         return get_called_class();
     }
 
-    public static function getStaticClass()
+    /**
+     * Get the class name of the late static binding.
+     *
+     * @param  void
+     * @return string
+     */
+    public static function getStaticClass(): string
     {
         return static::class;
     }
@@ -105,11 +117,23 @@ declare(strict_types = 1);
 
 class Foo
 {
-    public static function getClassMethods()
+    /**
+     * Return all methods of the specified class.
+     *
+     * @param  void
+     * @return array
+     */
+    public static function getClassMethods(): array
     {
         return get_class_methods(static::class);
     }
 
+    /**
+     * Just a test method.
+     *
+     * @param  void
+     * @return void
+     */
     private static function test()
     {
     }
@@ -139,11 +163,34 @@ declare(strict_types = 1);
 
 class Foo
 {
+    /**
+     * Public variable.
+     *
+     * @var string
+     */
     public $public = 'cat';
+
+    /**
+     * Protected variable.
+     *
+     * @var string
+     */
     protected $protected = 'dog';
+
+    /**
+     * Private variable.
+     *
+     * @var null
+     */
     private $private;
 
-    public static function getclassVars()
+    /**
+     * Returns all variables of the specified class.
+     *
+     * @param  void
+     * @return array
+     */
+    public static function getclassVars(): array
     {
         return get_class_vars(static::class);
     }
@@ -171,7 +218,13 @@ declare(strict_types = 1);
 
 class Foo
 {
-    public function getClass()
+    /**
+     * Returns the class name of the current object.
+     *
+     * @param  void
+     * @return string
+     */
+    public function getClass(): string
     {
         return get_class($this);
     }
@@ -238,14 +291,26 @@ declare(strict_types = 1);
 
 class Foo
 {
+    /**
+     * Public variable.
+     *
+     * @var string
+     */
     public $public = 'cat';
-    protected $protected = 'dog';
-    private $private;
 
-    public static function getclassVars()
-    {
-        return get_class_vars(static::class);
-    }
+    /**
+     * Protected variable.
+     *
+     * @var string
+     */
+    protected $protected = 'dog';
+
+    /**
+     * Private variable.
+     *
+     * @var null
+     */
+    private $private;
 }
 
 class Bar extends Foo
@@ -269,7 +334,13 @@ declare(strict_types = 1);
 
 class Foo
 {
-    public static function getParentClass()
+    /**
+     * Returns the parent class name of the object or class.
+     *
+     * @param  void
+     * @return string
+     */
+    public static function getParentClass(): string
     {
         return get_parent_class(static::class);
     }
@@ -386,14 +457,32 @@ declare(strict_types = 1);
 
 class Foo
 {
+    /**
+     * Public method.
+     *
+     * @param  void
+     * @return void
+     */
     public static function publicFunc()
     {
     }
 
+    /**
+     * Protected method.
+     *
+     * @param  void
+     * @return void
+     */
     protected static function protectedFunc()
     {
     }
 
+    /**
+     * Private method.
+     *
+     * @param  void
+     * @return void
+     */
     private static function privateFunc()
     {
     }
@@ -429,8 +518,25 @@ declare(strict_types = 1);
 
 class Foo
 {
+    /**
+     * Public variable.
+     *
+     * @var string
+     */
     public $public = 'cat';
+
+    /**
+     * Protected variable.
+     *
+     * @var string
+     */
     protected $protected = 'dog';
+
+    /**
+     * Private variable.
+     *
+     * @var null
+     */
     private $private;
 }
 

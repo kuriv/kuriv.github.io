@@ -226,14 +226,59 @@ $is_bool = is_bool(false); // $is_bool = true;
 
 declare(strict_types = 1);
 
-function foo()
+/**
+ * Just a test function.
+ *
+ * @param  void
+ * @return void
+ */
+function test()
 {
 }
 
-$is_callable = is_callable('foo');                        // $is_callable = true;
-$is_callable = is_callable('bar');                        // $is_callable = false;
-$is_callable = is_callable('foo', false, $callable_name); // $is_callable = true; $callable_name = 'foo';
-$is_callable = is_callable('bar', true, $callable_name);  // $is_callable = true; $callable_name = 'bar';
+/**
+ * Just a test function.
+ *
+ * @param  void
+ * @return void
+ */
+$test = function () {
+};
+
+class Foo
+{
+    /**
+     * Just a test method.
+     *
+     * @param  void
+     * @return void
+     */
+    public function test()
+    {
+    }
+}
+
+class Bar
+{
+    /**
+     * Just a test method.
+     *
+     * @param  void
+     * @return void
+     */
+    public static function test()
+    {
+    }
+}
+
+$is_callable = is_callable('print');                       // $is_callable = false;
+$is_callable = is_callable('test');                        // $is_callable = true;
+$is_callable = is_callable($test);                         // $is_callable = true;
+$is_callable = is_callable([new Foo, 'test']);             // $is_callable = true;
+$is_callable = is_callable(['Bar', 'test']);               // $is_callable = true;
+$is_callable = is_callable('Bar::test');                   // $is_callable = true;
+$is_callable = is_callable('test', false, $callable_name); // $is_callable = true; $callable_name = 'test';
+$is_callable = is_callable('print', true, $callable_name); // $is_callable = true; $callable_name = 'print';
 
 ```
 
