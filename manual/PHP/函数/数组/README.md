@@ -205,9 +205,19 @@ $array_diff_key = array_diff_key(['foo' => 'cat', 'bar' => 'dog'], ['bar' => 'do
 
 declare(strict_types = 1);
 
-function array_diff_uassoc_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_diff_uassoc_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
 $array_diff_uassoc = array_diff_uassoc([2, 4, 5], [2, 4, 5], 'array_diff_uassoc_func');                                                                                   // $array_diff_uassoc = [];
@@ -227,9 +237,19 @@ $array_diff_uassoc = array_diff_uassoc(['foo' => 'cat', 'bar' => 'dog'], ['bar' 
 
 declare(strict_types = 1);
 
-function array_diff_ukey_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_diff_ukey_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
 $array_diff_ukey = array_diff_ukey([2, 4, 5], [2, 4, 5], 'array_diff_ukey_func');                                                                                   // $array_diff_ukey = [];
@@ -296,17 +316,36 @@ $array_fill = array_fill(0, 3, array_fill(0, 3, 0)); // $array_fill = [0 => [0 =
 
 declare(strict_types = 1);
 
-function array_filter_odd_func($value)
+/**
+ * Filter odd.
+ *
+ * @param  int    $value
+ * @return int
+ */
+function array_filter_odd_func(int $value): int
 {
     return ($value & 1);
 }
 
-function array_filter_even_func($value)
+/**
+ * Filter even.
+ *
+ * @param  int    $value
+ * @return bool
+ */
+function array_filter_even_func(int $value): bool
 {
     return !($value & 1);
 }
 
-function array_filter_both_func($value, $key)
+/**
+ * Filter the specified key and value.
+ *
+ * @param  int    $value
+ * @param  int    $key
+ * @return bool
+ */
+function array_filter_both_func(int $value, int $key): bool
 {
     return ($value == 2 && $key == 0);
 }
@@ -378,9 +417,19 @@ $array_intersect_key = array_intersect_key(['foo' => 'cat', 'bar' => 'dog'], ['b
 
 declare(strict_types = 1);
 
-function array_intersect_uassoc_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_intersect_uassoc_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
 $array_intersect_uassoc = array_intersect_uassoc([2, 4, 5], [2, 4, 5], 'array_intersect_uassoc_func');                                                                                   // $array_intersect_uassoc = [0 => 2, 1 => 4, 2 => 5];
@@ -400,9 +449,19 @@ $array_intersect_uassoc = array_intersect_uassoc(['foo' => 'cat', 'bar' => 'dog'
 
 declare(strict_types = 1);
 
-function array_intersect_ukey_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_intersect_ukey_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
 $array_intersect_ukey = array_intersect_ukey([2, 4, 5], [2, 4, 5], 'array_intersect_ukey_func');                                                                                   // $array_intersect_ukey = [0 => 2, 1 => 4, 2 => 5];
@@ -497,12 +556,25 @@ $array_keys = array_keys([2, 4, 5], '5', true);             // $array_keys = [];
 
 declare(strict_types = 1);
 
-function array_map_cube_func($value)
+/**
+ * Calculate the cube of the numbers.
+ *
+ * @param  int    $value
+ * @return int
+ */
+function array_map_cube_func(int $value): int
 {
     return pow($value, 3);
 }
 
-function array_map_sum_func($a, $b)
+/**
+ * Calculate the sum of the two numbers.
+ *
+ * @param  int    $a
+ * @param  int    $b
+ * @return int
+ */
+function array_map_sum_func(int $a, int $b): int
 {
     return $a + $b;
 }
@@ -511,7 +583,7 @@ $array_map = array_map('array_map_cube_func', [2, 4, 5]);                    // 
 $array_map = array_map('array_map_sum_func', [2, 4, 5], [2, 4, 5]);          // $array_map = [0 => 4, 1 => 8, 2 => 10];
 $array_map = array_map('array_map_sum_func', [2, 4, 5], [2, 4, 5, 2, 4, 5]); // $array_map = [0 => 4, 1 => 8, 2 => 10, 3 => 2, 4 => 4, 5 => 5];
 $array_map = array_map(null, ['foo' => 'cat']);                              // $array_map = ['foo' => 'cat'];
-$array_map = array_map(null, [0], ['foo' => 'cat'], [1, 2]);                 // $array_map = [0 => [0 => 0, 1 => 'cat', 2 => 1], 1 => [0 => null, 1 => null, 2 => 2]];
+$array_map = array_map(null, [0], ['foo' => 'cat'], [1, 2]);                 // $array_map = [0 => [0 => 0, 1 => 'cat', 2 => 1], 1 => [0 => NULL, 1 => NULL, 2 => 2]];
 
 ```
 
@@ -628,7 +700,7 @@ $array_pad = array_pad([2, 4, 5], 2, 0);  // $array_pad = [0 => 2, 1 => 4, 2 => 
 declare(strict_types = 1);
 
 $foo = [];                               // $foo = [];
-$array_pop = array_pop($foo);            // $array_pop = null;
+$array_pop = array_pop($foo);            // $array_pop = NULL;
 
 $foo = [2, 4, 5];                        // $foo = [0 => 2, 1 => 4];
 $array_pop = array_pop($foo);            // $array_pop = 5;
@@ -697,7 +769,14 @@ $array_rand = array_rand([2, 4, 5, 2, 4, 5], 2);
 
 declare(strict_types = 1);
 
-function array_reduce_func($a, $b)
+/**
+ * Calculate the sum of the two numbers.
+ *
+ * @param  int    $a
+ * @param  int    $b
+ * @return int
+ */
+function array_reduce_func(int $a, int $b): int
 {
     return $a + $b;
 }
@@ -788,7 +867,7 @@ $array_search = array_search(5, [2, 4, 5, 5, 5, 5]);                   // $array
 declare(strict_types = 1);
 
 $foo = [];                               // $foo = [];
-$array_shift = array_shift($foo);        // $array_shift = null;
+$array_shift = array_shift($foo);        // $array_shift = NULL;
 
 $foo = [2, 4, 5];                        // $foo = [0 => 4, 1 => 5];
 $array_shift = array_shift($foo);        // $array_shift = 2;
@@ -883,14 +962,24 @@ $array_sum = array_sum([1.2, 2.3, 3.4]); // $array_sum = 6.9;
 
 declare(strict_types = 1);
 
-function array_udiff_assoc_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_udiff_assoc_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
 $array_udiff_assoc = array_udiff_assoc([2, 4, 5], [2, 4, 5], 'array_udiff_assoc_func');                                                                                   // $array_udiff_assoc = [];
 $array_udiff_assoc = array_udiff_assoc([2, 4, 5], [2], 'array_udiff_assoc_func');                                                                                         // $array_udiff_assoc = [1 => 4, 2 => 5];
-$array_udiff_assoc = array_udiff_assoc([2, 4, 5], ['2', '04', '05'], 'array_udiff_assoc_func');                                                                           // $array_udiff_assoc = [];
+$array_udiff_assoc = array_udiff_assoc([2, 4, 5], ['2', '04', '05'], 'array_udiff_assoc_func');                                                                           // $array_udiff_assoc = [1 => 4, 2 => 5];
 $array_udiff_assoc = array_udiff_assoc(['foo' => 'cat'], ['bar' => 'dog'], 'array_udiff_assoc_func');                                                                     // $array_udiff_assoc = ['foo' => 'cat'];
 $array_udiff_assoc = array_udiff_assoc(['foo' => 'cat', 'bar' => 'dog'], ['bar' => 'dog', 'baz' => 'bird'], ['foo' => 'cat', 'baz' => 'bird'], 'array_udiff_assoc_func'); // $array_udiff_assoc = [];
 
@@ -905,19 +994,39 @@ $array_udiff_assoc = array_udiff_assoc(['foo' => 'cat', 'bar' => 'dog'], ['bar' 
 
 declare(strict_types = 1);
 
-function array_udiff_uassoc_value_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_udiff_uassoc_value_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
-function array_udiff_uassoc_key_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_udiff_uassoc_key_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
 $array_udiff_uassoc = array_udiff_uassoc([2, 4, 5], [2, 4, 5], 'array_udiff_uassoc_value_func', 'array_udiff_uassoc_key_func');                                                                                   // $array_udiff_uassoc = [];
 $array_udiff_uassoc = array_udiff_uassoc([2, 4, 5], [2], 'array_udiff_uassoc_value_func', 'array_udiff_uassoc_key_func');                                                                                         // $array_udiff_uassoc = [1 => 4, 2 => 5];
-$array_udiff_uassoc = array_udiff_uassoc([2, 4, 5], ['2', '04', '05'], 'array_udiff_uassoc_value_func', 'array_udiff_uassoc_key_func');                                                                           // $array_udiff_uassoc = [];
+$array_udiff_uassoc = array_udiff_uassoc([2, 4, 5], ['2', '04', '05'], 'array_udiff_uassoc_value_func', 'array_udiff_uassoc_key_func');                                                                           // $array_udiff_uassoc = [1 => 4, 2 => 5];
 $array_udiff_uassoc = array_udiff_uassoc(['foo' => 'cat'], ['bar' => 'dog'], 'array_udiff_uassoc_value_func', 'array_udiff_uassoc_key_func');                                                                     // $array_udiff_uassoc = ['foo' => 'cat'];
 $array_udiff_uassoc = array_udiff_uassoc(['foo' => 'cat', 'bar' => 'dog'], ['bar' => 'dog', 'baz' => 'bird'], ['foo' => 'cat', 'baz' => 'bird'], 'array_udiff_uassoc_value_func', 'array_udiff_uassoc_key_func'); // $array_udiff_uassoc = [];
 
@@ -932,14 +1041,24 @@ $array_udiff_uassoc = array_udiff_uassoc(['foo' => 'cat', 'bar' => 'dog'], ['bar
 
 declare(strict_types = 1);
 
-function array_udiff_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_udiff_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
 $array_udiff = array_udiff([2, 4, 5], [2, 4, 5], 'array_udiff_func');                                                                                   // $array_udiff = [];
 $array_udiff = array_udiff([2, 4, 5], ['2'], 'array_udiff_func');                                                                                       // $array_udiff = [1 => 4, 2 => 5];
-$array_udiff = array_udiff([2, 4, 5], ['2', '04', '05'], 'array_udiff_func');                                                                           // $array_udiff = [];
+$array_udiff = array_udiff([2, 4, 5], ['2', '04', '05'], 'array_udiff_func');                                                                           // $array_udiff = [1 => 4, 2 => 5];
 $array_udiff = array_udiff(['foo' => 'cat'], ['bar' => 'dog'], 'array_udiff_func');                                                                     // $array_udiff = ['foo' => 'cat'];
 $array_udiff = array_udiff(['foo' => 'cat', 'bar' => 'dog'], ['bar' => 'dog', 'baz' => 'bird'], ['foo' => 'cat', 'baz' => 'bird'], 'array_udiff_func'); // $array_udiff = [];
 
@@ -954,16 +1073,26 @@ $array_udiff = array_udiff(['foo' => 'cat', 'bar' => 'dog'], ['bar' => 'dog', 'b
 
 declare(strict_types = 1);
 
-function array_uintersect_assoc_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_uintersect_assoc_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
-$array_uintersect_assoc = array_uintersect_assoc([2, 4, 5], [2, 4, 5], 'array_uintersect_assoc_func');                                                                       // $array_uintersect_assoc = [0 => 2, 1 => 4, 2 => 5];
-$array_uintersect_assoc = array_uintersect_assoc([2, 4, 5], [2], 'array_uintersect_assoc_func');                                                                             // $array_uintersect_assoc = [0 => 2];
-$array_uintersect_assoc = array_uintersect_assoc([2, 4, 5], ['2', '04', '05'], 'array_uintersect_assoc_func');                                                               // $array_uintersect_assoc = [0 => 2, 1 => 4, 2 => 5];
-$array_uintersect_assoc = array_uintersect_assoc(['foo' => 'cat'], ['bar' => 'dog'], 'array_uintersect_assoc_func');                                                         // $array_uintersect_assoc = [];
-$array_uintersect_assoc = array_uintersect_assoc(['a' => 'cat', 'b' => 'dog'], ['b' => 'dog', 'c' => 'bird'], ['a' => 'cat', 'c' => 'bird'], 'array_uintersect_assoc_func'); // $array_uintersect_assoc = [];
+$array_uintersect_assoc = array_uintersect_assoc([2, 4, 5], [2, 4, 5], 'array_uintersect_assoc_func');                                                                                   // $array_uintersect_assoc = [0 => 2, 1 => 4, 2 => 5];
+$array_uintersect_assoc = array_uintersect_assoc([2, 4, 5], [2], 'array_uintersect_assoc_func');                                                                                         // $array_uintersect_assoc = [0 => 2];
+$array_uintersect_assoc = array_uintersect_assoc([2, 4, 5], ['2', '04', '05'], 'array_uintersect_assoc_func');                                                                           // $array_uintersect_assoc = [0 => 2];
+$array_uintersect_assoc = array_uintersect_assoc(['foo' => 'cat'], ['bar' => 'dog'], 'array_uintersect_assoc_func');                                                                     // $array_uintersect_assoc = [];
+$array_uintersect_assoc = array_uintersect_assoc(['foo' => 'cat', 'bar' => 'dog'], ['bar' => 'dog', 'baz' => 'bird'], ['foo' => 'cat', 'baz' => 'bird'], 'array_uintersect_assoc_func'); // $array_uintersect_assoc = [];
 
 ```
 
@@ -976,19 +1105,39 @@ $array_uintersect_assoc = array_uintersect_assoc(['a' => 'cat', 'b' => 'dog'], [
 
 declare(strict_types = 1);
 
-function array_uintersect_uassoc_value_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_uintersect_uassoc_value_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
-function array_uintersect_uassoc_key_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_uintersect_uassoc_key_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
 $array_uintersect_uassoc = array_uintersect_uassoc([2, 4, 5], [2, 4, 5], 'array_uintersect_uassoc_value_func', 'array_uintersect_uassoc_key_func');                                                                                   // $array_uintersect_uassoc = [0 => 2, 1 => 4, 2 => 5];
 $array_uintersect_uassoc = array_uintersect_uassoc([2, 4, 5], [2], 'array_uintersect_uassoc_value_func', 'array_uintersect_uassoc_key_func');                                                                                         // $array_uintersect_uassoc = [0 => 2];
-$array_uintersect_uassoc = array_uintersect_uassoc([2, 4, 5], ['2', '04', '05'], 'array_uintersect_uassoc_value_func', 'array_uintersect_uassoc_key_func');                                                                           // $array_uintersect_uassoc = [0 => 2, 1 => 4, 2 => 5];
+$array_uintersect_uassoc = array_uintersect_uassoc([2, 4, 5], ['2', '04', '05'], 'array_uintersect_uassoc_value_func', 'array_uintersect_uassoc_key_func');                                                                           // $array_uintersect_uassoc = [0 => 2];
 $array_uintersect_uassoc = array_uintersect_uassoc(['foo' => 'cat'], ['bar' => 'dog'], 'array_uintersect_uassoc_value_func', 'array_uintersect_uassoc_key_func');                                                                     // $array_uintersect_uassoc = [];
 $array_uintersect_uassoc = array_uintersect_uassoc(['foo' => 'cat', 'bar' => 'dog'], ['bar' => 'dog', 'baz' => 'bird'], ['foo' => 'cat', 'baz' => 'bird'], 'array_uintersect_uassoc_value_func', 'array_uintersect_uassoc_key_func'); // $array_uintersect_uassoc = [];
 
@@ -1003,14 +1152,24 @@ $array_uintersect_uassoc = array_uintersect_uassoc(['foo' => 'cat', 'bar' => 'do
 
 declare(strict_types = 1);
 
-function array_uintersect_func($a, $b)
+/**
+ * Use strict check.
+ *
+ * @param  string $a
+ * @param  string $b
+ * @return int
+ */
+function array_uintersect_func(string $a, string $b): int
 {
-    return ($a <=> $b);
+    if ($a === $b) {
+        return 0;
+    }
+    return ($a > $b) ? 1 : -1;
 }
 
 $array_uintersect = array_uintersect([2, 4, 5], [2, 4, 5], 'array_uintersect_func');                                                                                   // $array_uintersect = [0 => 2, 1 => 4, 2 => 5];
 $array_uintersect = array_uintersect([2, 4, 5], [2], 'array_uintersect_func');                                                                                         // $array_uintersect = [0 => 2];
-$array_uintersect = array_uintersect([2, 4, 5], ['2', '04', '05'], 'array_uintersect_func');                                                                           // $array_uintersect = [0 => 2, 1 => 4, 2 => 5];
+$array_uintersect = array_uintersect([2, 4, 5], ['2', '04', '05'], 'array_uintersect_func');                                                                           // $array_uintersect = [0 => 2];
 $array_uintersect = array_uintersect(['foo' => 'cat'], ['bar' => 'dog'], 'array_uintersect_func');                                                                     // $array_uintersect = [];
 $array_uintersect = array_uintersect(['foo' => 'cat', 'bar' => 'dog'], ['bar' => 'dog', 'baz' => 'bird'], ['foo' => 'cat', 'baz' => 'bird'], 'array_uintersect_func'); // $array_uintersect = [];
 
@@ -1080,12 +1239,27 @@ $array_values = array_values(['foo' => 'cat', 'bar' => 'dog']); // $array_values
 
 declare(strict_types = 1);
 
-function array_walk_recursive_cube_func(&$value, $key)
+/**
+ * Calculate the cube of the numbers.
+ *
+ * @param  int    &$value
+ * @param  int    $key
+ * @return void
+ */
+function array_walk_recursive_cube_func(int &$value, int $key)
 {
     $value = pow($value, 3);
 }
 
-function array_walk_recursive_sum_func(&$value, $key, $data)
+/**
+ * Calculate the sum of the two numbers.
+ *
+ * @param  int    &$value
+ * @param  int    $key
+ * @param  int    $data
+ * @return void
+ */
+function array_walk_recursive_sum_func(int &$value, int $key, int $data)
 {
     $value += $data;
 }
@@ -1107,12 +1281,27 @@ $array_walk_recursive = array_walk_recursive($foo, 'array_walk_recursive_sum_fun
 
 declare(strict_types = 1);
 
-function array_walk_cube_func(&$value, $key)
+/**
+ * Calculate the cube of the numbers.
+ *
+ * @param  int    &$value
+ * @param  int    $key
+ * @return void
+ */
+function array_walk_cube_func(int &$value, int $key)
 {
     $value = pow($value, 3);
 }
 
-function array_walk_sum_func(&$value, $key, $data)
+/**
+ * Calculate the sum of the two numbers.
+ *
+ * @param  int    &$value
+ * @param  int    $key
+ * @param  int    $data
+ * @return void
+ */
+function array_walk_sum_func(int &$value, int $key, int $data)
 {
     $value += $data;
 }
@@ -1808,12 +1997,26 @@ $sort = sort($foo, SORT_NATURAL | SORT_FLAG_CASE);                             /
 
 declare(strict_types = 1);
 
-function uasort_asc_func($a, $b)
+/**
+ * Sort in ascending order.
+ *
+ * @param  int    $a
+ * @param  int    $b
+ * @return int
+ */
+function uasort_asc_func(int $a, int $b): int
 {
     return ($a <=> $b);
 }
 
-function uasort_desc_func($a, $b)
+/**
+ * Sort in descending order.
+ *
+ * @param  int    $a
+ * @param  int    $b
+ * @return int
+ */
+function uasort_desc_func(int $a, int $b): int
 {
     return -($a <=> $b);
 }
@@ -1835,12 +2038,26 @@ $uasort = uasort($foo, 'uasort_desc_func'); // $uasort = true;
 
 declare(strict_types = 1);
 
-function uksort_asc_func($a, $b)
+/**
+ * Sort in ascending order.
+ *
+ * @param  int    $a
+ * @param  int    $b
+ * @return int
+ */
+function uksort_asc_func(int $a, int $b): int
 {
     return ($a <=> $b);
 }
 
-function uksort_desc_func($a, $b)
+/**
+ * Sort in descending order.
+ *
+ * @param  int    $a
+ * @param  int    $b
+ * @return int
+ */
+function uksort_desc_func(int $a, int $b): int
 {
     return -($a <=> $b);
 }
@@ -1862,12 +2079,26 @@ $usort = uksort($foo, 'uksort_desc_func'); // $uksort = true;
 
 declare(strict_types = 1);
 
-function usort_asc_func($a, $b)
+/**
+ * Sort in ascending order.
+ *
+ * @param  int    $a
+ * @param  int    $b
+ * @return int
+ */
+function usort_asc_func(int $a, int $b): int
 {
     return ($a <=> $b);
 }
 
-function usort_cmp_func($a, $b)
+/**
+ * Sort by string.
+ *
+ * @param  array  $a
+ * @param  array  $b
+ * @return int
+ */
+function usort_cmp_func(array $a, array $b): int
 {
     return strcmp($a['foo'], $b['foo']);
 }

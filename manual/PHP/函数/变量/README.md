@@ -232,7 +232,7 @@ declare(strict_types = 1);
  * @param  void
  * @return void
  */
-function test()
+function foo()
 {
 }
 
@@ -242,7 +242,7 @@ function test()
  * @param  void
  * @return void
  */
-$test = function () {
+$foo = function () {
 };
 
 class Foo
@@ -272,13 +272,14 @@ class Bar
 }
 
 $is_callable = is_callable('print');                       // $is_callable = false;
-$is_callable = is_callable('test');                        // $is_callable = true;
-$is_callable = is_callable($test);                         // $is_callable = true;
+$is_callable = is_callable('foo');                         // $is_callable = true;
+$is_callable = is_callable($foo);                          // $is_callable = true;
 $is_callable = is_callable([new Foo, 'test']);             // $is_callable = true;
 $is_callable = is_callable(['Bar', 'test']);               // $is_callable = true;
 $is_callable = is_callable('Bar::test');                   // $is_callable = true;
-$is_callable = is_callable('test', false, $callable_name); // $is_callable = true; $callable_name = 'test';
+$is_callable = is_callable('foo', false, $callable_name);  // $is_callable = true; $callable_name = 'foo';
 $is_callable = is_callable('print', true, $callable_name); // $is_callable = true; $callable_name = 'print';
+
 
 ```
 
@@ -631,17 +632,17 @@ $unserialize = unserialize('O:8:"stdClass":0:{}');            // $unserialize = 
 
 declare(strict_types = 1);
 
-$foo = 0;            // $foo = null;
+$foo = 0;            // $foo = NULL;
 unset($foo);
 
 $foo = [0, 1, 2];    // $foo = [1 => 1, 2 => 2];
 unset($foo[0]);
 
-$foo = new stdClass; // $foo = null;
+$foo = new stdClass; // $foo = NULL;
 unset($foo);
 
-$foo = 0;            // $foo = null;
-$bar = [0, 1, 2];    // $bar = null;
+$foo = 0;            // $foo = NULL;
+$bar = [0, 1, 2];    // $bar = NULL;
 unset($foo, $bar);
 
 ```

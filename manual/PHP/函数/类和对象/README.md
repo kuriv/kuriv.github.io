@@ -202,8 +202,8 @@ class Bar extends Foo
 
 $get_class_vars = get_class_vars('Foo'); // $get_class_vars = ['public' => 'cat'];
 $get_class_vars = get_class_vars('Bar'); // $get_class_vars = ['public' => 'cat'];
-$get_class_vars = Foo::getclassVars();   // $get_class_vars = ['public' => 'cat', 'protected' => 'dog', 'private' => null];
-$get_class_vars = Bar::getclassVars();   // $get_class_vars = ['public' => 'cat', 'protected' => 'dog', 'private' => null];
+$get_class_vars = Foo::getclassVars();   // $get_class_vars = ['public' => 'cat', 'protected' => 'dog', 'private' => NULL];
+$get_class_vars = Bar::getclassVars();   // $get_class_vars = ['public' => 'cat', 'protected' => 'dog', 'private' => NULL];
 
 ```
 

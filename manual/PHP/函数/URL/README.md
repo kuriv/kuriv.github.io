@@ -99,7 +99,7 @@ declare(strict_types = 1);
 $parse_url = parse_url('http://username:password@hostname/path?arg=value#anchor');                   // $parse_url = ['scheme' => 'http', 'host' => 'hostname', 'user' => 'username', 'pass' => 'password', 'path' => '/path', 'query' => 'arg=value', 'fragment' => 'anchor'];
 $parse_url = parse_url('http://username:password@hostname/path?arg=value#anchor', PHP_URL_SCHEME);   // $parse_url = 'http';
 $parse_url = parse_url('http://username:password@hostname/path?arg=value#anchor', PHP_URL_HOST);     // $parse_url = 'hostname';
-$parse_url = parse_url('http://username:password@hostname/path?arg=value#anchor', PHP_URL_PORT);     // $parse_url = null;
+$parse_url = parse_url('http://username:password@hostname/path?arg=value#anchor', PHP_URL_PORT);     // $parse_url = NULL;
 $parse_url = parse_url('http://username:password@hostname/path?arg=value#anchor', PHP_URL_USER);     // $parse_url = 'username';
 $parse_url = parse_url('http://username:password@hostname/path?arg=value#anchor', PHP_URL_PASS);     // $parse_url = 'password';
 $parse_url = parse_url('http://username:password@hostname/path?arg=value#anchor', PHP_URL_PATH);     // $parse_url = '/path';

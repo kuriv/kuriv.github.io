@@ -12,7 +12,7 @@
 
 declare(strict_types = 1);
 
-$token_get_all = token_get_all('<?php echo; ?>');
+$token_get_all = token_get_all('<?php phpinfo(); ?>');
 $token_get_all = token_get_all('/* foo */');
 
 ```
