@@ -1,6 +1,6 @@
 # Summary
 
-* [目录](README.md)
+* [Markdown](README.md)
     * [基本语法](README/基本语法.md)
         * [水平线](README/基本语法/水平线.md)
         * [标题](README/基本语法/标题.md)
