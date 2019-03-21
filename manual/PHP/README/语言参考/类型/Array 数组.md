@@ -1,7 +1,6 @@
 ## Array 数组
 
 * [基本语法](#基本语法)
-* [更多语法](#更多语法)
 * [转换为数组](#转换为数组)
 
 ### 基本语法
@@ -36,9 +35,7 @@ $bar = [
 
 ```
 
-### 更多语法
-
-附例一：
+附例三：
 
 ```php
 <?php
@@ -56,7 +53,7 @@ var_dump($foo); // array(1) { [1]=> string(3) "qux" }
 
 ```
 
-附例二：
+附例四：
 
 ```php
 <?php
@@ -69,7 +66,7 @@ var_dump($foo); // array(4) { [0]=> string(3) "foo" [1]=> string(3) "bar" [6]=> 
 
 ```
 
-附例三：
+附例五：
 
 ```php
 <?php
@@ -91,7 +88,7 @@ var_dump(foo()[1]); // int(4)
 
 ```
 
-附例四：
+附例六：
 
 ```php
 <?php
@@ -111,7 +108,7 @@ var_dump($foo); // array(3) { ["bar"]=> string(3) "dog" [0]=> string(4) "bird" [
 
 ```
 
-附例五：
+附例七：
 
 ```php
 <?php
@@ -139,7 +136,7 @@ var_dump($foo); // array(2) { [0]=> int(6) [1]=> int(7) }
 
 ```
 
-附例六：
+附例八：
 
 ```php
 <?php
@@ -203,3 +200,4 @@ var_dump((array) new Foo); // array(0) { }
 var_dump((array) new Bar); // array(3) { ["public"]=> string(6) "public" ["\0*\0protected"]=> string(9) "protected" ["\0Bar\0private"]=> NULL }
 
 ```
+

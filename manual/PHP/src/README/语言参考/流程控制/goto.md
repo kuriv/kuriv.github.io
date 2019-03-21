@@ -16,7 +16,9 @@ goto bar;
 var_dump('foo');
 
 bar:
-var_dump('bar'); // string(3) "bar"
+var_dump('bar');
+
+// string(3) "bar"
 
 ```
 
@@ -34,7 +36,9 @@ for ($i = 0; $i < 10; $i++) {
 }
 
 foo:
-var_dump('foo'); // string(3) "foo"
+var_dump('foo');
+
+// string(3) "foo"
 
 ```
 

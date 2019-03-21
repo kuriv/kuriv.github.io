@@ -15,7 +15,7 @@ $foo = 'foo';
 
 switch ($foo) {
     case 0:
-        var_dump(0); // int(0)
+        var_dump(0);
         break;
     case 'foo':
         var_dump('foo');
@@ -23,6 +23,8 @@ switch ($foo) {
     default:
         break;
 }
+
+// int(0)
 
 ```
 
@@ -37,14 +39,17 @@ $foo = 'foo';
 
 switch ($foo) {
     case 0:
-        var_dump(0);     // int(0)
+        var_dump(0);
         // no break
     case 'bar':
-        var_dump('bar'); // string(3) "bar"
+        var_dump('bar');
         // no break
     default:
         break;
 }
+
+// int(0)
+// string(3) "bar"
 
 ```
 
@@ -60,11 +65,13 @@ $foo = 'foo';
 switch ($foo) {
     case 0:
     case 'bar':
-        var_dump('bar'); // string(3) "bar"
+        var_dump('bar');
         break;
     default:
         break;
 }
+
+// string(3) "bar"
 
 ```
 
@@ -85,9 +92,11 @@ switch ($foo) {
         var_dump(2);
         break;
     default:
-        var_dump($foo); // int(5)
+        var_dump($foo);
         break;
 }
+
+// int(5)
 
 ```
 

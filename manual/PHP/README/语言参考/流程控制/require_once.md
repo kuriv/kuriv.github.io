@@ -10,7 +10,6 @@
 declare(strict_types = 1);
 
 require_once __DIR__ . '/example.php';
-require_once __DIR__ . '/example.php';
 
 ```
 

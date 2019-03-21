@@ -25,10 +25,11 @@ $bar = false;
 declare(strict_types = 1);
 
 $foo = 'foo';
-$bar = false;
 
 if ($foo == 'foo') {
 }
+
+$bar = false;
 
 if ($bar) {
 }

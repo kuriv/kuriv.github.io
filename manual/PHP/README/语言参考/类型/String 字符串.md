@@ -1,7 +1,6 @@
 ## String 字符串
 
 * [基本语法](#基本语法)
-* [更多语法](#更多语法)
 * [转换为字符串](#转换为字符串)
 
 ### 基本语法
@@ -61,9 +60,7 @@ EOT;
 
 ```
 
-### 更多语法
-
-附例一：
+附例五：
 
 ```php
 <?php
@@ -77,7 +74,7 @@ var_dump("foo bar $foobaz qux");  // string(12) "foo bar  qux"
 
 ```
 
-附例二：
+附例六：
 
 ```php
 <?php
@@ -94,7 +91,7 @@ var_dump("foo bar $foo[1]baz qux");   // string(19) "foo bar birdbaz qux"
 
 ```
 
-附例三：
+附例七：
 
 ```php
 <?php
@@ -108,17 +105,17 @@ class Foo
      *
      * @var string
      */
-    public $foo = 'foo';
+    public $property = 'foo';
 }
 
 $foo = new Foo;
 
-var_dump("foo bar $foo->foo baz qux"); // string(19) "foo bar foo baz qux"
-var_dump("foo bar $foo->foobaz qux");  // string(12) "foo bar  qux"
+var_dump("foo bar $foo->property baz qux"); // string(19) "foo bar foo baz qux"
+var_dump("foo bar $foo->propertybaz qux");  // string(12) "foo bar  qux"
 
 ```
 
-附例四：
+附例八：
 
 ```php
 <?php
@@ -134,7 +131,7 @@ var_dump("foo bar {$foo}baz qux");   // string(18) "foo bar foobaz qux"
 
 ```
 
-附例五：
+附例九：
 
 ```php
 <?php
@@ -151,7 +148,7 @@ var_dump("foo bar {$foo[1]}baz qux");     // string(19) "foo bar birdbaz qux"
 
 ```
 
-附例六：
+附例十：
 
 ```php
 <?php
@@ -165,17 +162,17 @@ class Foo
      *
      * @var string
      */
-    public $foo = 'foo';
+    public $property = 'foo';
 }
 
 $foo = new Foo;
 
-var_dump("foo bar {$foo->foo} baz qux"); // string(19) "foo bar foo baz qux"
-var_dump("foo bar {$foo->foo}baz qux");  // string(18) "foo bar foobaz qux"
+var_dump("foo bar {$foo->property} baz qux"); // string(19) "foo bar foo baz qux"
+var_dump("foo bar {$foo->property}baz qux");  // string(18) "foo bar foobaz qux"
 
 ```
 
-附例七：
+附例十一：
 
 ```php
 <?php
@@ -190,7 +187,7 @@ var_dump($foo[2]); // string(1) "o"
 
 ```
 
-附例八：
+附例十二：
 
 ```php
 <?php
@@ -204,7 +201,7 @@ var_dump($foo); // string(3) "fo0"
 
 ```
 
-附例九：
+附例十三：
 
 ```php
 <?php
