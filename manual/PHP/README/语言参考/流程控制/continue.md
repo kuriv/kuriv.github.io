@@ -1,10 +1,6 @@
 ## continue
 
-* [基本语法](#基本语法)
-
-### 基本语法
-
-附例一：
+`continue` 在循环结构中用来跳过本次循环中剩余的代码并在条件求值为真时开始执行下一次循环， `continue` 跳过当前 `for` 结构的执行：
 
 ```php
 <?php
@@ -13,13 +9,13 @@ declare(strict_types = 1);
 
 for ($i = 1; $i < 10; $i++) {
     if ($i == 5) {
-        continue 1;
+        continue;
     }
 }
 
 ```
 
-附例二：
+`continue` 跳过当前 `foreach` 结构的执行：
 
 ```php
 <?php
@@ -36,7 +32,7 @@ foreach ($foo as $value) {
 
 ```
 
-附例三：
+`continue` 跳过当前 `while` 结构的执行：
 
 ```php
 <?php
@@ -54,7 +50,7 @@ while ($foo < 10) {
 
 ```
 
-附例四：
+`continue` 跳过当前 `do-while` 结构的执行：
 
 ```php
 <?php
@@ -72,7 +68,7 @@ do {
 
 ```
 
-附例五：
+`continue` 跳过当前 `switch` 结构的执行， `continue` 可以接受一个可选的数字参数来决定跳过几重循环到循环结尾：
 
 ```php
 <?php

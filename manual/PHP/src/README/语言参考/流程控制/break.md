@@ -1,10 +1,6 @@
 ## break
 
-* [基本语法](#基本语法)
-
-### 基本语法
-
-附例一：
+`break` 在循环结构中用来结束当前循环， `break` 结束当前 `for` 结构的执行：
 
 ```php
 <?php
@@ -13,13 +9,13 @@ declare(strict_types = 1);
 
 for ($i = 1; $i < 10; $i++) {
     if ($i == 5) {
-        break 1;
+        break;
     }
 }
 
 ```
 
-附例二：
+`break` 结束当前 `foreach` 结构的执行：
 
 ```php
 <?php
@@ -36,7 +32,7 @@ foreach ($foo as $value) {
 
 ```
 
-附例三：
+`break` 结束当前 `while` 结构的执行：
 
 ```php
 <?php
@@ -54,7 +50,7 @@ while ($foo < 10) {
 
 ```
 
-附例四：
+`break` 结束当前 `do-while` 结构的执行：
 
 ```php
 <?php
@@ -72,7 +68,7 @@ do {
 
 ```
 
-附例五：
+`break` 结束当前 `switch` 结构的执行， `break` 可以接受一个可选的数字参数来决定跳出几重循环：
 
 ```php
 <?php

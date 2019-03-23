@@ -1005,14 +1005,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.2" >
+        <li class="chapter " data-level="1.1.1.9.2" data-path="../类与对象/属性.html">
             
-                <span>
+                <a href="../类与对象/属性.html">
             
                     
-                    [属性]
+                    属性
             
-                </span>
+                </a>
             
 
             
@@ -1187,27 +1187,27 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.16" >
+        <li class="chapter " data-level="1.1.1.9.16" data-path="../类与对象/魔术方法.html">
             
-                <span>
+                <a href="../类与对象/魔术方法.html">
             
                     
-                    [魔术方法]
+                    魔术方法
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.17" >
+        <li class="chapter " data-level="1.1.1.9.17" data-path="../类与对象/Final 关键字.html">
             
-                <span>
+                <a href="../类与对象/Final 关键字.html">
             
                     
-                    [Final 关键字]
+                    Final 关键字
             
-                </span>
+                </a>
             
 
             
@@ -1239,14 +1239,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.20" >
+        <li class="chapter " data-level="1.1.1.9.20" data-path="../类与对象/类型约束.html">
             
-                <span>
+                <a href="../类与对象/类型约束.html">
             
                     
-                    [类型约束]
+                    类型约束
             
-                </span>
+                </a>
             
 
             
@@ -1436,25 +1436,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x9519;&#x8BEF;&#x63A7;&#x5236;&#x8FD0;&#x7B97;&#x7B26;">&#x9519;&#x8BEF;&#x63A7;&#x5236;&#x8FD0;&#x7B97;&#x7B26;</h2>
-<ul>
-<li><a href="#&#x57FA;&#x672C;&#x8BED;&#x6CD5;">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</a></li>
-</ul>
-<h3 id="&#x57FA;&#x672C;&#x8BED;&#x6CD5;">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h3>
-<p>&#x9644;&#x4F8B;&#x4E00;&#xFF1A;</p>
+<p><code>PHP</code> &#x652F;&#x6301;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x63A7;&#x5236;&#x8FD0;&#x7B97;&#x7B26; <code>@</code> &#x3002;&#x5F53;&#x5C06;&#x5176;&#x653E;&#x7F6E;&#x5728;&#x4E00;&#x4E2A; <code>PHP</code> &#x8868;&#x8FBE;&#x5F0F;&#x4E4B;&#x524D;&#xFF0C;&#x8BE5;&#x8868;&#x8FBE;&#x5F0F;&#x53EF;&#x80FD;&#x4EA7;&#x751F;&#x7684;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x90FD;&#x88AB;&#x5FFD;&#x7565;&#x6389;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#x7684; <code>@</code> &#x9519;&#x8BEF;&#x63A7;&#x5236;&#x8FD0;&#x7B97;&#x7B26;&#x524D;&#x7F00;&#x751A;&#x81F3;&#x4F7F;&#x5BFC;&#x81F4;&#x811A;&#x672C;&#x7EC8;&#x6B62;&#x7684;&#x4E25;&#x91CD;&#x9519;&#x8BEF;&#x7684;&#x9519;&#x8BEF;&#x62A5;&#x544A;&#x4E5F;&#x5931;&#x6548;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5982;&#x679C;&#x5728;&#x67D0;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x6216;&#x8005;&#x6572;&#x9519;&#x4E86;&#x5B57;&#x6BCD;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x524D;&#x7528;&#x4E86; <code>@</code> &#x6765;&#x6291;&#x5236;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x90A3;&#x811A;&#x672C;&#x4F1A;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8FF9;&#x8C61;&#x663E;&#x793A;&#x539F;&#x56E0;&#x800C;&#x6B7B;&#x5728;&#x90A3;&#x91CC;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
 
 var_dump(@$foo); <span class="hljs-comment">// NULL</span>
-</code></pre>
-<p>&#x9644;&#x4F8B;&#x4E8C;&#xFF1A;</p>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-
-<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
-
-$bar = @$foo;
-
-var_dump($bar); <span class="hljs-comment">// NULL</span>
 </code></pre>
 
                                 
@@ -1499,7 +1487,7 @@ var_dump($bar); <span class="hljs-comment">// NULL</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"错误控制运算符","level":"1.1.1.6.6","depth":4,"next":{"title":"执行运算符","level":"1.1.1.6.7","depth":4,"path":"README/语言参考/运算符/执行运算符.md","ref":"README/语言参考/运算符/执行运算符.md","articles":[]},"previous":{"title":"比较运算符","level":"1.1.1.6.5","depth":4,"path":"README/语言参考/运算符/比较运算符.md","ref":"README/语言参考/运算符/比较运算符.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/运算符/错误控制运算符.md","mtime":"2019-03-19T16:11:05.399Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-21T17:55:35.638Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"错误控制运算符","level":"1.1.1.6.6","depth":4,"next":{"title":"执行运算符","level":"1.1.1.6.7","depth":4,"path":"README/语言参考/运算符/执行运算符.md","ref":"README/语言参考/运算符/执行运算符.md","articles":[]},"previous":{"title":"比较运算符","level":"1.1.1.6.5","depth":4,"path":"README/语言参考/运算符/比较运算符.md","ref":"README/语言参考/运算符/比较运算符.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/运算符/错误控制运算符.md","mtime":"2019-03-23T07:52:43.623Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-23T17:13:37.170Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

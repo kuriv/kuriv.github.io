@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="类型约束.html" />
+    
     
     <link rel="prev" href="对象复制.html" />
     
@@ -1003,14 +1005,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.2" >
+        <li class="chapter " data-level="1.1.1.9.2" data-path="属性.html">
             
-                <span>
+                <a href="属性.html">
             
                     
-                    [属性]
+                    属性
             
-                </span>
+                </a>
             
 
             
@@ -1185,27 +1187,27 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.16" >
+        <li class="chapter " data-level="1.1.1.9.16" data-path="魔术方法.html">
             
-                <span>
+                <a href="魔术方法.html">
             
                     
-                    [魔术方法]
+                    魔术方法
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.17" >
+        <li class="chapter " data-level="1.1.1.9.17" data-path="Final 关键字.html">
             
-                <span>
+                <a href="Final 关键字.html">
             
                     
-                    [Final 关键字]
+                    Final 关键字
             
-                </span>
+                </a>
             
 
             
@@ -1237,14 +1239,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.20" >
+        <li class="chapter " data-level="1.1.1.9.20" data-path="类型约束.html">
             
-                <span>
+                <a href="类型约束.html">
             
                     
-                    [类型约束]
+                    类型约束
             
-                </span>
+                </a>
             
 
             
@@ -1434,11 +1436,8 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;">&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;</h2>
-<ul>
-<li><a href="#&#x57FA;&#x672C;&#x8BED;&#x6CD5;">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</a></li>
-</ul>
-<h3 id="&#x57FA;&#x672C;&#x8BED;&#x6CD5;">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h3>
-<p>&#x9644;&#x4F8B;&#x4E00;&#xFF1A;</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26; <code>==</code> &#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x6BD4;&#x8F83;&#x7684;&#x539F;&#x5219;&#x662F;&#xFF1A;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x5C5E;&#x6027;&#x503C;&#x90FD;&#x76F8;&#x7B49;&#xFF0C;&#x800C;&#x4E14;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x53D8;&#x91CF;&#x76F8;&#x7B49;&#x3002;</p>
+<p>&#x800C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26; <code>===</code> &#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x53D8;&#x91CF;&#x4E00;&#x5B9A;&#x8981;&#x6307;&#x5411;&#x67D0;&#x4E2A;&#x7C7B;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF08;&#x5373;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF09;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -1453,108 +1452,7 @@
     <span class="hljs-keyword">public</span> $property;
 
     <span class="hljs-comment">/**
-     * Just a test function.
-     *
-     * <span class="hljs-doctag">@param</span>  void
-     * <span class="hljs-doctag">@return</span> void
-     */</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span><span class="hljs-params">()</span>
-    </span>{
-    }
-}
-
-$foo = <span class="hljs-keyword">new</span> Foo;
-$bar = <span class="hljs-keyword">new</span> Foo;
-
-var_dump($foo == $bar);  <span class="hljs-comment">// bool(true)</span>
-var_dump($foo != $bar);  <span class="hljs-comment">// bool(false)</span>
-var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
-var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
-</code></pre>
-<p>&#x9644;&#x4F8B;&#x4E8C;&#xFF1A;</p>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-
-<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
-</span>{
-    <span class="hljs-comment">/**
-     * Just a test property.
-     *
-     * <span class="hljs-doctag">@var</span> string
-     */</span>
-    <span class="hljs-keyword">public</span> $property;
-
-    <span class="hljs-comment">/**
-     * Just a test function.
-     *
-     * <span class="hljs-doctag">@param</span>  void
-     * <span class="hljs-doctag">@return</span> void
-     */</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span><span class="hljs-params">()</span>
-    </span>{
-    }
-}
-
-$foo = <span class="hljs-keyword">new</span> Foo;
-$bar = <span class="hljs-keyword">clone</span> $foo;
-
-var_dump($foo == $bar);  <span class="hljs-comment">// bool(true)</span>
-var_dump($foo != $bar);  <span class="hljs-comment">// bool(false)</span>
-var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
-var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
-</code></pre>
-<p>&#x9644;&#x4F8B;&#x4E09;&#xFF1A;</p>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-
-<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
-</span>{
-    <span class="hljs-comment">/**
-     * Just a test property.
-     *
-     * <span class="hljs-doctag">@var</span> string
-     */</span>
-    <span class="hljs-keyword">public</span> $property;
-
-    <span class="hljs-comment">/**
-     * Just a test function.
-     *
-     * <span class="hljs-doctag">@param</span>  void
-     * <span class="hljs-doctag">@return</span> void
-     */</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span><span class="hljs-params">()</span>
-    </span>{
-    }
-}
-
-$foo = <span class="hljs-keyword">new</span> Foo;
-$foo-&gt;property = <span class="hljs-string">&apos;foo&apos;</span>;
-$bar = <span class="hljs-keyword">new</span> Foo;
-$bar-&gt;property = <span class="hljs-string">&apos;bar&apos;</span>;
-
-var_dump($foo == $bar);  <span class="hljs-comment">// bool(false)</span>
-var_dump($foo != $bar);  <span class="hljs-comment">// bool(true)</span>
-var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
-var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
-</code></pre>
-<p>&#x9644;&#x4F8B;&#x56DB;&#xFF1A;</p>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-
-<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
-</span>{
-    <span class="hljs-comment">/**
-     * Just a test property.
-     *
-     * <span class="hljs-doctag">@var</span> string
-     */</span>
-    <span class="hljs-keyword">public</span> $property;
-
-    <span class="hljs-comment">/**
-     * Just a test function.
+     * Just a test method.
      *
      * <span class="hljs-doctag">@param</span>  void
      * <span class="hljs-doctag">@return</span> void
@@ -1574,7 +1472,7 @@ var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
     <span class="hljs-keyword">public</span> $property;
 
     <span class="hljs-comment">/**
-     * Just a test function.
+     * Just a test method.
      *
      * <span class="hljs-doctag">@param</span>  void
      * <span class="hljs-doctag">@return</span> void
@@ -1585,37 +1483,38 @@ var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
 }
 
 $foo = <span class="hljs-keyword">new</span> Foo;
+$bar = <span class="hljs-keyword">new</span> Foo;
+
+var_dump($foo == $bar);  <span class="hljs-comment">// bool(true)</span>
+var_dump($foo != $bar);  <span class="hljs-comment">// bool(false)</span>
+var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
+var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+$bar = <span class="hljs-keyword">clone</span> $foo;
+
+var_dump($foo == $bar);  <span class="hljs-comment">// bool(true)</span>
+var_dump($foo != $bar);  <span class="hljs-comment">// bool(false)</span>
+var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
+var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+$foo-&gt;property = <span class="hljs-string">&apos;foo&apos;</span>;
+$bar = <span class="hljs-keyword">new</span> Foo;
+$bar-&gt;property = <span class="hljs-string">&apos;bar&apos;</span>;
+
+var_dump($foo == $bar);  <span class="hljs-comment">// bool(false)</span>
+var_dump($foo != $bar);  <span class="hljs-comment">// bool(true)</span>
+var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
+var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
+
+$foo = <span class="hljs-keyword">new</span> Foo;
 $bar = <span class="hljs-keyword">new</span> Bar;
 
 var_dump($foo == $bar);  <span class="hljs-comment">// bool(false)</span>
 var_dump($foo != $bar);  <span class="hljs-comment">// bool(true)</span>
 var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
 var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
-</code></pre>
-<p>&#x9644;&#x4F8B;&#x4E94;&#xFF1A;</p>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-
-<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
-</span>{
-    <span class="hljs-comment">/**
-     * Just a test property.
-     *
-     * <span class="hljs-doctag">@var</span> string
-     */</span>
-    <span class="hljs-keyword">public</span> $property;
-
-    <span class="hljs-comment">/**
-     * Just a test function.
-     *
-     * <span class="hljs-doctag">@param</span>  void
-     * <span class="hljs-doctag">@return</span> void
-     */</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span><span class="hljs-params">()</span>
-    </span>{
-    }
-}
 
 $foo = <span class="hljs-keyword">new</span> Foo;
 $bar = $foo;
@@ -1652,10 +1551,14 @@ var_dump($foo !== $bar); <span class="hljs-comment">// bool(false)</span>
 
             
                 
-                <a href="对象复制.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 对象复制">
+                <a href="对象复制.html" class="navigation navigation-prev " aria-label="Previous page: 对象复制">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="类型约束.html" class="navigation navigation-next " aria-label="Next page: 类型约束">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1664,7 +1567,7 @@ var_dump($foo !== $bar); <span class="hljs-comment">// bool(false)</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"对象比较","level":"1.1.1.9.19","depth":4,"next":{"title":"[类型约束]","level":"1.1.1.9.20","depth":4,"ref":"","articles":[]},"previous":{"title":"对象复制","level":"1.1.1.9.18","depth":4,"path":"README/语言参考/类与对象/对象复制.md","ref":"README/语言参考/类与对象/对象复制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/类与对象/对象比较.md","mtime":"2019-03-21T17:37:18.787Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-21T17:55:35.638Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"对象比较","level":"1.1.1.9.19","depth":4,"next":{"title":"类型约束","level":"1.1.1.9.20","depth":4,"path":"README/语言参考/类与对象/类型约束.md","ref":"README/语言参考/类与对象/类型约束.md","articles":[]},"previous":{"title":"对象复制","level":"1.1.1.9.18","depth":4,"path":"README/语言参考/类与对象/对象复制.md","ref":"README/语言参考/类与对象/对象复制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/类与对象/对象比较.md","mtime":"2019-03-23T15:49:36.893Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-23T17:13:37.170Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

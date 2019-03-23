@@ -1,10 +1,6 @@
 ## 来自 PHP 之外的变量
 
-* [基本语法](#基本语法)
-
-### 基本语法
-
-附例一：
+从一个简单的 `HTML` 表单中访问 `POST` 数据：
 
 ```html
 <!DOCTYPE html>
@@ -33,7 +29,7 @@ var_dump($_POST['username'], $_POST['password']);
 
 ```
 
-附例二：
+变量名中的点和空格被转换成下划线：
 
 ```html
 <!DOCTYPE html>
@@ -44,6 +40,7 @@ var_dump($_POST['username'], $_POST['password']);
     <body>
         <form action="example.php" method="post">
             <input type="text" name="foo.bar">
+            <input type="text" name="baz qux">
             <input type="submit" value="Submit">
         </form>
     </body>
@@ -58,10 +55,11 @@ example.php
 declare(strict_types = 1);
 
 var_dump($_POST['foo_bar']);
+var_dump($_POST['baz_qux']);
 
 ```
 
-附例三：
+`PHP` 也懂得表单变量上下文中的数组。例如可以将相关的变量编成组，或者用此特性从多选输入框中取得值：
 
 ```html
 <!DOCTYPE html>
@@ -97,7 +95,7 @@ var_dump($_POST['info'], $_POST['option']);
 
 ```
 
-附例四：
+当提交表单时，可以用一幅图像代替标准的提交按钮。当用户点击到图像中的某处时，相应的表单会被传送到服务器，并加上两个变量，它们包含了用户点击图像的坐标。有经验的用户可能会注意到被浏览器发送的实际变量名包含的是一个点而不是下划线（即 `image.x` 和 `image.y` ），但 `PHP` 自动将点转换成了下划线。
 
 ```html
 <!DOCTYPE html>
@@ -124,7 +122,7 @@ var_dump($_POST['image_x'], $_POST['image_y']);
 
 ```
 
-附例五：
+可以用 `setcookie()` 函数设定 `Cookie`。 `Cookie` 是 `HTTP` 信息头中的一部分，因此 `setcookie()` 函数必须在向浏览器发送任何输出之前调用。
 
 ```php
 <?php

@@ -1,10 +1,6 @@
 ## Callable 可调用类型
 
-* [基本语法](#基本语法)
-
-### 基本语法
-
-附例一：
+普通的用户自定义函数：
 
 ```php
 <?php
@@ -25,7 +21,7 @@ call_user_func('foo');
 
 ```
 
-附例二：
+匿名函数：
 
 ```php
 <?php
@@ -45,7 +41,7 @@ call_user_func($foo);
 
 ```
 
-附例三：
+类中的普通方法：
 
 ```php
 <?php
@@ -69,7 +65,7 @@ call_user_func([new Foo, 'method']);
 
 ```
 
-附例四：
+类中的静态方法：
 
 ```php
 <?php
@@ -93,7 +89,7 @@ call_user_func(['Foo', 'method']);
 
 ```
 
-附例五：
+类中的静态方法：
 
 ```php
 <?php
@@ -117,7 +113,7 @@ call_user_func('Foo::method');
 
 ```
 
-附例六：
+父类中的静态方法：
 
 ```php
 <?php
@@ -154,7 +150,7 @@ call_user_func(['Bar', 'parent::method']);
 
 ```
 
-附例七：
+`__invoke()` 魔术方法：
 
 ```php
 <?php

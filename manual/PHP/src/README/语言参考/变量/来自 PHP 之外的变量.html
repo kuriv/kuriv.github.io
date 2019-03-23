@@ -1005,14 +1005,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.2" >
+        <li class="chapter " data-level="1.1.1.9.2" data-path="../类与对象/属性.html">
             
-                <span>
+                <a href="../类与对象/属性.html">
             
                     
-                    [属性]
+                    属性
             
-                </span>
+                </a>
             
 
             
@@ -1187,27 +1187,27 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.16" >
+        <li class="chapter " data-level="1.1.1.9.16" data-path="../类与对象/魔术方法.html">
             
-                <span>
+                <a href="../类与对象/魔术方法.html">
             
                     
-                    [魔术方法]
+                    魔术方法
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.17" >
+        <li class="chapter " data-level="1.1.1.9.17" data-path="../类与对象/Final 关键字.html">
             
-                <span>
+                <a href="../类与对象/Final 关键字.html">
             
                     
-                    [Final 关键字]
+                    Final 关键字
             
-                </span>
+                </a>
             
 
             
@@ -1239,14 +1239,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.1.9.20" >
+        <li class="chapter " data-level="1.1.1.9.20" data-path="../类与对象/类型约束.html">
             
-                <span>
+                <a href="../类与对象/类型约束.html">
             
                     
-                    [类型约束]
+                    类型约束
             
-                </span>
+                </a>
             
 
             
@@ -1436,11 +1436,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x6765;&#x81EA;-php-&#x4E4B;&#x5916;&#x7684;&#x53D8;&#x91CF;">&#x6765;&#x81EA; PHP &#x4E4B;&#x5916;&#x7684;&#x53D8;&#x91CF;</h2>
-<ul>
-<li><a href="#&#x57FA;&#x672C;&#x8BED;&#x6CD5;">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</a></li>
-</ul>
-<h3 id="&#x57FA;&#x672C;&#x8BED;&#x6CD5;">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h3>
-<p>&#x9644;&#x4F8B;&#x4E00;&#xFF1A;</p>
+<p>&#x4ECE;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684; <code>HTML</code> &#x8868;&#x5355;&#x4E2D;&#x8BBF;&#x95EE; <code>POST</code> &#x6570;&#x636E;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-cmn-Hans&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -1462,7 +1458,7 @@
 
 var_dump($_POST[<span class="hljs-string">&apos;username&apos;</span>], $_POST[<span class="hljs-string">&apos;password&apos;</span>]);
 </code></pre>
-<p>&#x9644;&#x4F8B;&#x4E8C;&#xFF1A;</p>
+<p>&#x53D8;&#x91CF;&#x540D;&#x4E2D;&#x7684;&#x70B9;&#x548C;&#x7A7A;&#x683C;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x4E0B;&#x5212;&#x7EBF;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-cmn-Hans&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -1471,6 +1467,7 @@ var_dump($_POST[<span class="hljs-string">&apos;username&apos;</span>], $_POST[<
     <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;example.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;foo.bar&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;baz qux&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Submit&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
@@ -1482,8 +1479,9 @@ var_dump($_POST[<span class="hljs-string">&apos;username&apos;</span>], $_POST[<
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
 
 var_dump($_POST[<span class="hljs-string">&apos;foo_bar&apos;</span>]);
+var_dump($_POST[<span class="hljs-string">&apos;baz_qux&apos;</span>]);
 </code></pre>
-<p>&#x9644;&#x4F8B;&#x4E09;&#xFF1A;</p>
+<p><code>PHP</code> &#x4E5F;&#x61C2;&#x5F97;&#x8868;&#x5355;&#x53D8;&#x91CF;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x4F8B;&#x5982;&#x53EF;&#x4EE5;&#x5C06;&#x76F8;&#x5173;&#x7684;&#x53D8;&#x91CF;&#x7F16;&#x6210;&#x7EC4;&#xFF0C;&#x6216;&#x8005;&#x7528;&#x6B64;&#x7279;&#x6027;&#x4ECE;&#x591A;&#x9009;&#x8F93;&#x5165;&#x6846;&#x4E2D;&#x53D6;&#x5F97;&#x503C;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-cmn-Hans&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -1512,7 +1510,7 @@ var_dump($_POST[<span class="hljs-string">&apos;foo_bar&apos;</span>]);
 
 var_dump($_POST[<span class="hljs-string">&apos;info&apos;</span>], $_POST[<span class="hljs-string">&apos;option&apos;</span>]);
 </code></pre>
-<p>&#x9644;&#x4F8B;&#x56DB;&#xFF1A;</p>
+<p>&#x5F53;&#x63D0;&#x4EA4;&#x8868;&#x5355;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x5E45;&#x56FE;&#x50CF;&#x4EE3;&#x66FF;&#x6807;&#x51C6;&#x7684;&#x63D0;&#x4EA4;&#x6309;&#x94AE;&#x3002;&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x5230;&#x56FE;&#x50CF;&#x4E2D;&#x7684;&#x67D0;&#x5904;&#x65F6;&#xFF0C;&#x76F8;&#x5E94;&#x7684;&#x8868;&#x5355;&#x4F1A;&#x88AB;&#x4F20;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E76;&#x52A0;&#x4E0A;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5B83;&#x4EEC;&#x5305;&#x542B;&#x4E86;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x56FE;&#x50CF;&#x7684;&#x5750;&#x6807;&#x3002;&#x6709;&#x7ECF;&#x9A8C;&#x7684;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x4F1A;&#x6CE8;&#x610F;&#x5230;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x7684;&#x5B9E;&#x9645;&#x53D8;&#x91CF;&#x540D;&#x5305;&#x542B;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x70B9;&#x800C;&#x4E0D;&#x662F;&#x4E0B;&#x5212;&#x7EBF;&#xFF08;&#x5373; <code>image.x</code> &#x548C; <code>image.y</code> &#xFF09;&#xFF0C;&#x4F46; <code>PHP</code> &#x81EA;&#x52A8;&#x5C06;&#x70B9;&#x8F6C;&#x6362;&#x6210;&#x4E86;&#x4E0B;&#x5212;&#x7EBF;&#x3002;</p>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-cmn-Hans&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -1532,7 +1530,7 @@ var_dump($_POST[<span class="hljs-string">&apos;info&apos;</span>], $_POST[<span
 
 var_dump($_POST[<span class="hljs-string">&apos;image_x&apos;</span>], $_POST[<span class="hljs-string">&apos;image_y&apos;</span>]);
 </code></pre>
-<p>&#x9644;&#x4F8B;&#x4E94;&#xFF1A;</p>
+<p>&#x53EF;&#x4EE5;&#x7528; <code>setcookie()</code> &#x51FD;&#x6570;&#x8BBE;&#x5B9A; <code>Cookie</code>&#x3002; <code>Cookie</code> &#x662F; <code>HTTP</code> &#x4FE1;&#x606F;&#x5934;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x56E0;&#x6B64; <code>setcookie()</code> &#x51FD;&#x6570;&#x5FC5;&#x987B;&#x5728;&#x5411;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -1583,7 +1581,7 @@ setcookie(<span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-st
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"来自 PHP 之外的变量","level":"1.1.1.3.4","depth":4,"next":{"title":"常量","level":"1.1.1.4","depth":3,"path":"README/语言参考/常量.md","ref":"README/语言参考/常量.md","articles":[{"title":"基本语法","level":"1.1.1.4.1","depth":4,"path":"README/语言参考/常量/基本语法.md","ref":"README/语言参考/常量/基本语法.md","articles":[]},{"title":"魔术常量","level":"1.1.1.4.2","depth":4,"path":"README/语言参考/常量/魔术常量.md","ref":"README/语言参考/常量/魔术常量.md","articles":[]}]},"previous":{"title":"可变变量","level":"1.1.1.3.3","depth":4,"path":"README/语言参考/变量/可变变量.md","ref":"README/语言参考/变量/可变变量.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/变量/来自 PHP 之外的变量.md","mtime":"2019-03-19T12:15:20.177Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-21T17:55:35.638Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"来自 PHP 之外的变量","level":"1.1.1.3.4","depth":4,"next":{"title":"常量","level":"1.1.1.4","depth":3,"path":"README/语言参考/常量.md","ref":"README/语言参考/常量.md","articles":[{"title":"基本语法","level":"1.1.1.4.1","depth":4,"path":"README/语言参考/常量/基本语法.md","ref":"README/语言参考/常量/基本语法.md","articles":[]},{"title":"魔术常量","level":"1.1.1.4.2","depth":4,"path":"README/语言参考/常量/魔术常量.md","ref":"README/语言参考/常量/魔术常量.md","articles":[]}]},"previous":{"title":"可变变量","level":"1.1.1.3.3","depth":4,"path":"README/语言参考/变量/可变变量.md","ref":"README/语言参考/变量/可变变量.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/变量/来自 PHP 之外的变量.md","mtime":"2019-03-22T17:08:16.945Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-23T17:13:37.170Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
