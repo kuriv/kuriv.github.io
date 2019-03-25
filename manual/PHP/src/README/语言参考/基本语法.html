@@ -1,0 +1,1813 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>基本语法 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="基本语法/PHP 标记.html" />
+    
+    
+    <link rel="prev" href="../语言参考.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    PHP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../语言参考.html">
+            
+                <a href="../语言参考.html">
+            
+                    
+                    语言参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1.1.1" data-path="基本语法.html">
+            
+                <a href="基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1.1" data-path="基本语法/PHP 标记.html">
+            
+                <a href="基本语法/PHP 标记.html">
+            
+                    
+                    PHP 标记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.1.2" data-path="基本语法/从 HTML 中分离.html">
+            
+                <a href="基本语法/从 HTML 中分离.html">
+            
+                    
+                    从 HTML 中分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.1.3" data-path="基本语法/指令分隔符.html">
+            
+                <a href="基本语法/指令分隔符.html">
+            
+                    
+                    指令分隔符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.1.4" data-path="基本语法/注释.html">
+            
+                <a href="基本语法/注释.html">
+            
+                    
+                    注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="类型.html">
+            
+                <a href="类型.html">
+            
+                    
+                    类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.2.1" data-path="类型/Boolean 布尔类型.html">
+            
+                <a href="类型/Boolean 布尔类型.html">
+            
+                    
+                    Boolean 布尔类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.2" data-path="类型/Integer 整型.html">
+            
+                <a href="类型/Integer 整型.html">
+            
+                    
+                    Integer 整型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.3" data-path="类型/Float 浮点型.html">
+            
+                <a href="类型/Float 浮点型.html">
+            
+                    
+                    Float 浮点型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.4" data-path="类型/String 字符串.html">
+            
+                <a href="类型/String 字符串.html">
+            
+                    
+                    String 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.5" data-path="类型/Array 数组.html">
+            
+                <a href="类型/Array 数组.html">
+            
+                    
+                    Array 数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.6" data-path="类型/Object 对象.html">
+            
+                <a href="类型/Object 对象.html">
+            
+                    
+                    Object 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.7" data-path="类型/Resource 资源类型.html">
+            
+                <a href="类型/Resource 资源类型.html">
+            
+                    
+                    Resource 资源类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.8" data-path="类型/NULL.html">
+            
+                <a href="类型/NULL.html">
+            
+                    
+                    NULL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.9" data-path="类型/Callable 可调用类型.html">
+            
+                <a href="类型/Callable 可调用类型.html">
+            
+                    
+                    Callable 可调用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.10" data-path="类型/类型转换的判别.html">
+            
+                <a href="类型/类型转换的判别.html">
+            
+                    
+                    类型转换的判别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="变量.html">
+            
+                <a href="变量.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.3.1" data-path="变量/基本语法.html">
+            
+                <a href="变量/基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3.2" data-path="变量/变量范围.html">
+            
+                <a href="变量/变量范围.html">
+            
+                    
+                    变量范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3.3" data-path="变量/可变变量.html">
+            
+                <a href="变量/可变变量.html">
+            
+                    
+                    可变变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3.4" data-path="变量/来自 PHP 之外的变量.html">
+            
+                <a href="变量/来自 PHP 之外的变量.html">
+            
+                    
+                    来自 PHP 之外的变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4" data-path="常量.html">
+            
+                <a href="常量.html">
+            
+                    
+                    常量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.4.1" data-path="常量/基本语法.html">
+            
+                <a href="常量/基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4.2" data-path="常量/魔术常量.html">
+            
+                <a href="常量/魔术常量.html">
+            
+                    
+                    魔术常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.5" data-path="表达式.html">
+            
+                <a href="表达式.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6" data-path="运算符.html">
+            
+                <a href="运算符.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.6.1" data-path="运算符/运算符优先级.html">
+            
+                <a href="运算符/运算符优先级.html">
+            
+                    
+                    运算符优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.2" data-path="运算符/算数运算符.html">
+            
+                <a href="运算符/算数运算符.html">
+            
+                    
+                    算数运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.3" data-path="运算符/赋值运算符.html">
+            
+                <a href="运算符/赋值运算符.html">
+            
+                    
+                    赋值运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.4" data-path="运算符/位运算符.html">
+            
+                <a href="运算符/位运算符.html">
+            
+                    
+                    位运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.5" data-path="运算符/比较运算符.html">
+            
+                <a href="运算符/比较运算符.html">
+            
+                    
+                    比较运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.6" data-path="运算符/错误控制运算符.html">
+            
+                <a href="运算符/错误控制运算符.html">
+            
+                    
+                    错误控制运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.7" data-path="运算符/执行运算符.html">
+            
+                <a href="运算符/执行运算符.html">
+            
+                    
+                    执行运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.8" data-path="运算符/递增递减运算符.html">
+            
+                <a href="运算符/递增递减运算符.html">
+            
+                    
+                    递增递减运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.9" data-path="运算符/逻辑运算符.html">
+            
+                <a href="运算符/逻辑运算符.html">
+            
+                    
+                    逻辑运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.10" data-path="运算符/字符串运算符.html">
+            
+                <a href="运算符/字符串运算符.html">
+            
+                    
+                    字符串运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.11" data-path="运算符/数组运算符.html">
+            
+                <a href="运算符/数组运算符.html">
+            
+                    
+                    数组运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.12" data-path="运算符/类型运算符.html">
+            
+                <a href="运算符/类型运算符.html">
+            
+                    
+                    类型运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7" data-path="流程控制.html">
+            
+                <a href="流程控制.html">
+            
+                    
+                    流程控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.7.1" data-path="流程控制/if.html">
+            
+                <a href="流程控制/if.html">
+            
+                    
+                    if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.2" data-path="流程控制/else.html">
+            
+                <a href="流程控制/else.html">
+            
+                    
+                    else
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.3" data-path="流程控制/elseif.html">
+            
+                <a href="流程控制/elseif.html">
+            
+                    
+                    elseif
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.4" data-path="流程控制/while.html">
+            
+                <a href="流程控制/while.html">
+            
+                    
+                    while
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.5" data-path="流程控制/do-while.html">
+            
+                <a href="流程控制/do-while.html">
+            
+                    
+                    do-while
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.6" data-path="流程控制/for.html">
+            
+                <a href="流程控制/for.html">
+            
+                    
+                    for
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.7" data-path="流程控制/foreach.html">
+            
+                <a href="流程控制/foreach.html">
+            
+                    
+                    foreach
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.8" data-path="流程控制/break.html">
+            
+                <a href="流程控制/break.html">
+            
+                    
+                    break
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.9" data-path="流程控制/continue.html">
+            
+                <a href="流程控制/continue.html">
+            
+                    
+                    continue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.10" data-path="流程控制/switch.html">
+            
+                <a href="流程控制/switch.html">
+            
+                    
+                    switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.11" data-path="流程控制/流程控制的替代语法.html">
+            
+                <a href="流程控制/流程控制的替代语法.html">
+            
+                    
+                    流程控制的替代语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.12" data-path="流程控制/declare.html">
+            
+                <a href="流程控制/declare.html">
+            
+                    
+                    declare
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.13" data-path="流程控制/return.html">
+            
+                <a href="流程控制/return.html">
+            
+                    
+                    return
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.14" data-path="流程控制/require.html">
+            
+                <a href="流程控制/require.html">
+            
+                    
+                    require
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.15" data-path="流程控制/include.html">
+            
+                <a href="流程控制/include.html">
+            
+                    
+                    include
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.16" data-path="流程控制/require_once.html">
+            
+                <a href="流程控制/require_once.html">
+            
+                    
+                    require_once
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.17" data-path="流程控制/include_once.html">
+            
+                <a href="流程控制/include_once.html">
+            
+                    
+                    include_once
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.18" data-path="流程控制/goto.html">
+            
+                <a href="流程控制/goto.html">
+            
+                    
+                    goto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8" data-path="函数.html">
+            
+                <a href="函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.8.1" data-path="函数/用户自定义函数.html">
+            
+                <a href="函数/用户自定义函数.html">
+            
+                    
+                    用户自定义函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8.2" data-path="函数/函数的参数.html">
+            
+                <a href="函数/函数的参数.html">
+            
+                    
+                    函数的参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8.3" data-path="函数/返回值.html">
+            
+                <a href="函数/返回值.html">
+            
+                    
+                    返回值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8.4" data-path="函数/可变函数.html">
+            
+                <a href="函数/可变函数.html">
+            
+                    
+                    可变函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8.5" data-path="函数/匿名函数.html">
+            
+                <a href="函数/匿名函数.html">
+            
+                    
+                    匿名函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9" data-path="类与对象.html">
+            
+                <a href="类与对象.html">
+            
+                    
+                    类与对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.9.1" data-path="类与对象/基本语法.html">
+            
+                <a href="类与对象/基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.2" data-path="类与对象/属性.html">
+            
+                <a href="类与对象/属性.html">
+            
+                    
+                    属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.3" data-path="类与对象/类常量.html">
+            
+                <a href="类与对象/类常量.html">
+            
+                    
+                    类常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.4" data-path="类与对象/类的自动加载.html">
+            
+                <a href="类与对象/类的自动加载.html">
+            
+                    
+                    类的自动加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.5" data-path="类与对象/构造函数和析构函数.html">
+            
+                <a href="类与对象/构造函数和析构函数.html">
+            
+                    
+                    构造函数和析构函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.6" >
+            
+                <span>
+            
+                    
+                    [访问控制]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.7" >
+            
+                <span>
+            
+                    
+                    [对象继承]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.8" >
+            
+                <span>
+            
+                    
+                    [范围解析操作符]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.9" >
+            
+                <span>
+            
+                    
+                    [Static 关键字]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.10" data-path="类与对象/抽象类.html">
+            
+                <a href="类与对象/抽象类.html">
+            
+                    
+                    抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.11" data-path="类与对象/对象接口.html">
+            
+                <a href="类与对象/对象接口.html">
+            
+                    
+                    对象接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.12" >
+            
+                <span>
+            
+                    
+                    [Trait]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.13" >
+            
+                <span>
+            
+                    
+                    [匿名类]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.14" >
+            
+                <span>
+            
+                    
+                    [重载]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.15" >
+            
+                <span>
+            
+                    
+                    [遍历对象]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.16" data-path="类与对象/魔术方法.html">
+            
+                <a href="类与对象/魔术方法.html">
+            
+                    
+                    魔术方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.17" data-path="类与对象/Final 关键字.html">
+            
+                <a href="类与对象/Final 关键字.html">
+            
+                    
+                    Final 关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.18" data-path="类与对象/对象复制.html">
+            
+                <a href="类与对象/对象复制.html">
+            
+                    
+                    对象复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.19" data-path="类与对象/对象比较.html">
+            
+                <a href="类与对象/对象比较.html">
+            
+                    
+                    对象比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.20" data-path="类与对象/类型约束.html">
+            
+                <a href="类与对象/类型约束.html">
+            
+                    
+                    类型约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.21" data-path="类与对象/后期静态绑定.html">
+            
+                <a href="类与对象/后期静态绑定.html">
+            
+                    
+                    后期静态绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.22" data-path="类与对象/对象和引用.html">
+            
+                <a href="类与对象/对象和引用.html">
+            
+                    
+                    对象和引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.9.23" data-path="类与对象/对象序列化.html">
+            
+                <a href="类与对象/对象序列化.html">
+            
+                    
+                    对象序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.10" data-path="引用的解释.html">
+            
+                <a href="引用的解释.html">
+            
+                    
+                    引用的解释
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.10.1" data-path="引用的解释/引用是什么.html">
+            
+                <a href="引用的解释/引用是什么.html">
+            
+                    
+                    引用是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.10.2" data-path="引用的解释/引用不是什么.html">
+            
+                <a href="引用的解释/引用不是什么.html">
+            
+                    
+                    引用不是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.10.3" data-path="引用的解释/引用做什么.html">
+            
+                <a href="引用的解释/引用做什么.html">
+            
+                    
+                    引用做什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.10.4" data-path="引用的解释/引用传递.html">
+            
+                <a href="引用的解释/引用传递.html">
+            
+                    
+                    引用传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.10.5" data-path="引用的解释/引用返回.html">
+            
+                <a href="引用的解释/引用返回.html">
+            
+                    
+                    引用返回
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.10.6" data-path="引用的解释/取消引用.html">
+            
+                <a href="引用的解释/取消引用.html">
+            
+                    
+                    取消引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.10.7" data-path="引用的解释/引用定位.html">
+            
+                <a href="引用的解释/引用定位.html">
+            
+                    
+                    引用定位
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11" data-path="预定义变量.html">
+            
+                <a href="预定义变量.html">
+            
+                    
+                    预定义变量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.11.1" data-path="预定义变量/$GLOBALS.html">
+            
+                <a href="预定义变量/$GLOBALS.html">
+            
+                    
+                    $GLOBALS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.2" data-path="预定义变量/$_GET.html">
+            
+                <a href="预定义变量/$_GET.html">
+            
+                    
+                    $_GET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.3" data-path="预定义变量/$_POST.html">
+            
+                <a href="预定义变量/$_POST.html">
+            
+                    
+                    $_POST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.4" data-path="预定义变量/$_COOKIE.html">
+            
+                <a href="预定义变量/$_COOKIE.html">
+            
+                    
+                    $_COOKIE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.5" data-path="预定义变量/$_REQUEST.html">
+            
+                <a href="预定义变量/$_REQUEST.html">
+            
+                    
+                    $_REQUEST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.6" data-path="预定义变量/$_FILES.html">
+            
+                <a href="预定义变量/$_FILES.html">
+            
+                    
+                    $_FILES
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.7" data-path="预定义变量/$_SESSION.html">
+            
+                <a href="预定义变量/$_SESSION.html">
+            
+                    
+                    $_SESSION
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.8" data-path="预定义变量/$_SERVER.html">
+            
+                <a href="预定义变量/$_SERVER.html">
+            
+                    
+                    $_SERVER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.9" data-path="预定义变量/$_ENV.html">
+            
+                <a href="预定义变量/$_ENV.html">
+            
+                    
+                    $_ENV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.10" data-path="预定义变量/$http_response_header.html">
+            
+                <a href="预定义变量/$http_response_header.html">
+            
+                    
+                    $http_response_header
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.11" data-path="预定义变量/$argc.html">
+            
+                <a href="预定义变量/$argc.html">
+            
+                    
+                    $argc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.11.12" data-path="预定义变量/$argv.html">
+            
+                <a href="预定义变量/$argv.html">
+            
+                    
+                    $argv
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../函数参考.html">
+            
+                <a href="../函数参考.html">
+            
+                    
+                    函数参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="../函数参考/数学.html">
+            
+                <a href="../函数参考/数学.html">
+            
+                    
+                    数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.2" data-path="../函数参考/邮件.html">
+            
+                <a href="../函数参考/邮件.html">
+            
+                    
+                    邮件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.3" data-path="../函数参考/目录.html">
+            
+                <a href="../函数参考/目录.html">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.4" data-path="../函数参考/URL.html">
+            
+                <a href="../函数参考/URL.html">
+            
+                    
+                    URL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.5" data-path="../函数参考/解析器.html">
+            
+                <a href="../函数参考/解析器.html">
+            
+                    
+                    解析器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >基本语法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x57FA;&#x672C;&#x8BED;&#x6CD5;">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h1>
+<ul>
+<li><a href="&#x57FA;&#x672C;&#x8BED;&#x6CD5;/PHP%20&#x6807;&#x8BB0;.html">PHP &#x6807;&#x8BB0;</a></li>
+<li><a href="&#x57FA;&#x672C;&#x8BED;&#x6CD5;/&#x4ECE;%20HTML%20&#x4E2D;&#x5206;&#x79BB;.html">&#x4ECE; HTML &#x4E2D;&#x5206;&#x79BB;</a></li>
+<li><a href="&#x57FA;&#x672C;&#x8BED;&#x6CD5;/&#x6307;&#x4EE4;&#x5206;&#x9694;&#x7B26;.html">&#x6307;&#x4EE4;&#x5206;&#x9694;&#x7B26;</a></li>
+<li><a href="&#x57FA;&#x672C;&#x8BED;&#x6CD5;/&#x6CE8;&#x91CA;.html">&#x6CE8;&#x91CA;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../语言参考.html" class="navigation navigation-prev " aria-label="Previous page: 语言参考">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="基本语法/PHP 标记.html" class="navigation navigation-next " aria-label="Next page: PHP 标记">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基本语法","level":"1.1.1.1","depth":3,"next":{"title":"PHP 标记","level":"1.1.1.1.1","depth":4,"path":"README/语言参考/基本语法/PHP 标记.md","ref":"README/语言参考/基本语法/PHP 标记.md","articles":[]},"previous":{"title":"语言参考","level":"1.1.1","depth":2,"path":"README/语言参考.md","ref":"README/语言参考.md","articles":[{"title":"基本语法","level":"1.1.1.1","depth":3,"path":"README/语言参考/基本语法.md","ref":"README/语言参考/基本语法.md","articles":[{"title":"PHP 标记","level":"1.1.1.1.1","depth":4,"path":"README/语言参考/基本语法/PHP 标记.md","ref":"README/语言参考/基本语法/PHP 标记.md","articles":[]},{"title":"从 HTML 中分离","level":"1.1.1.1.2","depth":4,"path":"README/语言参考/基本语法/从 HTML 中分离.md","ref":"README/语言参考/基本语法/从 HTML 中分离.md","articles":[]},{"title":"指令分隔符","level":"1.1.1.1.3","depth":4,"path":"README/语言参考/基本语法/指令分隔符.md","ref":"README/语言参考/基本语法/指令分隔符.md","articles":[]},{"title":"注释","level":"1.1.1.1.4","depth":4,"path":"README/语言参考/基本语法/注释.md","ref":"README/语言参考/基本语法/注释.md","articles":[]}]},{"title":"类型","level":"1.1.1.2","depth":3,"path":"README/语言参考/类型.md","ref":"README/语言参考/类型.md","articles":[{"title":"Boolean 布尔类型","level":"1.1.1.2.1","depth":4,"path":"README/语言参考/类型/Boolean 布尔类型.md","ref":"README/语言参考/类型/Boolean 布尔类型.md","articles":[]},{"title":"Integer 整型","level":"1.1.1.2.2","depth":4,"path":"README/语言参考/类型/Integer 整型.md","ref":"README/语言参考/类型/Integer 整型.md","articles":[]},{"title":"Float 浮点型","level":"1.1.1.2.3","depth":4,"path":"README/语言参考/类型/Float 浮点型.md","ref":"README/语言参考/类型/Float 浮点型.md","articles":[]},{"title":"String 字符串","level":"1.1.1.2.4","depth":4,"path":"README/语言参考/类型/String 字符串.md","ref":"README/语言参考/类型/String 字符串.md","articles":[]},{"title":"Array 数组","level":"1.1.1.2.5","depth":4,"path":"README/语言参考/类型/Array 数组.md","ref":"README/语言参考/类型/Array 数组.md","articles":[]},{"title":"Object 对象","level":"1.1.1.2.6","depth":4,"path":"README/语言参考/类型/Object 对象.md","ref":"README/语言参考/类型/Object 对象.md","articles":[]},{"title":"Resource 资源类型","level":"1.1.1.2.7","depth":4,"path":"README/语言参考/类型/Resource 资源类型.md","ref":"README/语言参考/类型/Resource 资源类型.md","articles":[]},{"title":"NULL","level":"1.1.1.2.8","depth":4,"path":"README/语言参考/类型/NULL.md","ref":"README/语言参考/类型/NULL.md","articles":[]},{"title":"Callable 可调用类型","level":"1.1.1.2.9","depth":4,"path":"README/语言参考/类型/Callable 可调用类型.md","ref":"README/语言参考/类型/Callable 可调用类型.md","articles":[]},{"title":"类型转换的判别","level":"1.1.1.2.10","depth":4,"path":"README/语言参考/类型/类型转换的判别.md","ref":"README/语言参考/类型/类型转换的判别.md","articles":[]}]},{"title":"变量","level":"1.1.1.3","depth":3,"path":"README/语言参考/变量.md","ref":"README/语言参考/变量.md","articles":[{"title":"基本语法","level":"1.1.1.3.1","depth":4,"path":"README/语言参考/变量/基本语法.md","ref":"README/语言参考/变量/基本语法.md","articles":[]},{"title":"变量范围","level":"1.1.1.3.2","depth":4,"path":"README/语言参考/变量/变量范围.md","ref":"README/语言参考/变量/变量范围.md","articles":[]},{"title":"可变变量","level":"1.1.1.3.3","depth":4,"path":"README/语言参考/变量/可变变量.md","ref":"README/语言参考/变量/可变变量.md","articles":[]},{"title":"来自 PHP 之外的变量","level":"1.1.1.3.4","depth":4,"path":"README/语言参考/变量/来自 PHP 之外的变量.md","ref":"README/语言参考/变量/来自 PHP 之外的变量.md","articles":[]}]},{"title":"常量","level":"1.1.1.4","depth":3,"path":"README/语言参考/常量.md","ref":"README/语言参考/常量.md","articles":[{"title":"基本语法","level":"1.1.1.4.1","depth":4,"path":"README/语言参考/常量/基本语法.md","ref":"README/语言参考/常量/基本语法.md","articles":[]},{"title":"魔术常量","level":"1.1.1.4.2","depth":4,"path":"README/语言参考/常量/魔术常量.md","ref":"README/语言参考/常量/魔术常量.md","articles":[]}]},{"title":"表达式","level":"1.1.1.5","depth":3,"path":"README/语言参考/表达式.md","ref":"README/语言参考/表达式.md","articles":[]},{"title":"运算符","level":"1.1.1.6","depth":3,"path":"README/语言参考/运算符.md","ref":"README/语言参考/运算符.md","articles":[{"title":"运算符优先级","level":"1.1.1.6.1","depth":4,"path":"README/语言参考/运算符/运算符优先级.md","ref":"README/语言参考/运算符/运算符优先级.md","articles":[]},{"title":"算数运算符","level":"1.1.1.6.2","depth":4,"path":"README/语言参考/运算符/算数运算符.md","ref":"README/语言参考/运算符/算数运算符.md","articles":[]},{"title":"赋值运算符","level":"1.1.1.6.3","depth":4,"path":"README/语言参考/运算符/赋值运算符.md","ref":"README/语言参考/运算符/赋值运算符.md","articles":[]},{"title":"位运算符","level":"1.1.1.6.4","depth":4,"path":"README/语言参考/运算符/位运算符.md","ref":"README/语言参考/运算符/位运算符.md","articles":[]},{"title":"比较运算符","level":"1.1.1.6.5","depth":4,"path":"README/语言参考/运算符/比较运算符.md","ref":"README/语言参考/运算符/比较运算符.md","articles":[]},{"title":"错误控制运算符","level":"1.1.1.6.6","depth":4,"path":"README/语言参考/运算符/错误控制运算符.md","ref":"README/语言参考/运算符/错误控制运算符.md","articles":[]},{"title":"执行运算符","level":"1.1.1.6.7","depth":4,"path":"README/语言参考/运算符/执行运算符.md","ref":"README/语言参考/运算符/执行运算符.md","articles":[]},{"title":"递增递减运算符","level":"1.1.1.6.8","depth":4,"path":"README/语言参考/运算符/递增递减运算符.md","ref":"README/语言参考/运算符/递增递减运算符.md","articles":[]},{"title":"逻辑运算符","level":"1.1.1.6.9","depth":4,"path":"README/语言参考/运算符/逻辑运算符.md","ref":"README/语言参考/运算符/逻辑运算符.md","articles":[]},{"title":"字符串运算符","level":"1.1.1.6.10","depth":4,"path":"README/语言参考/运算符/字符串运算符.md","ref":"README/语言参考/运算符/字符串运算符.md","articles":[]},{"title":"数组运算符","level":"1.1.1.6.11","depth":4,"path":"README/语言参考/运算符/数组运算符.md","ref":"README/语言参考/运算符/数组运算符.md","articles":[]},{"title":"类型运算符","level":"1.1.1.6.12","depth":4,"path":"README/语言参考/运算符/类型运算符.md","ref":"README/语言参考/运算符/类型运算符.md","articles":[]}]},{"title":"流程控制","level":"1.1.1.7","depth":3,"path":"README/语言参考/流程控制.md","ref":"README/语言参考/流程控制.md","articles":[{"title":"if","level":"1.1.1.7.1","depth":4,"path":"README/语言参考/流程控制/if.md","ref":"README/语言参考/流程控制/if.md","articles":[]},{"title":"else","level":"1.1.1.7.2","depth":4,"path":"README/语言参考/流程控制/else.md","ref":"README/语言参考/流程控制/else.md","articles":[]},{"title":"elseif","level":"1.1.1.7.3","depth":4,"path":"README/语言参考/流程控制/elseif.md","ref":"README/语言参考/流程控制/elseif.md","articles":[]},{"title":"while","level":"1.1.1.7.4","depth":4,"path":"README/语言参考/流程控制/while.md","ref":"README/语言参考/流程控制/while.md","articles":[]},{"title":"do-while","level":"1.1.1.7.5","depth":4,"path":"README/语言参考/流程控制/do-while.md","ref":"README/语言参考/流程控制/do-while.md","articles":[]},{"title":"for","level":"1.1.1.7.6","depth":4,"path":"README/语言参考/流程控制/for.md","ref":"README/语言参考/流程控制/for.md","articles":[]},{"title":"foreach","level":"1.1.1.7.7","depth":4,"path":"README/语言参考/流程控制/foreach.md","ref":"README/语言参考/流程控制/foreach.md","articles":[]},{"title":"break","level":"1.1.1.7.8","depth":4,"path":"README/语言参考/流程控制/break.md","ref":"README/语言参考/流程控制/break.md","articles":[]},{"title":"continue","level":"1.1.1.7.9","depth":4,"path":"README/语言参考/流程控制/continue.md","ref":"README/语言参考/流程控制/continue.md","articles":[]},{"title":"switch","level":"1.1.1.7.10","depth":4,"path":"README/语言参考/流程控制/switch.md","ref":"README/语言参考/流程控制/switch.md","articles":[]},{"title":"流程控制的替代语法","level":"1.1.1.7.11","depth":4,"path":"README/语言参考/流程控制/流程控制的替代语法.md","ref":"README/语言参考/流程控制/流程控制的替代语法.md","articles":[]},{"title":"declare","level":"1.1.1.7.12","depth":4,"path":"README/语言参考/流程控制/declare.md","ref":"README/语言参考/流程控制/declare.md","articles":[]},{"title":"return","level":"1.1.1.7.13","depth":4,"path":"README/语言参考/流程控制/return.md","ref":"README/语言参考/流程控制/return.md","articles":[]},{"title":"require","level":"1.1.1.7.14","depth":4,"path":"README/语言参考/流程控制/require.md","ref":"README/语言参考/流程控制/require.md","articles":[]},{"title":"include","level":"1.1.1.7.15","depth":4,"path":"README/语言参考/流程控制/include.md","ref":"README/语言参考/流程控制/include.md","articles":[]},{"title":"require_once","level":"1.1.1.7.16","depth":4,"path":"README/语言参考/流程控制/require_once.md","ref":"README/语言参考/流程控制/require_once.md","articles":[]},{"title":"include_once","level":"1.1.1.7.17","depth":4,"path":"README/语言参考/流程控制/include_once.md","ref":"README/语言参考/流程控制/include_once.md","articles":[]},{"title":"goto","level":"1.1.1.7.18","depth":4,"path":"README/语言参考/流程控制/goto.md","ref":"README/语言参考/流程控制/goto.md","articles":[]}]},{"title":"函数","level":"1.1.1.8","depth":3,"path":"README/语言参考/函数.md","ref":"README/语言参考/函数.md","articles":[{"title":"用户自定义函数","level":"1.1.1.8.1","depth":4,"path":"README/语言参考/函数/用户自定义函数.md","ref":"README/语言参考/函数/用户自定义函数.md","articles":[]},{"title":"函数的参数","level":"1.1.1.8.2","depth":4,"path":"README/语言参考/函数/函数的参数.md","ref":"README/语言参考/函数/函数的参数.md","articles":[]},{"title":"返回值","level":"1.1.1.8.3","depth":4,"path":"README/语言参考/函数/返回值.md","ref":"README/语言参考/函数/返回值.md","articles":[]},{"title":"可变函数","level":"1.1.1.8.4","depth":4,"path":"README/语言参考/函数/可变函数.md","ref":"README/语言参考/函数/可变函数.md","articles":[]},{"title":"匿名函数","level":"1.1.1.8.5","depth":4,"path":"README/语言参考/函数/匿名函数.md","ref":"README/语言参考/函数/匿名函数.md","articles":[]}]},{"title":"类与对象","level":"1.1.1.9","depth":3,"path":"README/语言参考/类与对象.md","ref":"README/语言参考/类与对象.md","articles":[{"title":"基本语法","level":"1.1.1.9.1","depth":4,"path":"README/语言参考/类与对象/基本语法.md","ref":"README/语言参考/类与对象/基本语法.md","articles":[]},{"title":"属性","level":"1.1.1.9.2","depth":4,"path":"README/语言参考/类与对象/属性.md","ref":"README/语言参考/类与对象/属性.md","articles":[]},{"title":"类常量","level":"1.1.1.9.3","depth":4,"path":"README/语言参考/类与对象/类常量.md","ref":"README/语言参考/类与对象/类常量.md","articles":[]},{"title":"类的自动加载","level":"1.1.1.9.4","depth":4,"path":"README/语言参考/类与对象/类的自动加载.md","ref":"README/语言参考/类与对象/类的自动加载.md","articles":[]},{"title":"构造函数和析构函数","level":"1.1.1.9.5","depth":4,"path":"README/语言参考/类与对象/构造函数和析构函数.md","ref":"README/语言参考/类与对象/构造函数和析构函数.md","articles":[]},{"title":"[访问控制]","level":"1.1.1.9.6","depth":4,"ref":"","articles":[]},{"title":"[对象继承]","level":"1.1.1.9.7","depth":4,"ref":"","articles":[]},{"title":"[范围解析操作符]","level":"1.1.1.9.8","depth":4,"ref":"","articles":[]},{"title":"[Static 关键字]","level":"1.1.1.9.9","depth":4,"ref":"","articles":[]},{"title":"抽象类","level":"1.1.1.9.10","depth":4,"path":"README/语言参考/类与对象/抽象类.md","ref":"README/语言参考/类与对象/抽象类.md","articles":[]},{"title":"对象接口","level":"1.1.1.9.11","depth":4,"path":"README/语言参考/类与对象/对象接口.md","ref":"README/语言参考/类与对象/对象接口.md","articles":[]},{"title":"[Trait]","level":"1.1.1.9.12","depth":4,"ref":"","articles":[]},{"title":"[匿名类]","level":"1.1.1.9.13","depth":4,"ref":"","articles":[]},{"title":"[重载]","level":"1.1.1.9.14","depth":4,"ref":"","articles":[]},{"title":"[遍历对象]","level":"1.1.1.9.15","depth":4,"ref":"","articles":[]},{"title":"魔术方法","level":"1.1.1.9.16","depth":4,"path":"README/语言参考/类与对象/魔术方法.md","ref":"README/语言参考/类与对象/魔术方法.md","articles":[]},{"title":"Final 关键字","level":"1.1.1.9.17","depth":4,"path":"README/语言参考/类与对象/Final 关键字.md","ref":"README/语言参考/类与对象/Final 关键字.md","articles":[]},{"title":"对象复制","level":"1.1.1.9.18","depth":4,"path":"README/语言参考/类与对象/对象复制.md","ref":"README/语言参考/类与对象/对象复制.md","articles":[]},{"title":"对象比较","level":"1.1.1.9.19","depth":4,"path":"README/语言参考/类与对象/对象比较.md","ref":"README/语言参考/类与对象/对象比较.md","articles":[]},{"title":"类型约束","level":"1.1.1.9.20","depth":4,"path":"README/语言参考/类与对象/类型约束.md","ref":"README/语言参考/类与对象/类型约束.md","articles":[]},{"title":"后期静态绑定","level":"1.1.1.9.21","depth":4,"path":"README/语言参考/类与对象/后期静态绑定.md","ref":"README/语言参考/类与对象/后期静态绑定.md","articles":[]},{"title":"对象和引用","level":"1.1.1.9.22","depth":4,"path":"README/语言参考/类与对象/对象和引用.md","ref":"README/语言参考/类与对象/对象和引用.md","articles":[]},{"title":"对象序列化","level":"1.1.1.9.23","depth":4,"path":"README/语言参考/类与对象/对象序列化.md","ref":"README/语言参考/类与对象/对象序列化.md","articles":[]}]},{"title":"引用的解释","level":"1.1.1.10","depth":3,"path":"README/语言参考/引用的解释.md","ref":"README/语言参考/引用的解释.md","articles":[{"title":"引用是什么","level":"1.1.1.10.1","depth":4,"path":"README/语言参考/引用的解释/引用是什么.md","ref":"README/语言参考/引用的解释/引用是什么.md","articles":[]},{"title":"引用不是什么","level":"1.1.1.10.2","depth":4,"path":"README/语言参考/引用的解释/引用不是什么.md","ref":"README/语言参考/引用的解释/引用不是什么.md","articles":[]},{"title":"引用做什么","level":"1.1.1.10.3","depth":4,"path":"README/语言参考/引用的解释/引用做什么.md","ref":"README/语言参考/引用的解释/引用做什么.md","articles":[]},{"title":"引用传递","level":"1.1.1.10.4","depth":4,"path":"README/语言参考/引用的解释/引用传递.md","ref":"README/语言参考/引用的解释/引用传递.md","articles":[]},{"title":"引用返回","level":"1.1.1.10.5","depth":4,"path":"README/语言参考/引用的解释/引用返回.md","ref":"README/语言参考/引用的解释/引用返回.md","articles":[]},{"title":"取消引用","level":"1.1.1.10.6","depth":4,"path":"README/语言参考/引用的解释/取消引用.md","ref":"README/语言参考/引用的解释/取消引用.md","articles":[]},{"title":"引用定位","level":"1.1.1.10.7","depth":4,"path":"README/语言参考/引用的解释/引用定位.md","ref":"README/语言参考/引用的解释/引用定位.md","articles":[]}]},{"title":"预定义变量","level":"1.1.1.11","depth":3,"path":"README/语言参考/预定义变量.md","ref":"README/语言参考/预定义变量.md","articles":[{"title":"$GLOBALS","level":"1.1.1.11.1","depth":4,"path":"README/语言参考/预定义变量/$GLOBALS.md","ref":"README/语言参考/预定义变量/$GLOBALS.md","articles":[]},{"title":"$_GET","level":"1.1.1.11.2","depth":4,"path":"README/语言参考/预定义变量/$_GET.md","ref":"README/语言参考/预定义变量/$_GET.md","articles":[]},{"title":"$_POST","level":"1.1.1.11.3","depth":4,"path":"README/语言参考/预定义变量/$_POST.md","ref":"README/语言参考/预定义变量/$_POST.md","articles":[]},{"title":"$_COOKIE","level":"1.1.1.11.4","depth":4,"path":"README/语言参考/预定义变量/$_COOKIE.md","ref":"README/语言参考/预定义变量/$_COOKIE.md","articles":[]},{"title":"$_REQUEST","level":"1.1.1.11.5","depth":4,"path":"README/语言参考/预定义变量/$_REQUEST.md","ref":"README/语言参考/预定义变量/$_REQUEST.md","articles":[]},{"title":"$_FILES","level":"1.1.1.11.6","depth":4,"path":"README/语言参考/预定义变量/$_FILES.md","ref":"README/语言参考/预定义变量/$_FILES.md","articles":[]},{"title":"$_SESSION","level":"1.1.1.11.7","depth":4,"path":"README/语言参考/预定义变量/$_SESSION.md","ref":"README/语言参考/预定义变量/$_SESSION.md","articles":[]},{"title":"$_SERVER","level":"1.1.1.11.8","depth":4,"path":"README/语言参考/预定义变量/$_SERVER.md","ref":"README/语言参考/预定义变量/$_SERVER.md","articles":[]},{"title":"$_ENV","level":"1.1.1.11.9","depth":4,"path":"README/语言参考/预定义变量/$_ENV.md","ref":"README/语言参考/预定义变量/$_ENV.md","articles":[]},{"title":"$http_response_header","level":"1.1.1.11.10","depth":4,"path":"README/语言参考/预定义变量/$http_response_header.md","ref":"README/语言参考/预定义变量/$http_response_header.md","articles":[]},{"title":"$argc","level":"1.1.1.11.11","depth":4,"path":"README/语言参考/预定义变量/$argc.md","ref":"README/语言参考/预定义变量/$argc.md","articles":[]},{"title":"$argv","level":"1.1.1.11.12","depth":4,"path":"README/语言参考/预定义变量/$argv.md","ref":"README/语言参考/预定义变量/$argv.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/基本语法.md","mtime":"2019-03-25T14:19:45.684Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-25T16:18:39.977Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
