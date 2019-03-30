@@ -1,8 +1,6 @@
-## switch
+# switch
 
-`switch` 语句类似于具有同一个表达式的一系列 `if` 语句。很多场合下需要把同一个变量（或表达式）与很多不同的值比较，并根据它等于哪个值来执行不同的代码。这正是 `switch` 语句的用途。
-
-如果比较一个数字和字符串或者比较涉及到数字内容的字符串，则字符串会被转换为数值并且比较按照数值来进行。
+`switch` 语句类似于具有同一个表达式的一系列 `if` 语句。很多场合下需要把同一个变量（或表达式）与很多不同的值比较，并根据它等于哪个值来执行不同的代码。这正是 `switch` 语句的用途。如果比较一个数字和字符串或者比较涉及到数字内容的字符串，则字符串会被转换为数值并且比较按照数值来进行。
 
 ```php
 <?php
@@ -10,7 +8,6 @@
 declare(strict_types = 1);
 
 $foo = 'foo';
-
 switch ($foo) {
     case 0:
         var_dump(0);
@@ -19,7 +16,6 @@ switch ($foo) {
         var_dump('foo');
         break;
 }
-
 // int(0)
 
 ```
@@ -32,7 +28,6 @@ switch ($foo) {
 declare(strict_types = 1);
 
 $foo = 'foo';
-
 switch ($foo) {
     case 0:
         var_dump(0);
@@ -41,13 +36,12 @@ switch ($foo) {
         var_dump('bar');
         // no break
 }
-
 // int(0)
 // string(3) "bar"
 
 ```
 
-在一个 `case` 中的语句也可以为空，这样只不过将控制转移到了下一个 `case` 中的语句：
+在一个 `case` 中的语句也可以为空，这样只不过将控制转移到了下一个 `case` 中的语句。
 
 ```php
 <?php
@@ -55,19 +49,17 @@ switch ($foo) {
 declare(strict_types = 1);
 
 $foo = 'foo';
-
 switch ($foo) {
     case 0:
     case 'bar':
         var_dump('bar');
         break;
 }
-
 // string(3) "bar"
 
 ```
 
-一个 `case` 的特例是 `default` 。它匹配了任何和其它 `case` 都不匹配的情况。例如：
+一个 `case` 的特例是 `default` 。它匹配了任何和其它 `case` 都不匹配的情况。
 
 ```php
 <?php
@@ -75,7 +67,6 @@ switch ($foo) {
 declare(strict_types = 1);
 
 $foo = 5;
-
 switch ($foo) {
     case 1:
         var_dump(1);
@@ -87,7 +78,6 @@ switch ($foo) {
         var_dump($foo);
         break;
 }
-
 // int(5)
 
 ```

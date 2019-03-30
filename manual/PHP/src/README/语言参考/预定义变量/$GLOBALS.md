@@ -8,7 +8,7 @@
 declare(strict_types = 1);
 
 /**
- * Just a test function.
+ * Use superglobal variables in function.
  *
  * @param  void
  * @return string

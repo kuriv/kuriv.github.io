@@ -1,4 +1,4 @@
-## Final 关键字
+# Final 关键字
 
 如果一个类被声明为 `final` ，则不能被继承。
 
@@ -42,7 +42,7 @@ class Foo
 class Bar extends Foo
 {
     /**
-     * Override the parent method.
+     * Try to override the parent method.
      *
      * @param  void
      * @return void

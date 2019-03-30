@@ -1,4 +1,4 @@
-## return
+# return
 
 如果在一个函数中调用 `return` 语句，将立即结束此函数的执行并将它的参数作为函数的值返回。
 
@@ -8,7 +8,7 @@
 declare(strict_types = 1);
 
 /**
- * Just a test function.
+ * Return an integer.
  *
  * @param  void
  * @return int
@@ -30,12 +30,11 @@ var_dump(foo()); // int(5)
 declare(strict_types = 1);
 
 $foo = require __DIR__ . '/example.php';
-
 var_dump($foo); // string(3) "foo"
 
 ```
 
-example.php
+上例中的 `example.php` 文件内容：
 
 ```php
 <?php
@@ -43,7 +42,6 @@ example.php
 declare(strict_types = 1);
 
 $foo = 'foo';
-
 return $foo;
 
 ```

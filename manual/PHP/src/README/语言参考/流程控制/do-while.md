@@ -1,4 +1,4 @@
-## do-while
+# do-while
 
 `do-while` 循环和 `while` 循环非常相似，区别在于表达式的值是在每次循环结束时检查而不是开始时。
 
@@ -8,7 +8,6 @@
 declare(strict_types = 1);
 
 $foo = 1;
-
 do {
     $foo++;
 } while ($foo < 10);
@@ -25,7 +24,6 @@ declare(strict_types = 1);
 do {
     $foo = 'foo';
 } while (false);
-
 var_dump($foo); // string(3) "foo"
 
 ```

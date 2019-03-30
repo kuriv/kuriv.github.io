@@ -1,4 +1,4 @@
-## include
+# include
 
 `include` 语句包含并运行指定文件。被包含文件先按参数给出的路径寻找，如果没有给出目录（只有文件名）时则按照 `include_path` 指定的目录寻找。如果在 `include_path` 下没找到该文件则 `include` 最后才在调用脚本文件所在的目录和当前工作目录下寻找。如果最后仍未找到文件则 `include` 会发出一条警告。
 
@@ -29,20 +29,20 @@ include __DIR__ . '/example.php';
 
 declare(strict_types = 1);
 
+$foo = 'foo';
 include __DIR__ . '/example.php';
-
-var_dump($foo); // string(3) "foo"
+// string(3) "foo"
 
 ```
 
-example.php
+上例中的 `example.php` 文件内容：
 
 ```php
 <?php
 
 declare(strict_types = 1);
 
-$foo = 'foo';
+var_dump($foo);
 
 ```
 
@@ -54,7 +54,7 @@ $foo = 'foo';
 declare(strict_types = 1);
 
 /**
- * Just a test function.
+ * Include files in functions.
  *
  * @param  void
  * @return string
@@ -70,7 +70,7 @@ var_dump(foo()); // string(3) "foo"
 
 ```
 
-example.php
+上例中的 `example.php` 文件内容：
 
 ```php
 <?php
@@ -89,16 +89,14 @@ $foo = 'foo';
 declare(strict_types = 1);
 
 $foo = include __DIR__ . '/foo.php';
-
 var_dump($foo); // string(3) "foo"
 
 $bar = include __DIR__ . '/bar.php';
-
 var_dump($bar); // int(1)
 
 ```
 
-foo.php
+上例中的 `foo.php` 文件内容：
 
 ```php
 <?php
@@ -106,12 +104,11 @@ foo.php
 declare(strict_types = 1);
 
 $foo = 'foo';
-
 return $foo;
 
 ```
 
-bar.php
+上例中的 `bar.php` 文件内容：
 
 ```php
 <?php

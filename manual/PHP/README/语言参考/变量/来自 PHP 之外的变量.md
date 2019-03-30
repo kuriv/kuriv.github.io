@@ -1,6 +1,6 @@
-## 来自 PHP 之外的变量
+# 来自 PHP 之外的变量
 
-从一个简单的 `HTML` 表单中访问 `POST` 数据：
+当一个表单提交给 `PHP` 脚本时，表单中的信息会自动在脚本中可用。
 
 ```html
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
 </html>
 ```
 
-example.php
+上例中的 `example.php` 文件内容：
 
 ```php
 <?php
@@ -29,7 +29,7 @@ var_dump($_POST['username'], $_POST['password']);
 
 ```
 
-变量名中的点和空格被转换成下划线：
+变量名中的点和空格被转换成下划线。
 
 ```html
 <!DOCTYPE html>
@@ -47,19 +47,18 @@ var_dump($_POST['username'], $_POST['password']);
 </html>
 ```
 
-example.php
+上例中的 `example.php` 文件内容：
 
 ```php
 <?php
 
 declare(strict_types = 1);
 
-var_dump($_POST['foo_bar']);
-var_dump($_POST['baz_qux']);
+var_dump($_POST['foo_bar'], $_POST['baz_qux']);
 
 ```
 
-`PHP` 也懂得表单变量上下文中的数组。例如可以将相关的变量编成组，或者用此特性从多选输入框中取得值：
+`PHP` 也懂得表单变量上下文中的数组。例如可以将相关的变量编成组，或者用此特性从多选输入框中取得值。
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +83,7 @@ var_dump($_POST['baz_qux']);
 </html>
 ```
 
-example.php
+上例中的 `example.php` 文件内容：
 
 ```php
 <?php
@@ -111,7 +110,7 @@ var_dump($_POST['info'], $_POST['option']);
 </html>
 ```
 
-example.php
+上例中的 `example.php` 文件内容：
 
 ```php
 <?php

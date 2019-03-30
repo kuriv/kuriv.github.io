@@ -1,4 +1,4 @@
-## if
+# if
 
 `if` 结构是很多语言包括 `PHP` 在内最重要的特性之一，它允许按照条件执行代码片段。
 
@@ -8,7 +8,6 @@
 declare(strict_types = 1);
 
 $foo = 'foo';
-
 if (isset($foo)) {
 }
 
@@ -22,7 +21,6 @@ if (isset($foo)) {
 declare(strict_types = 1);
 
 $foo = 'foo';
-
 if (isset($foo)) {
     if ($foo == 'foo') {
     }

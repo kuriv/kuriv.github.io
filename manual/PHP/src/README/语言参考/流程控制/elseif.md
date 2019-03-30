@@ -1,4 +1,4 @@
-## elseif
+# elseif
 
 `elseif` ，和此名称暗示的一样，是 `if` 和 `else` 的组合。和 `else` 一样，它延伸了 `if` 语句，可以在原来的 `if` 表达式值为 `false` 时执行不同语句。但是和 `else` 不一样的是，它仅在 `elseif` 的条件表达式值为 `true` 时执行语句。
 
@@ -10,11 +10,9 @@
 declare(strict_types = 1);
 
 $baz = 'baz';
-
 if (isset($foo)) {
 } elseif (isset($bar)) {
 } elseif (isset($baz)) {
 }
 
 ```
-

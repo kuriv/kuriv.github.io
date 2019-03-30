@@ -1,12 +1,8 @@
-## declare
+# declare
 
 `declare` 结构用来设定一段代码的执行指令。 `declare` 结构也可用于全局范围，影响到其后的所有代码（但如果有 `declare` 结构的文件被其它文件包含，则对包含它的父文件不起作用）。
 
-`Tick` （时钟周期）是一个在 `declare` 代码段中解释器每执行 N 条可计时的低级语句就会发生的事件。 N 的值是在 `declare` 中用 `ticks = N` 来指定的。
-
-不是所有语句都可计时。通常条件表达式和参数表达式都不可计时。
-
-在每个 `Tick` 中出现的事件是由 `register_tick_function()` 来指定的。更多细节见下面的例子。注意每个 `Tick` 中可以出现多个事件。
+`Tick` （时钟周期）是一个在 `declare` 代码段中解释器每执行 N 条可计时的低级语句就会发生的事件。 N 的值是在 `declare` 中用 `ticks = N` 来指定的。不是所有语句都可计时。通常条件表达式和参数表达式都不可计时。在每个 `Tick` 中出现的事件是由 `register_tick_function()` 来指定的。更多细节见下面的例子。注意每个 `Tick` 中可以出现多个事件。
 
 ```php
 <?php
@@ -25,13 +21,10 @@ function foo()
 }
 
 register_tick_function('foo');
-
 $foo = 1;
-
 if ($foo > 0) {
     $foo += 2;
 }
-
 // string(3) "foo"
 // string(3) "foo"
 // string(3) "foo"
@@ -49,7 +42,8 @@ if ($foo > 0) {
 
 declare(strict_types = 1);
 
-$foo = print_r('foo', 1); // PHP Fatal error:  Uncaught TypeError: print_r() expects parameter 2 to be bool, int given.
+$foo = print_r('foo', 1);
+// PHP Fatal error:  Uncaught TypeError: print_r() expects parameter 2 to be bool, int given.
 
 ```
 

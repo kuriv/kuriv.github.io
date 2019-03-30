@@ -2,7 +2,7 @@
 
 `$_SERVER` 是一个包含了诸如头信息，路径，以及脚本位置等等信息的数组。这个数组中的项目由 `Web` 服务器创建。不能保证每个服务器都提供全部项目，服务器可能会忽略一些，或者提供一些没有在这里列举出来的项目。
 
-`PHP_SELF` 是当前执行脚本的文件名，与 `Document Root` 有关。例如，在地址为 `http://localhost/foo/bar.php` 的脚本中使用 `$_SERVER['PHP_SELF']` 将得到 `/foo/bar.php` 。
+`PHP_SELF` 是当前执行脚本的文件名，与 `Document Root` 有关， `PHP_SELF = SCRIPT_NAME + PATH_INFO` 。例如，在地址为 `http://localhost/foo/bar.php` 的脚本中使用 `$_SERVER['PHP_SELF']` 将得到 `/foo/bar.php` 。
 
 ```php
 <?php

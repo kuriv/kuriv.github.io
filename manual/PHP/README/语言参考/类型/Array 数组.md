@@ -67,7 +67,7 @@ var_dump($foo); // array(4) { [0]=> string(3) "foo" [1]=> string(3) "bar" [6]=> 
 declare(strict_types = 1);
 
 /**
- * Just a test function.
+ * Return an array.
  *
  * @param  void
  * @return array
