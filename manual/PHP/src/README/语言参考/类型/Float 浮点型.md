@@ -8,8 +8,8 @@
 declare(strict_types = 1);
 
 $foo = 1.001;
-$foo = 1.2e3;
-$foo = 7e-10;
+$bar = 1.2e3;
+$baz = 7e-10;
 
 ```
 

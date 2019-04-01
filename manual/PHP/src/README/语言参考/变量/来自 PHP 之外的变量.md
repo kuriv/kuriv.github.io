@@ -121,7 +121,7 @@ var_dump($_POST['image_x'], $_POST['image_y']);
 
 ```
 
-可以用 `setcookie()` 函数设定 `Cookie`。 `Cookie` 是 `HTTP` 信息头中的一部分，因此 `setcookie()` 函数必须在向浏览器发送任何输出之前调用。
+`PHP` 透明地支持 `RFC 6265` 定义中的 `HTTP Cookie` 。 `Cookie` 是一种在浏览器端存储数据并能追踪或识别再次访问的用户的机制。可以用 `setcookie()` 函数设定 `Cookie`。 `Cookie` 是 `HTTP` 信息头中的一部分，因此 `setcookie()` 函数必须在向浏览器发送任何输出之前调用。
 
 ```php
 <?php

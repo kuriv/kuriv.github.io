@@ -1,6 +1,10 @@
 # break
 
-`break` 在循环结构中用来结束当前循环结构的执行。 `break` 结束当前 `for` 结构的执行：
+`break` 在循环结构中用来结束当前循环结构的执行。
+
+`break` 可以接受一个可选的数字参数来决定跳出几重循环。默认值是 `1` ，即结束当前循环结构的执行。
+
+`break` 结束当前 `for` 结构的执行。
 
 ```php
 <?php
@@ -15,7 +19,7 @@ for ($i = 1; $i < 10; $i++) {
 
 ```
 
-`break` 结束当前 `foreach` 结构的执行：
+`break` 结束当前 `foreach` 结构的执行。
 
 ```php
 <?php
@@ -31,7 +35,7 @@ foreach ($foo as $value) {
 
 ```
 
-`break` 结束当前 `while` 结构的执行：
+`break` 结束当前 `while` 结构的执行。
 
 ```php
 <?php
@@ -48,7 +52,7 @@ while ($foo < 10) {
 
 ```
 
-`break` 结束当前 `do-while` 结构的执行：
+`break` 结束当前 `do-while` 结构的执行。
 
 ```php
 <?php
@@ -65,7 +69,7 @@ do {
 
 ```
 
-`break` 可以接受一个可选的数字参数来决定跳出几重循环。 `break` 结束当前 `switch` 结构的执行：
+`break` 结束当前 `switch` 结构的执行。
 
 ```php
 <?php

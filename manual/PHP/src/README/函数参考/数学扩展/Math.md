@@ -128,3 +128,564 @@ var_dump(atan2(10, 20)); // float(0.46364760900081)
 
 ```
 
+## atan
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(atan(-1)); // float(-0.78539816339745)
+var_dump(atan(0));  // float(0)
+var_dump(atan(1));  // float(0.78539816339745)
+
+```
+
+## atanh
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(atanh(-0.5)); // float(-0.54930614433405)
+var_dump(atanh(0));    // float(0)
+var_dump(atanh(0.5));  // float(0.54930614433405)
+
+```
+
+## base_convert
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(base_convert('11', 2, 10));     // string(1) "3"
+var_dump(base_convert('0031', 8, 10));   // string(2) "25"
+var_dump(base_convert('A37334', 16, 2)); // string(24) "101000110111001100110100"
+
+```
+
+## bindec
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(bindec('11'));     // int(3)
+var_dump(bindec('110011')); // int(51)
+var_dump(bindec('111111')); // int(63)
+
+```
+
+## ceil
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(ceil(-3.14)); // float(-3)
+var_dump(ceil(4.3));   // float(5)
+var_dump(ceil(9.999)); // float(10)
+
+```
+
+## cos
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(cos(-1)); // float(0.54030230586814)
+var_dump(cos(0));  // float(1)
+var_dump(cos(1));  // float(0.54030230586814)
+
+```
+
+## cosh
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(cosh(-1)); // float(1.5430806348152)
+var_dump(cosh(0));  // float(1)
+var_dump(cosh(1));  // float(1.5430806348152)
+
+```
+
+## decbin
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(decbin(11)); // string(4) "1011"
+var_dump(decbin(12)); // string(4) "1100"
+var_dump(decbin(26)); // string(5) "11010"
+
+```
+
+## dechex
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(dechex(10));  // string(1) "a"
+var_dump(dechex(47));  // string(2) "2f"
+var_dump(dechex(100)); // string(2) "64"
+
+```
+
+## decoct
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(decoct(15));  // string(2) "17"
+var_dump(decoct(100)); // string(3) "144"
+var_dump(decoct(264)); // string(3) "410"
+
+```
+
+## deg2rad
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(deg2rad(30));  // float(0.5235987755983)
+var_dump(deg2rad(90));  // float(1.5707963267949)
+var_dump(deg2rad(180)); // float(3.1415926535898)
+
+```
+
+## exp
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(exp(0));   // float(1)
+var_dump(exp(5.7)); // float(298.86740096706)
+var_dump(exp(12));  // float(162754.791419)
+
+```
+
+## expm1
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(expm1(0));   // float(0)
+var_dump(expm1(5.7)); // float(297.86740096706)
+var_dump(expm1(12));  // float(162753.791419)
+
+```
+
+## floor
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(floor(-3.14)); // float(-4)
+var_dump(floor(4.3));   // float(4)
+var_dump(floor(9.999)); // float(9)
+
+```
+
+## fmod
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(fmod(-10, 3));   // float(-1)
+var_dump(fmod(5, 2));     // float(1)
+var_dump(fmod(5.7, 1.3)); // float(0.5)
+
+```
+
+## getrandmax
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(getrandmax());
+
+```
+
+## hexdec
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(hexdec('a'));  // int(10)
+var_dump(hexdec('a0')); // int(160)
+var_dump(hexdec('ee')); // int(238)
+
+```
+
+## hypot
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(hypot(1, 2)); // float(2.2360679774998)
+var_dump(hypot(2, 3)); // float(3.605551275464)
+var_dump(hypot(3, 4)); // float(5)
+
+```
+
+## intdiv
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(intdiv(-3, -2)); // int(1)
+var_dump(intdiv(-3, 2));  // int(-1)
+var_dump(intdiv(3, 2));   // int(1)
+
+```
+
+## is_finite
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(is_finite(log(0))); // bool(false)
+var_dump(is_finite(2));      // bool(true)
+var_dump(is_finite(100));    // bool(true)
+
+```
+
+## is_infinite
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(is_infinite(log(0))); // bool(true)
+var_dump(is_infinite(2));      // bool(false)
+var_dump(is_infinite(100));    // bool(false)
+
+```
+
+## is_nan
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(is_nan(acos(8))); // bool(true)
+var_dump(is_nan(0));       // bool(false)
+var_dump(is_nan(1));       // bool(false)
+
+```
+
+## lcg_value
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(lcg_value());
+
+```
+
+## log10
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(log10(1));      // float(0)
+var_dump(log10(2));      // float(0.30102999566398)
+var_dump(log10(2.7183)); // float(0.43429738512451)
+
+```
+
+## log1p
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(log1p(0)); // float(0)
+var_dump(log1p(1)); // float(0.69314718055995)
+var_dump(log1p(2)); // float(1.0986122886681)
+
+```
+
+## log
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(log(1));    // float(0)
+var_dump(log(1, 2)); // float(0)
+var_dump(log(2, 2)); // float(1)
+
+```
+
+## max
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(max(1, 3, 5, 6, 7));           // int(7)
+var_dump(max([2, 4, 5]));               // int(5)
+var_dump(max('hello', 0));              // string(5) "hello"
+var_dump(max(0, 'hello'));              // int(0)
+var_dump(max('42', 3));                 // string(2) "42"
+var_dump(max([2, 4, 8], [2, 5, 7]));    // array(3) { [0]=> int(2) [1]=> int(5) [2]=> int(7) }
+var_dump(max([2, 2, 2], [1, 1, 1, 1])); // array(4) { [0]=> int(1) [1]=> int(1) [2]=> int(1) [3]=> int(1) }
+var_dump(max('hello', [2, 5, 7], 42));  // array(3) { [0]=> int(2) [1]=> int(5) [2]=> int(7) }
+
+```
+
+## min
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(min(2, 3, 1, 6, 7));           // int(1)
+var_dump(min([2, 4, 5]));               // int(2)
+var_dump(min('hello', 0));              // string(5) "hello"
+var_dump(min(0, 'hello'));              // int(0)
+var_dump(min('42', -1));                // int(-1)
+var_dump(min([2, 4, 8], [2, 5, 1]));    // array(3) { [0]=> int(2) [1]=> int(4) [2]=> int(8) }
+var_dump(min([2, 2, 2], [2, 1, 1, 1])); // array(3) { [0]=> int(2) [1]=> int(2) [2]=> int(2) }
+var_dump(min('hello', [2, 5, 7], 42));  // string(5) "hello"
+
+```
+
+## mt_getrandmax
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(mt_getrandmax());
+
+```
+
+## mt_rand
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(mt_rand());
+var_dump(mt_rand(5, 15));
+
+```
+
+## mt_srand
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+mt_srand((int) (microtime(true) * 10000));
+
+```
+
+## octdec
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(octdec('77'));  // int(63)
+var_dump(octdec('100')); // int(64)
+var_dump(octdec('777')); // int(511)
+
+```
+
+## pi
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(pi()); // float(3.1415926535898)
+
+```
+
+## pow
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(pow(0, 0));   // int(1)
+var_dump(pow(-1, 20)); // int(1)
+var_dump(pow(2, 8));   // int(256)
+
+```
+
+## rad2deg
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(rad2deg(0.5235987755983)); // float(30)
+var_dump(rad2deg(1.5707963267949)); // float(90)
+var_dump(rad2deg(3.1415926535898)); // float(180)
+
+```
+
+## rand
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(rand());
+var_dump(rand(5, 15));
+
+```
+
+## round
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(round(3.4));                         // float(3)
+var_dump(round(3.5));                         // float(4)
+var_dump(round(3.6, 0));                      // float(4)
+var_dump(round(1.95583, 2));                  // float(1.96)
+var_dump(round(1241757, -3));                 // float(1242000)
+var_dump(round(9.5, 0, PHP_ROUND_HALF_UP));   // float(10)
+var_dump(round(9.5, 0, PHP_ROUND_HALF_DOWN)); // float(9)
+var_dump(round(9.5, 0, PHP_ROUND_HALF_EVEN)); // float(10)
+var_dump(round(9.5, 0, PHP_ROUND_HALF_ODD));  // float(9)
+
+```
+
+## sin
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(sin(-1)); // float(-0.8414709848079)
+var_dump(sin(0));  // float(0)
+var_dump(sin(1));  // float(0.8414709848079)
+
+```
+
+## sinh
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(sinh(-1)); // float(-1.1752011936438)
+var_dump(sinh(0));  // float(0)
+var_dump(sinh(1));  // float(1.1752011936438)
+
+```
+
+## sqrt
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(sqrt(8));  // float(2.8284271247462)
+var_dump(sqrt(9));  // float(3)
+var_dump(sqrt(10)); // float(3.1622776601684)
+
+```
+
+## srand
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+srand((int) (microtime(true) * 10000));
+
+```
+
+## tan
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(tan(-1)); // float(-1.5574077246549)
+var_dump(tan(0));  // float(0)
+var_dump(tan(1));  // float(1.5574077246549)
+
+```
+
+## tanh
+
+```php
+<?php
+
+declare(strict_types = 1);
+
+var_dump(tanh(-1)); // float(-0.76159415595576)
+var_dump(tanh(0));  // float(0)
+var_dump(tanh(1));  // float(0.76159415595576)
+
+```
+

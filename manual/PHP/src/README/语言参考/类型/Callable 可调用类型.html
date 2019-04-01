@@ -2053,6 +2053,70 @@
             
         </li>
     
+        <li class="chapter " data-level="1.1.2.2" data-path="../../函数参考/其他基本扩展.html">
+            
+                <a href="../../函数参考/其他基本扩展.html">
+            
+                    
+                    其他基本扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.2.1" data-path="../../函数参考/其他基本扩展/Tokenizer.html">
+            
+                <a href="../../函数参考/其他基本扩展/Tokenizer.html">
+            
+                    
+                    Tokenizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.3" data-path="../../函数参考/文件系统相关扩展.html">
+            
+                <a href="../../函数参考/文件系统相关扩展.html">
+            
+                    
+                    文件系统相关扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.3.1" data-path="../../函数参考/文件系统相关扩展/目录.html">
+            
+                <a href="../../函数参考/文件系统相关扩展/目录.html">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -2109,7 +2173,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="callable-&#x53EF;&#x8C03;&#x7528;&#x7C7B;&#x578B;">Callable &#x53EF;&#x8C03;&#x7528;&#x7C7B;&#x578B;</h1>
-<p>&#x666E;&#x901A;&#x7684;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF1A;</p>
+<p>&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2126,7 +2190,7 @@
 
 call_user_func(<span class="hljs-string">&apos;foo&apos;</span>);
 </code></pre>
-<p>&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF1A;</p>
+<p>&#x533F;&#x540D;&#x51FD;&#x6570;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2142,7 +2206,7 @@ $foo = <span class="hljs-function"><span class="hljs-keyword">function</span> <s
 
 call_user_func($foo);
 </code></pre>
-<p>&#x7C7B;&#x4E2D;&#x7684;&#x666E;&#x901A;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>&#x7C7B;&#x4E2D;&#x7684;&#x666E;&#x901A;&#x65B9;&#x6CD5;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2162,7 +2226,7 @@ call_user_func($foo);
 
 call_user_func([<span class="hljs-keyword">new</span> Foo, <span class="hljs-string">&apos;method&apos;</span>]);
 </code></pre>
-<p>&#x7C7B;&#x4E2D;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>&#x7C7B;&#x4E2D;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2181,28 +2245,9 @@ call_user_func([<span class="hljs-keyword">new</span> Foo, <span class="hljs-str
 }
 
 call_user_func([<span class="hljs-string">&apos;Foo&apos;</span>, <span class="hljs-string">&apos;method&apos;</span>]);
-</code></pre>
-<p>&#x7C7B;&#x4E2D;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
-
-<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
-</span>{
-    <span class="hljs-comment">/**
-     * Just a test method.
-     *
-     * <span class="hljs-doctag">@param</span>  void
-     * <span class="hljs-doctag">@return</span> void
-     */</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span><span class="hljs-params">()</span>
-    </span>{
-    }
-}
-
 call_user_func(<span class="hljs-string">&apos;Foo::method&apos;</span>);
 </code></pre>
-<p>&#x7236;&#x7C7B;&#x4E2D;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>&#x7236;&#x7C7B;&#x4E2D;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2235,7 +2280,7 @@ call_user_func(<span class="hljs-string">&apos;Foo::method&apos;</span>);
 
 call_user_func([<span class="hljs-string">&apos;Bar&apos;</span>, <span class="hljs-string">&apos;parent::method&apos;</span>]);
 </code></pre>
-<p><code>__invoke()</code> &#x9B54;&#x672F;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>&#x7C7B;&#x4E2D;&#x7684; <code>__invoke()</code> &#x9B54;&#x672F;&#x65B9;&#x6CD5;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2298,7 +2343,7 @@ call_user_func(<span class="hljs-keyword">new</span> Foo);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Callable 可调用类型","level":"1.1.1.2.9","depth":4,"next":{"title":"类型转换的判别","level":"1.1.1.2.10","depth":4,"path":"README/语言参考/类型/类型转换的判别.md","ref":"README/语言参考/类型/类型转换的判别.md","articles":[]},"previous":{"title":"NULL","level":"1.1.1.2.8","depth":4,"path":"README/语言参考/类型/NULL.md","ref":"README/语言参考/类型/NULL.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/类型/Callable 可调用类型.md","mtime":"2019-03-25T16:17:25.722Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-30T15:00:28.072Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Callable 可调用类型","level":"1.1.1.2.9","depth":4,"next":{"title":"类型转换的判别","level":"1.1.1.2.10","depth":4,"path":"README/语言参考/类型/类型转换的判别.md","ref":"README/语言参考/类型/类型转换的判别.md","articles":[]},"previous":{"title":"NULL","level":"1.1.1.2.8","depth":4,"path":"README/语言参考/类型/NULL.md","ref":"README/语言参考/类型/NULL.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/类型/Callable 可调用类型.md","mtime":"2019-04-01T16:30:14.080Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-01T18:05:41.675Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

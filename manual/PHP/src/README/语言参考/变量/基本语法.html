@@ -2053,6 +2053,70 @@
             
         </li>
     
+        <li class="chapter " data-level="1.1.2.2" data-path="../../函数参考/其他基本扩展.html">
+            
+                <a href="../../函数参考/其他基本扩展.html">
+            
+                    
+                    其他基本扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.2.1" data-path="../../函数参考/其他基本扩展/Tokenizer.html">
+            
+                <a href="../../函数参考/其他基本扩展/Tokenizer.html">
+            
+                    
+                    Tokenizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.3" data-path="../../函数参考/文件系统相关扩展.html">
+            
+                <a href="../../函数参考/文件系统相关扩展.html">
+            
+                    
+                    文件系统相关扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.3.1" data-path="../../函数参考/文件系统相关扩展/目录.html">
+            
+                <a href="../../函数参考/文件系统相关扩展/目录.html">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -2109,7 +2173,8 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x57FA;&#x672C;&#x8BED;&#x6CD5;">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h1>
-<p><code>PHP</code> &#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x7528;&#x4E00;&#x4E2A;&#x7F8E;&#x5143;&#x7B26;&#x53F7; <code>$</code> &#x540E;&#x9762;&#x8DDF;&#x53D8;&#x91CF;&#x540D;&#x6765;&#x8868;&#x793A;&#x3002;&#x53D8;&#x91CF;&#x540D;&#x662F;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x7684;&#x3002;&#x53D8;&#x91CF;&#x540D;&#x4E0E; <code>PHP</code> &#x4E2D;&#x5176;&#x5B83;&#x7684;&#x6807;&#x7B7E;&#x4E00;&#x6837;&#x9075;&#x5FAA;&#x76F8;&#x540C;&#x7684;&#x89C4;&#x5219;&#x3002;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x7531;&#x5B57;&#x6BCD;&#x6216;&#x8005;&#x4E0B;&#x5212;&#x7EBF;&#x5F00;&#x5934;&#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x4E0A;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x5B57;&#x6BCD;&#xFF0C;&#x6570;&#x5B57;&#xFF0C;&#x6216;&#x8005;&#x4E0B;&#x5212;&#x7EBF;&#x3002;</p>
+<p><code>PHP</code> &#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x7528;&#x4E00;&#x4E2A;&#x7F8E;&#x5143;&#x7B26;&#x53F7; <code>$</code> &#x540E;&#x9762;&#x8DDF;&#x53D8;&#x91CF;&#x540D;&#x6765;&#x8868;&#x793A;&#x3002;&#x53D8;&#x91CF;&#x540D;&#x662F;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x7684;&#x3002;</p>
+<p>&#x53D8;&#x91CF;&#x540D;&#x4E0E; <code>PHP</code> &#x4E2D;&#x5176;&#x5B83;&#x7684;&#x6807;&#x7B7E;&#x4E00;&#x6837;&#x9075;&#x5FAA;&#x76F8;&#x540C;&#x7684;&#x89C4;&#x5219;&#x3002;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x7531;&#x5B57;&#x6BCD;&#x6216;&#x8005;&#x4E0B;&#x5212;&#x7EBF;&#x5F00;&#x5934;&#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x4E0A;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x5B57;&#x6BCD;&#xFF0C;&#x6570;&#x5B57;&#xFF0C;&#x6216;&#x8005;&#x4E0B;&#x5212;&#x7EBF;&#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2153,7 +2218,7 @@ var_dump($bar); <span class="hljs-comment">// string(3) &quot;bar&quot;</span>
 
 $foo = <span class="hljs-string">&apos;foo&apos;</span>;
 $bar = &amp;$foo;
-$bar = <span class="hljs-string">&apos;bar&apos;</span>;
+$foo = <span class="hljs-string">&apos;bar&apos;</span>;
 var_dump($foo); <span class="hljs-comment">// string(3) &quot;bar&quot;</span>
 var_dump($bar); <span class="hljs-comment">// string(3) &quot;bar&quot;</span>
 </code></pre>
@@ -2200,7 +2265,7 @@ var_dump($bar); <span class="hljs-comment">// string(3) &quot;bar&quot;</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本语法","level":"1.1.1.3.1","depth":4,"next":{"title":"变量范围","level":"1.1.1.3.2","depth":4,"path":"README/语言参考/变量/变量范围.md","ref":"README/语言参考/变量/变量范围.md","articles":[]},"previous":{"title":"变量","level":"1.1.1.3","depth":3,"path":"README/语言参考/变量.md","ref":"README/语言参考/变量.md","articles":[{"title":"基本语法","level":"1.1.1.3.1","depth":4,"path":"README/语言参考/变量/基本语法.md","ref":"README/语言参考/变量/基本语法.md","articles":[]},{"title":"变量范围","level":"1.1.1.3.2","depth":4,"path":"README/语言参考/变量/变量范围.md","ref":"README/语言参考/变量/变量范围.md","articles":[]},{"title":"可变变量","level":"1.1.1.3.3","depth":4,"path":"README/语言参考/变量/可变变量.md","ref":"README/语言参考/变量/可变变量.md","articles":[]},{"title":"来自 PHP 之外的变量","level":"1.1.1.3.4","depth":4,"path":"README/语言参考/变量/来自 PHP 之外的变量.md","ref":"README/语言参考/变量/来自 PHP 之外的变量.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/变量/基本语法.md","mtime":"2019-03-26T16:35:00.298Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-30T15:00:28.072Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本语法","level":"1.1.1.3.1","depth":4,"next":{"title":"变量范围","level":"1.1.1.3.2","depth":4,"path":"README/语言参考/变量/变量范围.md","ref":"README/语言参考/变量/变量范围.md","articles":[]},"previous":{"title":"变量","level":"1.1.1.3","depth":3,"path":"README/语言参考/变量.md","ref":"README/语言参考/变量.md","articles":[{"title":"基本语法","level":"1.1.1.3.1","depth":4,"path":"README/语言参考/变量/基本语法.md","ref":"README/语言参考/变量/基本语法.md","articles":[]},{"title":"变量范围","level":"1.1.1.3.2","depth":4,"path":"README/语言参考/变量/变量范围.md","ref":"README/语言参考/变量/变量范围.md","articles":[]},{"title":"可变变量","level":"1.1.1.3.3","depth":4,"path":"README/语言参考/变量/可变变量.md","ref":"README/语言参考/变量/可变变量.md","articles":[]},{"title":"来自 PHP 之外的变量","level":"1.1.1.3.4","depth":4,"path":"README/语言参考/变量/来自 PHP 之外的变量.md","ref":"README/语言参考/变量/来自 PHP 之外的变量.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/变量/基本语法.md","mtime":"2019-04-01T17:11:05.866Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-01T18:05:41.675Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -2053,6 +2053,70 @@
             
         </li>
     
+        <li class="chapter " data-level="1.1.2.2" data-path="../../函数参考/其他基本扩展.html">
+            
+                <a href="../../函数参考/其他基本扩展.html">
+            
+                    
+                    其他基本扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.2.1" data-path="../../函数参考/其他基本扩展/Tokenizer.html">
+            
+                <a href="../../函数参考/其他基本扩展/Tokenizer.html">
+            
+                    
+                    Tokenizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.3" data-path="../../函数参考/文件系统相关扩展.html">
+            
+                <a href="../../函数参考/文件系统相关扩展.html">
+            
+                    
+                    文件系统相关扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.3.1" data-path="../../函数参考/文件系统相关扩展/目录.html">
+            
+                <a href="../../函数参考/文件系统相关扩展/目录.html">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -2109,7 +2173,8 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;">&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</h1>
-<p>&#x903B;&#x8F91;&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;&#x5728;&#x4E24;&#x4E2A;&#x503C;&#x90FD;&#x4E3A; <code>true</code> &#x65F6;&#x8FD4;&#x56DE; <code>true</code> &#x3002;&#x903B;&#x8F91;&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;&#x6709;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x5F62;&#x5F0F;&#xFF0C; <code>&amp;&amp;</code> &#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C; <code>and</code> &#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x4F4E;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<p>&#x903B;&#x8F91;&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;&#x6709;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x5F62;&#x5F0F;&#xFF0C; <code>&amp;&amp;</code> &#x903B;&#x8F91;&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C; <code>and</code> &#x903B;&#x8F91;&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x4F4E;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<p>&#x903B;&#x8F91;&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;&#x5728;&#x4E24;&#x4E2A;&#x503C;&#x90FD;&#x4E3A; <code>true</code> &#x65F6;&#x8FD4;&#x56DE; <code>true</code> &#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2123,7 +2188,8 @@ var_dump($foo);            <span class="hljs-comment">// bool(false)</span>
 $foo = <span class="hljs-keyword">true</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">false</span>;
 var_dump($foo);            <span class="hljs-comment">// bool(true)</span>
 </code></pre>
-<p>&#x903B;&#x8F91;&#x6216;&#x8FD0;&#x7B97;&#x7B26;&#x5728;&#x4E24;&#x4E2A;&#x503C;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x4E3A; <code>true</code> &#x65F6;&#x8FD4;&#x56DE; <code>true</code> &#x3002;&#x903B;&#x8F91;&#x6216;&#x8FD0;&#x7B97;&#x7B26;&#x6709;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x5F62;&#x5F0F;&#xFF0C; <code>||</code> &#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C; <code>or</code> &#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x4F4E;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<p>&#x903B;&#x8F91;&#x6216;&#x8FD0;&#x7B97;&#x7B26;&#x6709;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x5F62;&#x5F0F;&#xFF0C; <code>||</code> &#x903B;&#x8F91;&#x6216;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C; <code>or</code> &#x903B;&#x8F91;&#x6216;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x4F4E;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<p>&#x903B;&#x8F91;&#x6216;&#x8FD0;&#x7B97;&#x7B26;&#x5728;&#x4E24;&#x4E2A;&#x503C;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x4E3A; <code>true</code> &#x65F6;&#x8FD4;&#x56DE; <code>true</code> &#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2137,7 +2203,8 @@ var_dump($foo);          <span class="hljs-comment">// bool(true)</span>
 $foo = <span class="hljs-keyword">false</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">true</span>;
 var_dump($foo);          <span class="hljs-comment">// bool(false)</span>
 </code></pre>
-<p>&#x903B;&#x8F91;&#x5F02;&#x6216;&#x8FD0;&#x7B97;&#x7B26; <code>xor</code> &#x5F53;&#x4E00;&#x4E2A;&#x503C;&#x4E3A; <code>true</code> &#x53E6;&#x4E00;&#x4E2A;&#x503C;&#x4E3A; <code>false</code> &#x65F6;&#x8FD4;&#x56DE; <code>true</code> &#x3002; <code>xor</code> &#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x4F4E;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<p><code>xor</code> &#x903B;&#x8F91;&#x5F02;&#x6216;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x4F4E;&#x4E8E;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<p><code>xor</code> &#x903B;&#x8F91;&#x5F02;&#x6216;&#x8FD0;&#x7B97;&#x7B26;&#x5F53;&#x4E00;&#x4E2A;&#x503C;&#x4E3A; <code>true</code> &#x53E6;&#x4E00;&#x4E2A;&#x503C;&#x4E3A; <code>false</code> &#x65F6;&#x8FD4;&#x56DE; <code>true</code> &#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2151,7 +2218,7 @@ var_dump($foo <span class="hljs-keyword">xor</span> $bar);  <span class="hljs-co
 $foo = <span class="hljs-keyword">false</span> <span class="hljs-keyword">xor</span> <span class="hljs-keyword">true</span>;
 var_dump($foo);           <span class="hljs-comment">// bool(false)</span>
 </code></pre>
-<p><code>!</code> &#x8FD0;&#x7B97;&#x7B26;&#x5F53;&#x4E00;&#x4E2A;&#x503C;&#x4E3A; <code>true</code> &#x65F6;&#x8FD4;&#x56DE; <code>false</code> &#xFF0C; &#x5F53;&#x4E00;&#x4E2A;&#x503C;&#x4E3A; <code>false</code> &#x65F6;&#x8FD4;&#x56DE; <code>true</code> &#x3002;</p>
+<p><code>!</code> &#x903B;&#x8F91;&#x975E;&#x8FD0;&#x7B97;&#x7B26;&#x5F53;&#x4E00;&#x4E2A;&#x503C;&#x4E3A; <code>true</code> &#x65F6;&#x8FD4;&#x56DE; <code>false</code> &#xFF0C; &#x5F53;&#x4E00;&#x4E2A;&#x503C;&#x4E3A; <code>false</code> &#x65F6;&#x8FD4;&#x56DE; <code>true</code> &#x3002;</p>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
@@ -2205,7 +2272,7 @@ var_dump(!$bar); <span class="hljs-comment">// bool(true)</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"逻辑运算符","level":"1.1.1.6.9","depth":4,"next":{"title":"字符串运算符","level":"1.1.1.6.10","depth":4,"path":"README/语言参考/运算符/字符串运算符.md","ref":"README/语言参考/运算符/字符串运算符.md","articles":[]},"previous":{"title":"递增递减运算符","level":"1.1.1.6.8","depth":4,"path":"README/语言参考/运算符/递增递减运算符.md","ref":"README/语言参考/运算符/递增递减运算符.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/运算符/逻辑运算符.md","mtime":"2019-03-27T11:40:27.959Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-30T15:00:28.072Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"逻辑运算符","level":"1.1.1.6.9","depth":4,"next":{"title":"字符串运算符","level":"1.1.1.6.10","depth":4,"path":"README/语言参考/运算符/字符串运算符.md","ref":"README/语言参考/运算符/字符串运算符.md","articles":[]},"previous":{"title":"递增递减运算符","level":"1.1.1.6.8","depth":4,"path":"README/语言参考/运算符/递增递减运算符.md","ref":"README/语言参考/运算符/递增递减运算符.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README/语言参考/运算符/逻辑运算符.md","mtime":"2019-04-01T17:46:50.856Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-01T18:05:41.675Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

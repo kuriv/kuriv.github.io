@@ -23,7 +23,7 @@ $foo = 'foo';
 if ($foo == 'foo') {
 }
 
-$bar = false;
+$bar = true;
 if ($bar) {
 }
 

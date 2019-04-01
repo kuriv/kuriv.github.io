@@ -144,4 +144,8 @@
     * [函数参考](README/函数参考.md)
         * [数学扩展](README/函数参考/数学扩展.md)
             * [Math](README/函数参考/数学扩展/Math.md)
+        * [其他基本扩展](README/函数参考/其他基本扩展.md)
+            * [Tokenizer](README/函数参考/其他基本扩展/Tokenizer.md)
+        * [文件系统相关扩展](README/函数参考/文件系统相关扩展.md)
+            * [目录](README/函数参考/文件系统相关扩展/目录.md)
 

@@ -1,6 +1,6 @@
 # Callable 可调用类型
 
-普通的用户自定义函数：
+用户自定义函数。
 
 ```php
 <?php
@@ -21,7 +21,7 @@ call_user_func('foo');
 
 ```
 
-匿名函数：
+匿名函数。
 
 ```php
 <?php
@@ -41,7 +41,7 @@ call_user_func($foo);
 
 ```
 
-类中的普通方法：
+类中的普通方法。
 
 ```php
 <?php
@@ -65,7 +65,7 @@ call_user_func([new Foo, 'method']);
 
 ```
 
-类中的静态方法：
+类中的静态方法。
 
 ```php
 <?php
@@ -86,34 +86,11 @@ class Foo
 }
 
 call_user_func(['Foo', 'method']);
-
-```
-
-类中的静态方法：
-
-```php
-<?php
-
-declare(strict_types = 1);
-
-class Foo
-{
-    /**
-     * Just a test method.
-     *
-     * @param  void
-     * @return void
-     */
-    public static function method()
-    {
-    }
-}
-
 call_user_func('Foo::method');
 
 ```
 
-父类中的静态方法：
+父类中的静态方法。
 
 ```php
 <?php
@@ -150,7 +127,7 @@ call_user_func(['Bar', 'parent::method']);
 
 ```
 
-`__invoke()` 魔术方法：
+类中的 `__invoke()` 魔术方法。
 
 ```php
 <?php
