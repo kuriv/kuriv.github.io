@@ -11,13 +11,7 @@ var_dump($argv);
 
 ```
 
-当执行以下这条命令时：
-
-```shell
-php index.php foo bar
-```
-
-上例中的输出类似于：
+当执行 `php index.php foo bar` 这条命令时，以上例程的输出类似于：
 
 ```
 array(3) {
@@ -29,4 +23,6 @@ array(3) {
   string(3) "bar"
 }
 ```
+
+
 
