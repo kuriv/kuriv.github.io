@@ -7,7 +7,7 @@
 
 declare(strict_types = 1);
 
-file_get_contents('https://github.com/');
+$data = file_get_contents('https://github.com/');
 var_dump($http_response_header);
 
 ```
