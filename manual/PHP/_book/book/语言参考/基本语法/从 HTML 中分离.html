@@ -1,0 +1,621 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>从 HTML 中分离 · PHP</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Kuriv Vesti">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="指令分隔符.html" />
+    
+    
+    <link rel="prev" href="PHP 标记.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    PHP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../语言参考.html">
+            
+                <a href="../../语言参考.html">
+            
+                    
+                    语言参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="../基本语法.html">
+            
+                <a href="../基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1.1" data-path="PHP 标记.html">
+            
+                <a href="PHP 标记.html">
+            
+                    
+                    PHP 标记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.1.1.2" data-path="从 HTML 中分离.html">
+            
+                <a href="从 HTML 中分离.html">
+            
+                    
+                    从 HTML 中分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.1.3" data-path="指令分隔符.html">
+            
+                <a href="指令分隔符.html">
+            
+                    
+                    指令分隔符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.1.4" data-path="注释.html">
+            
+                <a href="注释.html">
+            
+                    
+                    注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="../类型.html">
+            
+                <a href="../类型.html">
+            
+                    
+                    类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.2.1" data-path="../类型/Boolean 布尔类型.html">
+            
+                <a href="../类型/Boolean 布尔类型.html">
+            
+                    
+                    Boolean 布尔类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.2" data-path="../类型/Integer 整型.html">
+            
+                <a href="../类型/Integer 整型.html">
+            
+                    
+                    Integer 整型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.3" data-path="../类型/Float 浮点型.html">
+            
+                <a href="../类型/Float 浮点型.html">
+            
+                    
+                    Float 浮点型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.4" data-path="../类型/String 字符串.html">
+            
+                <a href="../类型/String 字符串.html">
+            
+                    
+                    String 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.5" data-path="../类型/Array 数组.html">
+            
+                <a href="../类型/Array 数组.html">
+            
+                    
+                    Array 数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.6" data-path="../类型/Object 对象.html">
+            
+                <a href="../类型/Object 对象.html">
+            
+                    
+                    Object 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.7" data-path="../类型/Resource 资源类型.html">
+            
+                <a href="../类型/Resource 资源类型.html">
+            
+                    
+                    Resource 资源类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.8" data-path="../类型/NULL.html">
+            
+                <a href="../类型/NULL.html">
+            
+                    
+                    NULL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.9" data-path="../类型/Callable 可调用类型.html">
+            
+                <a href="../类型/Callable 可调用类型.html">
+            
+                    
+                    Callable 可调用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.10" data-path="../类型/类型转换的判别.html">
+            
+                <a href="../类型/类型转换的判别.html">
+            
+                    
+                    类型转换的判别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="../变量.html">
+            
+                <a href="../变量.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.3.1" data-path="../变量/基本语法.html">
+            
+                <a href="../变量/基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3.2" data-path="../变量/变量范围.html">
+            
+                <a href="../变量/变量范围.html">
+            
+                    
+                    变量范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3.3" data-path="../变量/可变变量.html">
+            
+                <a href="../变量/可变变量.html">
+            
+                    
+                    可变变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3.4" data-path="../变量/来自 PHP 之外的变量.html">
+            
+                <a href="../变量/来自 PHP 之外的变量.html">
+            
+                    
+                    来自 PHP 之外的变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4" data-path="../常量.html">
+            
+                <a href="../常量.html">
+            
+                    
+                    常量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.4.1" data-path="../常量/基本语法.html">
+            
+                <a href="../常量/基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4.2" data-path="../常量/魔术常量.html">
+            
+                <a href="../常量/魔术常量.html">
+            
+                    
+                    魔术常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.5" data-path="../表达式.html">
+            
+                <a href="../表达式.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >从 HTML 中分离</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4ECE;-html-&#x4E2D;&#x5206;&#x79BB;">&#x4ECE; HTML &#x4E2D;&#x5206;&#x79BB;</h1>
+<p>&#x51E1;&#x662F;&#x5728;&#x4E00;&#x5BF9;&#x8D77;&#x59CB;&#x6807;&#x8BB0;&#x548C;&#x7ED3;&#x675F;&#x6807;&#x8BB0;&#x4E4B;&#x5916;&#x7684;&#x5185;&#x5BB9;&#x90FD;&#x4F1A;&#x88AB; PHP &#x89E3;&#x6790;&#x5668;&#x5FFD;&#x7565;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97; PHP &#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x5177;&#x5907;&#x6DF7;&#x5408;&#x5185;&#x5BB9;&#x3002;&#x53EF;&#x4EE5;&#x4F7F; PHP &#x5D4C;&#x5165;&#x5230; HTML &#x6587;&#x6863;&#x4E2D;&#x53BB;&#x3002;</p>
+<pre><code class="lang-php">&lt;p&gt;foo&lt;/p&gt;
+<span class="hljs-meta">&lt;?php</span> var_dump(<span class="hljs-string">&apos;bar&apos;</span>); <span class="hljs-meta">?&gt;</span>
+&lt;p&gt;baz&lt;/p&gt;
+<span class="hljs-meta">&lt;?php</span> var_dump(<span class="hljs-string">&apos;qux&apos;</span>); <span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>&#x5F53;&#x5904;&#x4E8E;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#x4E2D;&#x95F4;&#x65F6;&#xFF0C;&#x6B64;&#x65F6; PHP &#x89E3;&#x91CA;&#x5668;&#x4F1A;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x6765;&#x51B3;&#x5B9A;&#x54EA;&#x4E9B;&#x8F93;&#x51FA;&#x54EA;&#x4E9B;&#x8DF3;&#x8FC7;&#x3002; PHP &#x5C06;&#x8DF3;&#x8FC7;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#x672A;&#x8FBE;&#x6210;&#x7684;&#x6BB5;&#x843D;&#xFF0C;&#x5373;&#x4F7F;&#x8BE5;&#x6BB5;&#x843D;&#x4F4D;&#x4E8E; PHP &#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x6807;&#x8BB0;&#x4E4B;&#x5916;&#x3002;&#x7531;&#x4E8E; PHP &#x89E3;&#x91CA;&#x5668;&#x4F1A;&#x5728;&#x6761;&#x4EF6;&#x672A;&#x8FBE;&#x6210;&#x65F6;&#x76F4;&#x63A5;&#x8DF3;&#x8FC7;&#x8BE5;&#x6BB5;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#x5757;&#xFF0C;&#x56E0;&#x6B64; PHP &#x4F1A;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x6765;&#x5FFD;&#x7565;&#x4E4B;&#x3002;&#x8981;&#x8F93;&#x51FA;&#x5927;&#x6BB5;&#x6587;&#x672C;&#x65F6;&#xFF0C;&#x8DF3;&#x51FA; PHP &#x89E3;&#x6790;&#x6A21;&#x5F0F;&#x901A;&#x5E38;&#x6BD4;&#x5C06;&#x6587;&#x672C;&#x901A;&#x8FC7; <code>echo</code> &#x6216; <code>print</code> &#x8F93;&#x51FA;&#x66F4;&#x6709;&#x6548;&#x7387;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($foo)) : <span class="hljs-meta">?&gt;</span>
+    &lt;p&gt;foo&lt;/p&gt;
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">else</span> : <span class="hljs-meta">?&gt;</span>
+    &lt;p&gt;bar&lt;/p&gt;
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endif</span>; <span class="hljs-meta">?&gt;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="PHP 标记.html" class="navigation navigation-prev " aria-label="Previous page: PHP 标记">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="指令分隔符.html" class="navigation navigation-next " aria-label="Next page: 指令分隔符">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"从 HTML 中分离","level":"1.1.1.1.2","depth":4,"next":{"title":"指令分隔符","level":"1.1.1.1.3","depth":4,"path":"book/语言参考/基本语法/指令分隔符.md","ref":"book/语言参考/基本语法/指令分隔符.md","articles":[]},"previous":{"title":"PHP 标记","level":"1.1.1.1.1","depth":4,"path":"book/语言参考/基本语法/PHP 标记.md","ref":"book/语言参考/基本语法/PHP 标记.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"book/语言参考/基本语法/从 HTML 中分离.md","mtime":"2019-04-07T14:03:38.168Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:29:04.346Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
