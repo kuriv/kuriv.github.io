@@ -40,10 +40,10 @@ declare(strict_types = 1);
 
 $foo = 'foo';
 $bar = <<<EOT
-$foo
-\r\n
-bar
-EOT;
+          $foo
+          \r\n
+          bar
+          EOT;
 
 ```
 
@@ -58,10 +58,10 @@ declare(strict_types = 1);
 
 $foo = 'foo';
 $bar = <<<'EOT'
-$foo
-\r\n
-bar
-EOT;
+           $foo
+           \r\n
+           bar
+           EOT;
 
 ```
 
