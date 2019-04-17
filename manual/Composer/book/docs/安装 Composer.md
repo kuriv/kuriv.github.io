@@ -4,7 +4,7 @@
 
 ```shell
 curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer
 ```
 
 在 Windows 下安装只需下载并运行 [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe) ，它将安装最新版本的 Composer ，并设置好系统的环境变量。
