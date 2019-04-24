@@ -1,9 +1,0 @@
-# PHP 是什么
-
-PHP 即 PHP: Hypertext Preprocessor ，超文本预处理器。
-
-它是一种被广泛应用的开源脚本语言，可以嵌入到 HTML 文档中去执行，主要适用于 Web 开发领域。
-
-它的语法混合了 C 、 Java 和 Perl ，易于学习。
-
-该语言的主要目标是允许 Web 开发人员快速编写动态生成的 Web 页面，但 PHP 的用途远不只于此。
