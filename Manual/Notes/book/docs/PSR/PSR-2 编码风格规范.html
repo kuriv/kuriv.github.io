@@ -1,0 +1,811 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>PSR-2 编码风格规范 · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Kuriv Vesti">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="PSR-4 自动加载规范.html" />
+    
+    
+    <link rel="prev" href="PSR-1 基础编码规范.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Notes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../CRLF.html">
+            
+                <a href="../CRLF.html">
+            
+                    
+                    CRLF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../PSR.html">
+            
+                <a href="../PSR.html">
+            
+                    
+                    PSR
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="PSR-1 基础编码规范.html">
+            
+                <a href="PSR-1 基础编码规范.html">
+            
+                    
+                    PSR-1 基础编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2.2" data-path="PSR-2 编码风格规范.html">
+            
+                <a href="PSR-2 编码风格规范.html">
+            
+                    
+                    PSR-2 编码风格规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.3" data-path="PSR-4 自动加载规范.html">
+            
+                <a href="PSR-4 自动加载规范.html">
+            
+                    
+                    PSR-4 自动加载规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../SOLID.html">
+            
+                <a href="../SOLID.html">
+            
+                    
+                    SOLID
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >PSR-2 编码风格规范</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="psr-2-&#x7F16;&#x7801;&#x98CE;&#x683C;&#x89C4;&#x8303;">PSR-2 &#x7F16;&#x7801;&#x98CE;&#x683C;&#x89C4;&#x8303;</h1>
+<ul>
+<li><a href="#&#x901A;&#x5219;">&#x901A;&#x5219;</a><ul>
+<li><a href="#&#x57FA;&#x672C;&#x7F16;&#x7801;&#x51C6;&#x5219;">&#x57FA;&#x672C;&#x7F16;&#x7801;&#x51C6;&#x5219;</a></li>
+<li><a href="#&#x6587;&#x4EF6;">&#x6587;&#x4EF6;</a></li>
+<li><a href="#&#x884C;">&#x884C;</a></li>
+<li><a href="#&#x7F29;&#x8FDB;">&#x7F29;&#x8FDB;</a></li>
+<li><a href="#&#x5173;&#x952E;&#x5B57;&#x4EE5;&#x53CA;-true--false--null">&#x5173;&#x952E;&#x5B57;&#x4EE5;&#x53CA; true / false / null</a></li>
+</ul>
+</li>
+<li><a href="#namespace-&#x53CA;-use-&#x58F0;&#x660E;">namespace &#x53CA; use &#x58F0;&#x660E;</a></li>
+<li><a href="#&#x7C7B;&#x3001;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;">&#x7C7B;&#x3001;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</a><ul>
+<li><a href="#&#x6269;&#x5C55;&#x4E0E;&#x7EE7;&#x627F;">&#x6269;&#x5C55;&#x4E0E;&#x7EE7;&#x627F;</a></li>
+<li><a href="#&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</a></li>
+<li><a href="#&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</a></li>
+<li><a href="#&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;">&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;</a></li>
+<li><a href="#abstract-&#x548C;-final-&#x548C;-static">abstract &#x548C; final &#x548C; static</a></li>
+<li><a href="#&#x65B9;&#x6CD5;&#x53CA;&#x51FD;&#x6570;&#x8C03;&#x7528;">&#x65B9;&#x6CD5;&#x53CA;&#x51FD;&#x6570;&#x8C03;&#x7528;</a></li>
+</ul>
+</li>
+<li><a href="#&#x63A7;&#x5236;&#x7ED3;&#x6784;">&#x63A7;&#x5236;&#x7ED3;&#x6784;</a><ul>
+<li><a href="#if-&#x548C;-elseif-&#x548C;-else">if &#x548C; elseif &#x548C; else</a></li>
+<li><a href="#switch-&#x548C;-case">switch &#x548C; case</a></li>
+<li><a href="#while-&#x548C;-do-while">while &#x548C; do-while</a></li>
+<li><a href="#for">for</a></li>
+<li><a href="#foreach">foreach</a></li>
+<li><a href="#try-&#x548C;-catch">try &#x548C; catch</a></li>
+</ul>
+</li>
+<li><a href="#&#x95ED;&#x5305;">&#x95ED;&#x5305;</a></li>
+</ul>
+<h2 id="&#x901A;&#x5219;">&#x901A;&#x5219;</h2>
+<h3 id="&#x57FA;&#x672C;&#x7F16;&#x7801;&#x51C6;&#x5219;">&#x57FA;&#x672C;&#x7F16;&#x7801;&#x51C6;&#x5219;</h3>
+<blockquote>
+<p>&#x4EE3;&#x7801; <strong>&#x5FC5;&#x987B;</strong> &#x7B26;&#x5408; PSR-1 &#x4E2D;&#x7684;&#x6240;&#x6709;&#x89C4;&#x8303;&#x3002;</p>
+</blockquote>
+<h3 id="&#x6587;&#x4EF6;">&#x6587;&#x4EF6;</h3>
+<blockquote>
+<p>&#x6240;&#x6709; PHP &#x6587;&#x4EF6; <strong>&#x5FC5;&#x987B;</strong> &#x4F7F;&#x7528; Unix &#x7684; <code>LF</code> &#x4F5C;&#x4E3A;&#x884C;&#x7684;&#x7ED3;&#x675F;&#x7B26;&#x3002;</p>
+<p>&#x6240;&#x6709; PHP &#x6587;&#x4EF6; <strong>&#x5FC5;&#x987B;</strong> &#x4EE5;&#x4E00;&#x4E2A;&#x7A7A;&#x767D;&#x884C;&#x4F5C;&#x4E3A;&#x7ED3;&#x675F;&#x3002;</p>
+<p>&#x7EAF; PHP &#x4EE3;&#x7801;&#x6587;&#x4EF6; <strong>&#x5FC5;&#x987B;</strong> &#x7701;&#x7565;&#x6700;&#x540E;&#x7684; <code>?&gt;</code> &#x7ED3;&#x675F;&#x6807;&#x7B7E;&#x3002;</p>
+</blockquote>
+<h3 id="&#x884C;">&#x884C;</h3>
+<blockquote>
+<p>&#x884C;&#x7684;&#x957F;&#x5EA6; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x786C;&#x6027;&#x7684;&#x7EA6;&#x675F;&#x3002;</p>
+<p>&#x8F6F;&#x6027;&#x7684;&#x957F;&#x5EA6;&#x7EA6;&#x675F; <strong>&#x5FC5;&#x987B;</strong> &#x8981;&#x9650;&#x5236;&#x5728; 120 &#x4E2A;&#x5B57;&#x7B26;&#x4EE5;&#x5185;&#xFF0C;&#x82E5;&#x8D85;&#x8FC7;&#x6B64;&#x957F;&#x5EA6;&#xFF0C;&#x5E26;&#x4EE3;&#x7801;&#x89C4;&#x8303;&#x68C0;&#x67E5;&#x7684;&#x7F16;&#x8F91;&#x5668; <strong>&#x5FC5;&#x987B;</strong> &#x8981;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#xFF0C;&#x4E0D;&#x8FC7; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x53D1;&#x51FA;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#x3002;</p>
+<p>&#x6BCF;&#x884C; <strong>&#x4E0D;&#x8BE5;</strong> &#x591A;&#x4E8E; 80 &#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x5927;&#x4E8E; 80 &#x5B57;&#x7B26;&#x7684;&#x884C; <strong>&#x5E94;&#x8BE5;</strong> &#x6298;&#x6210;&#x591A;&#x884C;&#x3002;</p>
+<p>&#x975E;&#x7A7A;&#x884C;&#x540E; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x591A;&#x4F59;&#x7684;&#x7A7A;&#x683C;&#x7B26;&#x3002;</p>
+<p>&#x7A7A;&#x884C; <strong>&#x53EF;&#x4EE5;</strong> &#x4F7F;&#x5F97;&#x9605;&#x8BFB;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;&#x4EE5;&#x53CA;&#x6709;&#x52A9;&#x4E8E;&#x4EE3;&#x7801;&#x7684;&#x5206;&#x5757;&#x3002;</p>
+<p>&#x6BCF;&#x884C; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x5B58;&#x5728;&#x591A;&#x4E8E;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x3002;</p>
+</blockquote>
+<h3 id="&#x7F29;&#x8FDB;">&#x7F29;&#x8FDB;</h3>
+<blockquote>
+<p>&#x4EE3;&#x7801; <strong>&#x5FC5;&#x987B;</strong> &#x4F7F;&#x7528; 4 &#x4E2A;&#x7A7A;&#x683C;&#x7B26;&#x7684;&#x7F29;&#x8FDB;&#xFF0C; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x7528; Tab &#x952E;&#x3002;</p>
+</blockquote>
+<h3 id="&#x5173;&#x952E;&#x5B57;&#x4EE5;&#x53CA;-true--false--null">&#x5173;&#x952E;&#x5B57;&#x4EE5;&#x53CA; true / false / null</h3>
+<blockquote>
+<p>PHP &#x6240;&#x6709;&#x5173;&#x952E;&#x5B57; <strong>&#x5FC5;&#x987B;</strong> &#x5168;&#x90E8;&#x5C0F;&#x5199;&#x3002;</p>
+<p>&#x5E38;&#x91CF; <code>true</code> &#x3001; <code>false</code> &#x548C; <code>null</code> &#x4E5F; <strong>&#x5FC5;&#x987B;</strong> &#x5168;&#x90E8;&#x5C0F;&#x5199;&#x3002;</p>
+</blockquote>
+<h2 id="namespace-&#x53CA;-use-&#x58F0;&#x660E;">namespace &#x53CA; use &#x58F0;&#x660E;</h2>
+<blockquote>
+<p><code>namespace</code> &#x58F0;&#x660E;&#x540E; <strong>&#x5FC5;&#x987B;</strong> &#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x7A7A;&#x767D;&#x884C;&#x3002;</p>
+<p>&#x6240;&#x6709; <code>use</code> <strong>&#x5FC5;&#x987B;</strong> &#x5728; <code>namespace</code> &#x540E;&#x58F0;&#x660E;&#x3002;</p>
+<p>&#x6BCF;&#x6761; <code>use</code> &#x58F0;&#x660E;&#x8BED;&#x53E5; <strong>&#x5FC5;&#x987B;</strong> &#x53EA;&#x6709;&#x4E00;&#x4E2A; <code>use</code> &#x5173;&#x952E;&#x8BCD;&#x3002;</p>
+<p><code>use</code> &#x58F0;&#x660E;&#x8BED;&#x53E5;&#x5757;&#x540E; <strong>&#x5FC5;&#x987B;</strong> &#x8981;&#x6709;&#x4E00;&#x4E2A;&#x7A7A;&#x767D;&#x884C;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Vendor</span>\<span class="hljs-title">Package</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">FooClass</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">BarClass</span> <span class="hljs-title">as</span> <span class="hljs-title">Bar</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">OtherVendor</span>\<span class="hljs-title">OtherPackage</span>\<span class="hljs-title">BazClass</span>;
+</code></pre>
+<h2 id="&#x7C7B;&#x3001;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;">&#x7C7B;&#x3001;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</h2>
+<h3 id="&#x6269;&#x5C55;&#x4E0E;&#x7EE7;&#x627F;">&#x6269;&#x5C55;&#x4E0E;&#x7EE7;&#x627F;</h3>
+<blockquote>
+<p>&#x5173;&#x952E;&#x8BCD; <code>extends</code> &#x548C; <code>implements</code> <strong>&#x5FC5;&#x987B;</strong> &#x5199;&#x5728;&#x7C7B;&#x540D;&#x79F0;&#x7684;&#x540C;&#x4E00;&#x884C;&#x3002;</p>
+<p>&#x7C7B;&#x7684;&#x5F00;&#x59CB;&#x82B1;&#x62EC;&#x53F7; <strong>&#x5FC5;&#x987B;</strong> &#x72EC;&#x5360;&#x4E00;&#x884C;&#xFF0C;&#x7ED3;&#x675F;&#x82B1;&#x62EC;&#x53F7;&#x4E5F; <strong>&#x5FC5;&#x987B;</strong> &#x5728;&#x7C7B;&#x4E3B;&#x4F53;&#x540E;&#x72EC;&#x5360;&#x4E00;&#x884C;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Vendor</span>\<span class="hljs-title">Package</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">FooClass</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">BarClass</span> <span class="hljs-title">as</span> <span class="hljs-title">Bar</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">OtherVendor</span>\<span class="hljs-title">OtherPackage</span>\<span class="hljs-title">BazClass</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ParentClassName</span> <span class="hljs-keyword">implements</span> \<span class="hljs-title">ArrayAccess</span>, \<span class="hljs-title">Countable</span>
+</span>{
+}
+</code></pre>
+<blockquote>
+<p><code>implements</code> &#x7684;&#x7EE7;&#x627F;&#x5217;&#x8868;&#x4E5F; <strong>&#x53EF;&#x4EE5;</strong> &#x5206;&#x6210;&#x591A;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EE7;&#x627F;&#x63A5;&#x53E3;&#x540D;&#x79F0;&#x90FD; <strong>&#x5FC5;&#x987B;</strong> &#x5206;&#x5F00;&#x72EC;&#x7ACB;&#x6210;&#x884C;&#xFF0C;&#x5305;&#x62EC;&#x7B2C;&#x4E00;&#x4E2A;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Vendor</span>\<span class="hljs-title">Package</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">FooClass</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">BarClass</span> <span class="hljs-title">as</span> <span class="hljs-title">Bar</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">OtherVendor</span>\<span class="hljs-title">OtherPackage</span>\<span class="hljs-title">BazClass</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ParentClassName</span> <span class="hljs-keyword">implements</span>
+    \<span class="hljs-title">ArrayAccess</span>,
+    \<span class="hljs-title">Countable</span>,
+    \<span class="hljs-title">Serializable</span>
+</span>{
+}
+</code></pre>
+<h3 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h3>
+<blockquote>
+<p>&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x90FD; <strong>&#x5FC5;&#x987B;</strong> &#x6DFB;&#x52A0;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x3002;</p>
+<p><strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57; <code>var</code> &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x6BCF;&#x6761;&#x8BED;&#x53E5; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x5B9A;&#x4E49;&#x8D85;&#x8FC7;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x3002;</p>
+<p><strong>&#x4E0D;&#x8BE5;</strong> &#x4F7F;&#x7528;&#x4E0B;&#x5212;&#x7EBF;&#x4F5C;&#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x6765;&#x533A;&#x5206;&#x5C5E;&#x6027;&#x662F; <code>protected</code> &#x6216; <code>private</code> &#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Vendor</span>\<span class="hljs-title">Package</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test property.
+     *
+     * <span class="hljs-doctag">@var</span> null
+     */</span>
+    <span class="hljs-keyword">public</span> $foo = <span class="hljs-keyword">null</span>;
+}
+</code></pre>
+<h3 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</h3>
+<blockquote>
+<p>&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x90FD; <strong>&#x5FC5;&#x987B;</strong> &#x6DFB;&#x52A0;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x3002;</p>
+<p><strong>&#x4E0D;&#x8BE5;</strong> &#x4F7F;&#x7528;&#x4E0B;&#x5212;&#x7EBF;&#x4F5C;&#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x6765;&#x533A;&#x5206;&#x65B9;&#x6CD5;&#x662F; <code>protected</code> &#x6216; <code>private</code> &#x3002;</p>
+<p>&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x540E; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x7A7A;&#x683C;&#x7B26;&#xFF0C;&#x5176;&#x5F00;&#x59CB;&#x82B1;&#x62EC;&#x53F7; <strong>&#x5FC5;&#x987B;</strong> &#x72EC;&#x5360;&#x4E00;&#x884C;&#xFF0C;&#x7ED3;&#x675F;&#x82B1;&#x62EC;&#x53F7;&#x4E5F; <strong>&#x5FC5;&#x987B;</strong> &#x5728;&#x65B9;&#x6CD5;&#x4E3B;&#x4F53;&#x540E;&#x5355;&#x72EC;&#x6210;&#x4E00;&#x884C;&#x3002;&#x53C2;&#x6570;&#x5DE6;&#x62EC;&#x53F7;&#x540E;&#x548C;&#x53F3;&#x62EC;&#x53F7;&#x524D; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x7A7A;&#x683C;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Vendor</span>\<span class="hljs-title">Package</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test method.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">methodName</span><span class="hljs-params">()</span>
+    </span>{
+    }
+}
+</code></pre>
+<h3 id="&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;">&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;</h3>
+<blockquote>
+<p>&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x9017;&#x53F7;&#x540E;&#x9762; <strong>&#x5FC5;&#x987B;</strong> &#x8981;&#x6709;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x800C;&#x9017;&#x53F7;&#x524D;&#x9762; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x7A7A;&#x683C;&#x3002;</p>
+<p>&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x53C2;&#x6570;&#xFF0C; <strong>&#x5FC5;&#x987B;</strong> &#x653E;&#x5230;&#x53C2;&#x6570;&#x5217;&#x8868;&#x7684;&#x672B;&#x5C3E;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Vendor</span>\<span class="hljs-title">Package</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test method.
+     *
+     * <span class="hljs-doctag">@param</span>  mixed  $arg1
+     * <span class="hljs-doctag">@param</span>  mixed  $arg2
+     * <span class="hljs-doctag">@param</span>  array  $arg3
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">methodName</span><span class="hljs-params">($arg1, $arg2, $arg3 = [])</span>
+    </span>{
+    }
+}
+</code></pre>
+<blockquote>
+<p>&#x53C2;&#x6570;&#x5217;&#x8868; <strong>&#x53EF;&#x4EE5;</strong> &#x5206;&#x5217;&#x6210;&#x591A;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x5305;&#x62EC;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5728;&#x5185;&#x7684;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x90FD; <strong>&#x5FC5;&#x987B;</strong> &#x5355;&#x72EC;&#x6210;&#x884C;&#x3002;</p>
+<p>&#x62C6;&#x5206;&#x6210;&#x591A;&#x884C;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#x540E;&#xFF0C;&#x7ED3;&#x675F;&#x62EC;&#x53F7;&#x4EE5;&#x53CA;&#x65B9;&#x6CD5;&#x5F00;&#x59CB;&#x82B1;&#x62EC;&#x53F7; <strong>&#x5FC5;&#x987B;</strong> &#x5199;&#x5728;&#x540C;&#x4E00;&#x884C;&#xFF0C;&#x4E2D;&#x95F4;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Vendor</span>\<span class="hljs-title">Package</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test method.
+     *
+     * <span class="hljs-doctag">@param</span>  mixed  $arg1
+     * <span class="hljs-doctag">@param</span>  mixed  $arg2
+     * <span class="hljs-doctag">@param</span>  array  $arg3
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">methodName</span><span class="hljs-params">(
+        $arg1,
+        $arg2,
+        $arg3 = []
+    )</span> </span>{
+    }
+}
+</code></pre>
+<h3 id="abstract-&#x548C;-final-&#x548C;-static">abstract &#x548C; final &#x548C; static</h3>
+<blockquote>
+<p>&#x9700;&#x8981;&#x6DFB;&#x52A0; <code>abstract</code> &#x6216; <code>final</code> &#x58F0;&#x660E;&#x65F6;&#xFF0C; <strong>&#x5FC5;&#x987B;</strong> &#x5199;&#x5728;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x524D;&#xFF0C;&#x800C; <code>static</code> &#x5219; <strong>&#x5FC5;&#x987B;</strong> &#x5199;&#x5728;&#x5176;&#x540E;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Vendor</span>\<span class="hljs-title">Package</span>;
+
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test property.
+     *
+     * <span class="hljs-doctag">@var</span> null
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">static</span> $foo = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-comment">/**
+     * Just an abstract method.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span></span>;
+
+    <span class="hljs-comment">/**
+     * Just a test method.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span><span class="hljs-params">()</span>
+    </span>{
+    }
+}
+</code></pre>
+<h3 id="&#x65B9;&#x6CD5;&#x53CA;&#x51FD;&#x6570;&#x8C03;&#x7528;">&#x65B9;&#x6CD5;&#x53CA;&#x51FD;&#x6570;&#x8C03;&#x7528;</h3>
+<blockquote>
+<p>&#x65B9;&#x6CD5;&#x53CA;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x65B9;&#x6CD5;&#x540D;&#x6216;&#x51FD;&#x6570;&#x540D;&#x4E0E;&#x53C2;&#x6570;&#x5DE6;&#x62EC;&#x53F7;&#x4E4B;&#x95F4; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x53C2;&#x6570;&#x53F3;&#x62EC;&#x53F7;&#x524D;&#x4E5F; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x7A7A;&#x683C;&#x3002;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x524D; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x4F46;&#x5176;&#x540E; <strong>&#x5FC5;&#x987B;</strong> &#x6709;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+foo();
+$foo-&gt;bar($arg1);
+Foo::bar($arg2, $arg3);
+</code></pre>
+<blockquote>
+<p>&#x53C2;&#x6570; <strong>&#x53EF;&#x4EE5;</strong> &#x5206;&#x5217;&#x6210;&#x591A;&#x884C;&#xFF0C;&#x6B64;&#x65F6;&#x5305;&#x62EC;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5728;&#x5185;&#x7684;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x90FD; <strong>&#x5FC5;&#x987B;</strong> &#x5355;&#x72EC;&#x6210;&#x884C;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+$foo-&gt;bar(
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+);
+</code></pre>
+<h2 id="&#x63A7;&#x5236;&#x7ED3;&#x6784;">&#x63A7;&#x5236;&#x7ED3;&#x6784;</h2>
+<h3 id="if-&#x548C;-elseif-&#x548C;-else">if &#x548C; elseif &#x548C; else</h3>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">if</span> ($expr1) {
+} <span class="hljs-keyword">elseif</span> ($expr2) {
+} <span class="hljs-keyword">else</span> {
+}
+</code></pre>
+<h3 id="switch-&#x548C;-case">switch &#x548C; case</h3>
+<blockquote>
+<p><code>case</code> &#x8BED;&#x53E5; <strong>&#x5FC5;&#x987B;</strong> &#x76F8;&#x5BF9; <code>switch</code> &#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x7F29;&#x8FDB;&#xFF0C;&#x800C; <code>break</code> &#x8BED;&#x53E5;&#x4EE5;&#x53CA; <code>case</code> &#x5185;&#x7684;&#x5176;&#x5B83;&#x8BED;&#x53E5;&#x90FD; <strong>&#x5FC5;&#x987B;</strong> &#x76F8;&#x5BF9; <code>case</code> &#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x7F29;&#x8FDB;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5B58;&#x5728;&#x975E;&#x7A7A;&#x7684; <code>case</code> &#x8BED;&#x53E5;&#xFF0C;&#x4E3B;&#x4F53;&#x91CC; <strong>&#x5FC5;&#x987B;</strong> &#x6709;&#x7C7B;&#x4F3C; <code>// no break</code> &#x7684;&#x6CE8;&#x91CA;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">switch</span> ($expr) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-number">1</span>;
+        <span class="hljs-comment">// no break</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-number">4</span>;
+        <span class="hljs-keyword">return</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&apos;default&apos;</span>;
+        <span class="hljs-keyword">break</span>;
+}
+</code></pre>
+<h3 id="while-&#x548C;-do-while">while &#x548C; do-while</h3>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">while</span> ($expr) {
+}
+</code></pre>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">do</span> {
+} <span class="hljs-keyword">while</span> ($expr);
+</code></pre>
+<h3 id="for">for</h3>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">for</span> ($i = <span class="hljs-number">0</span>; $i &lt; <span class="hljs-number">10</span>; $i++) {
+}
+</code></pre>
+<h3 id="foreach">foreach</h3>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">foreach</span> ($iterable <span class="hljs-keyword">as</span> $key =&gt; $value) {
+}
+</code></pre>
+<h3 id="try-&#x548C;-catch">try &#x548C; catch</h3>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">try</span> {
+} <span class="hljs-keyword">catch</span> (FirstExceptionType $e) {
+} <span class="hljs-keyword">catch</span> (OtherExceptionType $e) {
+}
+</code></pre>
+<h2 id="&#x95ED;&#x5305;">&#x95ED;&#x5305;</h2>
+<blockquote>
+<p>&#x95ED;&#x5305;&#x58F0;&#x660E;&#x65F6;&#xFF0C;&#x5173;&#x952E;&#x8BCD; <code>function</code> &#x540E;&#x4EE5;&#x53CA;&#x5173;&#x952E;&#x8BCD; <code>use</code> &#x7684;&#x524D;&#x540E;&#x90FD; <strong>&#x5FC5;&#x987B;</strong> &#x8981;&#x6709;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x3002;</p>
+<p>&#x5F00;&#x59CB;&#x82B1;&#x62EC;&#x53F7; <strong>&#x5FC5;&#x987B;</strong> &#x5199;&#x5728;&#x58F0;&#x660E;&#x7684;&#x540C;&#x4E00;&#x884C;&#xFF0C;&#x7ED3;&#x675F;&#x82B1;&#x62EC;&#x53F7; <strong>&#x5FC5;&#x987B;</strong> &#x7D27;&#x8DDF;&#x4E3B;&#x4F53;&#x7ED3;&#x675F;&#x7684;&#x4E0B;&#x4E00;&#x884C;&#x3002;</p>
+<p>&#x53C2;&#x6570;&#x5217;&#x8868;&#x548C;&#x53D8;&#x91CF;&#x5217;&#x8868;&#x7684;&#x5DE6;&#x62EC;&#x53F7;&#x540E;&#x4EE5;&#x53CA;&#x53F3;&#x62EC;&#x53F7;&#x524D;&#xFF0C; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x7A7A;&#x683C;&#x3002;</p>
+<p>&#x53C2;&#x6570;&#x548C;&#x53D8;&#x91CF;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x9017;&#x53F7;&#x524D; <strong>&#x4E00;&#x5B9A;&#x4E0D;&#x53EF;</strong> &#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x800C;&#x9017;&#x53F7;&#x540E; <strong>&#x5FC5;&#x987B;</strong> &#x8981;&#x6709;&#x7A7A;&#x683C;&#x3002;</p>
+<p>&#x95ED;&#x5305;&#x4E2D;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x53C2;&#x6570; <strong>&#x5FC5;&#x987B;</strong> &#x653E;&#x5230;&#x5217;&#x8868;&#x7684;&#x540E;&#x9762;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">/**
+ * Just a test function.
+ *
+ * <span class="hljs-doctag">@param</span>  mixed $arg1
+ * <span class="hljs-doctag">@param</span>  mixed $arg2
+ * <span class="hljs-doctag">@return</span> void
+ */</span>
+$closureWithArgs = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($arg1, $arg2)</span> </span>{
+};
+
+<span class="hljs-comment">/**
+ * Just a test function.
+ *
+ * <span class="hljs-doctag">@param</span>  mixed $arg1
+ * <span class="hljs-doctag">@param</span>  mixed $arg2
+ * <span class="hljs-doctag">@return</span> void
+ */</span>
+$closureWithArgsAndVars = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($arg1, $arg2)</span> <span class="hljs-title">use</span> <span class="hljs-params">($var1, $var2)</span> </span>{
+};
+</code></pre>
+<blockquote>
+<p>&#x53C2;&#x6570;&#x5217;&#x8868;&#x4EE5;&#x53CA;&#x53D8;&#x91CF;&#x5217;&#x8868; <strong>&#x53EF;&#x4EE5;</strong> &#x5206;&#x6210;&#x591A;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#xFF0C;&#x5305;&#x62EC;&#x7B2C;&#x4E00;&#x4E2A;&#x5728;&#x5185;&#x7684;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x6216;&#x53D8;&#x91CF;&#x90FD; <strong>&#x5FC5;&#x987B;</strong> &#x5355;&#x72EC;&#x6210;&#x884C;&#xFF0C;&#x800C;&#x5217;&#x8868;&#x7684;&#x53F3;&#x62EC;&#x53F7;&#x4E0E;&#x95ED;&#x5305;&#x7684;&#x5F00;&#x59CB;&#x82B1;&#x62EC;&#x53F7; <strong>&#x5FC5;&#x987B;</strong> &#x653E;&#x5728;&#x540C;&#x4E00;&#x884C;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">/**
+ * Just a test function.
+ *
+ * <span class="hljs-doctag">@param</span>  mixed $longArgument
+ * <span class="hljs-doctag">@param</span>  mixed $longerArgument
+ * <span class="hljs-doctag">@param</span>  mixed $muchLongerArgument
+ * <span class="hljs-doctag">@return</span> void
+ */</span>
+$longArgs_noVars = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+)</span> </span>{
+};
+
+<span class="hljs-comment">/**
+ * Just a test function.
+ *
+ * <span class="hljs-doctag">@param</span>  void
+ * <span class="hljs-doctag">@return</span> void
+ */</span>
+$noArgs_longVars = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> <span class="hljs-title">use</span> <span class="hljs-params">(
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+)</span> </span>{
+};
+
+<span class="hljs-comment">/**
+ * Just a test function.
+ *
+ * <span class="hljs-doctag">@param</span>  mixed $longArgument
+ * <span class="hljs-doctag">@param</span>  mixed $longerArgument
+ * <span class="hljs-doctag">@param</span>  mixed $muchLongerArgument
+ * <span class="hljs-doctag">@return</span> void
+ */</span>
+$longArgs_longVars = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+)</span> <span class="hljs-title">use</span> <span class="hljs-params">(
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+)</span> </span>{
+};
+
+<span class="hljs-comment">/**
+ * Just a test function.
+ *
+ * <span class="hljs-doctag">@param</span>  mixed $longArgument
+ * <span class="hljs-doctag">@param</span>  mixed $longerArgument
+ * <span class="hljs-doctag">@param</span>  mixed $muchLongerArgument
+ * <span class="hljs-doctag">@return</span> void
+ */</span>
+$longArgs_shortVars = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+)</span> <span class="hljs-title">use</span> <span class="hljs-params">($var)</span> </span>{
+};
+
+<span class="hljs-comment">/**
+ * Just a test function.
+ *
+ * <span class="hljs-doctag">@param</span>  mixed $arg
+ * <span class="hljs-doctag">@return</span> void
+ */</span>
+$shortArgs_longVars = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($arg)</span> <span class="hljs-title">use</span> <span class="hljs-params">(
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+)</span> </span>{
+};
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x95ED;&#x5305;&#x88AB;&#x76F4;&#x63A5;&#x7528;&#x4F5C;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x4EE5;&#x4E0A;&#x89C4;&#x5219;&#x4ECD;&#x7136;&#x9002;&#x7528;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">declare</span>(strict_types = <span class="hljs-number">1</span>);
+
+$foo-&gt;bar(
+    $arg1,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($arg2)</span> <span class="hljs-title">use</span> <span class="hljs-params">($var)</span> </span>{
+    },
+    $arg3
+);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="PSR-1 基础编码规范.html" class="navigation navigation-prev " aria-label="Previous page: PSR-1 基础编码规范">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="PSR-4 自动加载规范.html" class="navigation navigation-next " aria-label="Next page: PSR-4 自动加载规范">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"PSR-2 编码风格规范","level":"1.1.2.2","depth":3,"next":{"title":"PSR-4 自动加载规范","level":"1.1.2.3","depth":3,"path":"docs/PSR/PSR-4 自动加载规范.md","ref":"docs/PSR/PSR-4 自动加载规范.md","articles":[]},"previous":{"title":"PSR-1 基础编码规范","level":"1.1.2.1","depth":3,"path":"docs/PSR/PSR-1 基础编码规范.md","ref":"docs/PSR/PSR-1 基础编码规范.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Notes","language":"zh-hans","gitbook":">=3.0.0","description":"笔记","direction":"ltr"},"file":{"path":"docs/PSR/PSR-2 编码风格规范.md","mtime":"2019-04-16T18:07:32.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T06:12:47.124Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

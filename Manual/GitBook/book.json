@@ -1,0 +1,14 @@
+{
+    "root": "",
+    "structure": {
+        "readme": "README.md",
+        "summary": "SUMMARY.md"
+    },
+    "title": "GitBook",
+    "description": "GitBook 教程",
+    "author": "Kuriv Vesti",
+    "isbn": "",
+    "language": "zh-hans",
+    "direction": "ltr",
+    "gitbook": ">=3.0.0"
+}
