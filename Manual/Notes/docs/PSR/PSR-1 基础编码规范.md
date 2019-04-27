@@ -30,8 +30,6 @@
 ```php
 <?php
 
-declare(strict_types = 1);
-
 //
 ini_set('display_errors', '1');
 
@@ -57,8 +55,6 @@ function foo()
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 /**
  * Just a test function.
@@ -95,8 +91,6 @@ if (!function_exists('bar')) {
 ```php
 <?php
 
-declare(strict_types = 1);
-
 namespace Vendor\Package;
 
 class StudlyCaps
@@ -113,8 +107,6 @@ class StudlyCaps
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 namespace Vendor\Package;
 

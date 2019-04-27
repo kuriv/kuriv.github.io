@@ -74,8 +74,6 @@
 ```php
 <?php
 
-declare(strict_types = 1);
-
 namespace Vendor\Package;
 
 use FooClass;
@@ -95,8 +93,6 @@ use OtherVendor\OtherPackage\BazClass;
 ```php
 <?php
 
-declare(strict_types = 1);
-
 namespace Vendor\Package;
 
 use FooClass;
@@ -113,8 +109,6 @@ class ClassName extends ParentClassName implements \ArrayAccess, \Countable
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 namespace Vendor\Package;
 
@@ -144,8 +138,6 @@ class ClassName extends ParentClassName implements
 ```php
 <?php
 
-declare(strict_types = 1);
-
 namespace Vendor\Package;
 
 class ClassName
@@ -153,9 +145,9 @@ class ClassName
     /**
      * Just a test property.
      *
-     * @var null
+     * @var NULL
      */
-    public $foo = null;
+    public $propertyName = null;
 }
 
 ```
@@ -170,8 +162,6 @@ class ClassName
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 namespace Vendor\Package;
 
@@ -199,8 +189,6 @@ class ClassName
 ```php
 <?php
 
-declare(strict_types = 1);
-
 namespace Vendor\Package;
 
 class ClassName
@@ -226,8 +214,6 @@ class ClassName
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 namespace Vendor\Package;
 
@@ -258,8 +244,6 @@ class ClassName
 ```php
 <?php
 
-declare(strict_types = 1);
-
 namespace Vendor\Package;
 
 abstract class ClassName
@@ -267,9 +251,9 @@ abstract class ClassName
     /**
      * Just a test property.
      *
-     * @var null
+     * @var NULL
      */
-    protected static $foo = null;
+    protected static $propertyName = null;
 
     /**
      * Just an abstract method.
@@ -277,7 +261,7 @@ abstract class ClassName
      * @param  void
      * @return void
      */
-    abstract protected function foo();
+    abstract protected function methodName();
 
     /**
      * Just a test method.
@@ -285,7 +269,7 @@ abstract class ClassName
      * @param  void
      * @return void
      */
-    final public static function bar()
+    final public static function anotherMethodName()
     {
     }
 }
@@ -299,8 +283,6 @@ abstract class ClassName
 ```php
 <?php
 
-declare(strict_types = 1);
-
 foo();
 $foo->bar($arg1);
 Foo::bar($arg2, $arg3);
@@ -311,8 +293,6 @@ Foo::bar($arg2, $arg3);
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 $foo->bar(
     $longArgument,
@@ -329,8 +309,6 @@ $foo->bar(
 ```php
 <?php
 
-declare(strict_types = 1);
-
 if ($expr1) {
 } elseif ($expr2) {
 } else {
@@ -346,8 +324,6 @@ if ($expr1) {
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 switch ($expr) {
     case 0:
@@ -373,8 +349,6 @@ switch ($expr) {
 ```php
 <?php
 
-declare(strict_types = 1);
-
 while ($expr) {
 }
 
@@ -382,8 +356,6 @@ while ($expr) {
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 do {
 } while ($expr);
@@ -395,8 +367,6 @@ do {
 ```php
 <?php
 
-declare(strict_types = 1);
-
 for ($i = 0; $i < 10; $i++) {
 }
 
@@ -407,8 +377,6 @@ for ($i = 0; $i < 10; $i++) {
 ```php
 <?php
 
-declare(strict_types = 1);
-
 foreach ($iterable as $key => $value) {
 }
 
@@ -418,8 +386,6 @@ foreach ($iterable as $key => $value) {
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 try {
 } catch (FirstExceptionType $e) {
@@ -442,8 +408,6 @@ try {
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 /**
  * Just a test function.
@@ -471,8 +435,6 @@ $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 /**
  * Just a test function.
@@ -555,8 +517,6 @@ $shortArgs_longVars = function ($arg) use (
 
 ```php
 <?php
-
-declare(strict_types = 1);
 
 $foo->bar(
     $arg1,
