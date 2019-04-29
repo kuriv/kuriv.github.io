@@ -1,0 +1,1209 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>来自 PHP 之外的变量 · PHP</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Kuriv Vesti">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../常量.html" />
+    
+    
+    <link rel="prev" href="可变变量.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    PHP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../语言参考.html">
+            
+                <a href="../../语言参考.html">
+            
+                    
+                    语言参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="../基本语法.html">
+            
+                <a href="../基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1.1" data-path="../基本语法/PHP 标记.html">
+            
+                <a href="../基本语法/PHP 标记.html">
+            
+                    
+                    PHP 标记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.1.2" data-path="../基本语法/从 HTML 中分离.html">
+            
+                <a href="../基本语法/从 HTML 中分离.html">
+            
+                    
+                    从 HTML 中分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.1.3" data-path="../基本语法/指令分隔符.html">
+            
+                <a href="../基本语法/指令分隔符.html">
+            
+                    
+                    指令分隔符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.1.4" data-path="../基本语法/注释.html">
+            
+                <a href="../基本语法/注释.html">
+            
+                    
+                    注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="../类型.html">
+            
+                <a href="../类型.html">
+            
+                    
+                    类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.2.1" data-path="../类型/Boolean 布尔类型.html">
+            
+                <a href="../类型/Boolean 布尔类型.html">
+            
+                    
+                    Boolean 布尔类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.2" data-path="../类型/Integer 整型.html">
+            
+                <a href="../类型/Integer 整型.html">
+            
+                    
+                    Integer 整型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.3" data-path="../类型/Float 浮点型.html">
+            
+                <a href="../类型/Float 浮点型.html">
+            
+                    
+                    Float 浮点型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.4" data-path="../类型/String 字符串.html">
+            
+                <a href="../类型/String 字符串.html">
+            
+                    
+                    String 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.5" data-path="../类型/Array 数组.html">
+            
+                <a href="../类型/Array 数组.html">
+            
+                    
+                    Array 数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.6" data-path="../类型/Object 对象.html">
+            
+                <a href="../类型/Object 对象.html">
+            
+                    
+                    Object 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.7" data-path="../类型/Resource 资源类型.html">
+            
+                <a href="../类型/Resource 资源类型.html">
+            
+                    
+                    Resource 资源类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.8" data-path="../类型/NULL.html">
+            
+                <a href="../类型/NULL.html">
+            
+                    
+                    NULL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.9" data-path="../类型/Callable 可调用类型.html">
+            
+                <a href="../类型/Callable 可调用类型.html">
+            
+                    
+                    Callable 可调用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2.10" data-path="../类型/类型转换的判别.html">
+            
+                <a href="../类型/类型转换的判别.html">
+            
+                    
+                    类型转换的判别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="../变量.html">
+            
+                <a href="../变量.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.3.1" data-path="基本语法.html">
+            
+                <a href="基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3.2" data-path="变量范围.html">
+            
+                <a href="变量范围.html">
+            
+                    
+                    变量范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3.3" data-path="可变变量.html">
+            
+                <a href="可变变量.html">
+            
+                    
+                    可变变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.1.3.4" data-path="来自 PHP 之外的变量.html">
+            
+                <a href="来自 PHP 之外的变量.html">
+            
+                    
+                    来自 PHP 之外的变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4" data-path="../常量.html">
+            
+                <a href="../常量.html">
+            
+                    
+                    常量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.4.1" data-path="../常量/基本语法.html">
+            
+                <a href="../常量/基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4.2" data-path="../常量/魔术常量.html">
+            
+                <a href="../常量/魔术常量.html">
+            
+                    
+                    魔术常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.5" data-path="../表达式.html">
+            
+                <a href="../表达式.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6" data-path="../运算符.html">
+            
+                <a href="../运算符.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.6.1" data-path="../运算符/运算符优先级.html">
+            
+                <a href="../运算符/运算符优先级.html">
+            
+                    
+                    运算符优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.2" data-path="../运算符/算数运算符.html">
+            
+                <a href="../运算符/算数运算符.html">
+            
+                    
+                    算数运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.3" data-path="../运算符/赋值运算符.html">
+            
+                <a href="../运算符/赋值运算符.html">
+            
+                    
+                    赋值运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.4" data-path="../运算符/位运算符.html">
+            
+                <a href="../运算符/位运算符.html">
+            
+                    
+                    位运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.5" data-path="../运算符/比较运算符.html">
+            
+                <a href="../运算符/比较运算符.html">
+            
+                    
+                    比较运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.6" data-path="../运算符/错误控制运算符.html">
+            
+                <a href="../运算符/错误控制运算符.html">
+            
+                    
+                    错误控制运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.7" data-path="../运算符/执行运算符.html">
+            
+                <a href="../运算符/执行运算符.html">
+            
+                    
+                    执行运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.8" data-path="../运算符/递增递减运算符.html">
+            
+                <a href="../运算符/递增递减运算符.html">
+            
+                    
+                    递增递减运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.9" data-path="../运算符/逻辑运算符.html">
+            
+                <a href="../运算符/逻辑运算符.html">
+            
+                    
+                    逻辑运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.10" data-path="../运算符/字符串运算符.html">
+            
+                <a href="../运算符/字符串运算符.html">
+            
+                    
+                    字符串运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.11" data-path="../运算符/数组运算符.html">
+            
+                <a href="../运算符/数组运算符.html">
+            
+                    
+                    数组运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6.12" data-path="../运算符/类型运算符.html">
+            
+                <a href="../运算符/类型运算符.html">
+            
+                    
+                    类型运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7" data-path="../流程控制.html">
+            
+                <a href="../流程控制.html">
+            
+                    
+                    流程控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.7.1" data-path="../流程控制/if.html">
+            
+                <a href="../流程控制/if.html">
+            
+                    
+                    if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.2" data-path="../流程控制/else.html">
+            
+                <a href="../流程控制/else.html">
+            
+                    
+                    else
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.3" data-path="../流程控制/elseif.html">
+            
+                <a href="../流程控制/elseif.html">
+            
+                    
+                    elseif
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.4" data-path="../流程控制/while.html">
+            
+                <a href="../流程控制/while.html">
+            
+                    
+                    while
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.5" data-path="../流程控制/do-while.html">
+            
+                <a href="../流程控制/do-while.html">
+            
+                    
+                    do-while
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.6" data-path="../流程控制/for.html">
+            
+                <a href="../流程控制/for.html">
+            
+                    
+                    for
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.7" data-path="../流程控制/foreach.html">
+            
+                <a href="../流程控制/foreach.html">
+            
+                    
+                    foreach
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.8" data-path="../流程控制/switch.html">
+            
+                <a href="../流程控制/switch.html">
+            
+                    
+                    switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.9" data-path="../流程控制/break.html">
+            
+                <a href="../流程控制/break.html">
+            
+                    
+                    break
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.10" data-path="../流程控制/continue.html">
+            
+                <a href="../流程控制/continue.html">
+            
+                    
+                    continue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.11" data-path="../流程控制/流程控制的替代语法.html">
+            
+                <a href="../流程控制/流程控制的替代语法.html">
+            
+                    
+                    流程控制的替代语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.12" data-path="../流程控制/declare.html">
+            
+                <a href="../流程控制/declare.html">
+            
+                    
+                    declare
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.13" data-path="../流程控制/return.html">
+            
+                <a href="../流程控制/return.html">
+            
+                    
+                    return
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.14" data-path="../流程控制/require.html">
+            
+                <a href="../流程控制/require.html">
+            
+                    
+                    require
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.15" data-path="../流程控制/include.html">
+            
+                <a href="../流程控制/include.html">
+            
+                    
+                    include
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.16" data-path="../流程控制/require_once.html">
+            
+                <a href="../流程控制/require_once.html">
+            
+                    
+                    require_once
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.17" data-path="../流程控制/include_once.html">
+            
+                <a href="../流程控制/include_once.html">
+            
+                    
+                    include_once
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.7.18" data-path="../流程控制/goto.html">
+            
+                <a href="../流程控制/goto.html">
+            
+                    
+                    goto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8" data-path="../函数.html">
+            
+                <a href="../函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.8.1" data-path="../函数/用户自定义函数.html">
+            
+                <a href="../函数/用户自定义函数.html">
+            
+                    
+                    用户自定义函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8.2" data-path="../函数/函数的参数.html">
+            
+                <a href="../函数/函数的参数.html">
+            
+                    
+                    函数的参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8.3" data-path="../函数/返回值.html">
+            
+                <a href="../函数/返回值.html">
+            
+                    
+                    返回值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8.4" data-path="../函数/可变函数.html">
+            
+                <a href="../函数/可变函数.html">
+            
+                    
+                    可变函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.8.5" data-path="../函数/匿名函数.html">
+            
+                <a href="../函数/匿名函数.html">
+            
+                    
+                    匿名函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >来自 PHP 之外的变量</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6765;&#x81EA;-php-&#x4E4B;&#x5916;&#x7684;&#x53D8;&#x91CF;">&#x6765;&#x81EA; PHP &#x4E4B;&#x5916;&#x7684;&#x53D8;&#x91CF;</h1>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x7ED9; PHP &#x811A;&#x672C;&#x65F6;&#xFF0C;&#x8868;&#x5355;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x4F1A;&#x81EA;&#x52A8;&#x5728;&#x811A;&#x672C;&#x4E2D;&#x53EF;&#x7528;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-cmn-Hans&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;example.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;&#x7684; <code>example.php</code> &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump($_POST[<span class="hljs-string">&apos;username&apos;</span>], $_POST[<span class="hljs-string">&apos;password&apos;</span>]);
+</code></pre>
+<p>&#x53D8;&#x91CF;&#x540D;&#x4E2D;&#x7684;&#x70B9;&#x548C;&#x7A7A;&#x683C;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x4E0B;&#x5212;&#x7EBF;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-cmn-Hans&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;example.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;info.username&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;info password&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;&#x7684; <code>example.php</code> &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump($_POST[<span class="hljs-string">&apos;info_username&apos;</span>], $_POST[<span class="hljs-string">&apos;info_password&apos;</span>]);
+</code></pre>
+<p>PHP &#x4E5F;&#x61C2;&#x5F97;&#x8868;&#x5355;&#x53D8;&#x91CF;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x4F8B;&#x5982;&#x53EF;&#x4EE5;&#x5C06;&#x76F8;&#x5173;&#x7684;&#x53D8;&#x91CF;&#x7F16;&#x6210;&#x7EC4;&#xFF0C;&#x6216;&#x8005;&#x7528;&#x6B64;&#x7279;&#x6027;&#x4ECE;&#x591A;&#x9009;&#x8F93;&#x5165;&#x6846;&#x4E2D;&#x53D6;&#x5F97;&#x503C;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-cmn-Hans&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;example.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;info[username]&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;info[password]&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;option[]&quot;</span> <span class="hljs-attr">multiple</span>=<span class="hljs-string">&quot;multiple&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;4&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;&#x7684; <code>example.php</code> &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump($_POST[<span class="hljs-string">&apos;info&apos;</span>], $_POST[<span class="hljs-string">&apos;option&apos;</span>]);
+</code></pre>
+<p>&#x5F53;&#x63D0;&#x4EA4;&#x8868;&#x5355;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x5E45;&#x56FE;&#x50CF;&#x4EE3;&#x66FF;&#x6807;&#x51C6;&#x7684;&#x63D0;&#x4EA4;&#x6309;&#x94AE;&#x3002;&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x5230;&#x56FE;&#x50CF;&#x4E2D;&#x7684;&#x67D0;&#x5904;&#x65F6;&#xFF0C;&#x76F8;&#x5E94;&#x7684;&#x8868;&#x5355;&#x4F1A;&#x88AB;&#x4F20;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E76;&#x52A0;&#x4E0A;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5B83;&#x4EEC;&#x5305;&#x542B;&#x4E86;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x56FE;&#x50CF;&#x7684;&#x5750;&#x6807;&#x3002;&#x6709;&#x7ECF;&#x9A8C;&#x7684;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x4F1A;&#x6CE8;&#x610F;&#x5230;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x7684;&#x5B9E;&#x9645;&#x53D8;&#x91CF;&#x540D;&#x5305;&#x542B;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x70B9;&#x800C;&#x4E0D;&#x662F;&#x4E0B;&#x5212;&#x7EBF;&#xFF0C;&#x4F46; PHP &#x81EA;&#x52A8;&#x5C06;&#x70B9;&#x8F6C;&#x6362;&#x6210;&#x4E86;&#x4E0B;&#x5212;&#x7EBF;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh-cmn-Hans&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;example.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;image&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://github.com/fluidicon.png&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;&#x7684; <code>example.php</code> &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump($_POST[<span class="hljs-string">&apos;image_x&apos;</span>], $_POST[<span class="hljs-string">&apos;image_y&apos;</span>]);
+</code></pre>
+<p>PHP &#x900F;&#x660E;&#x5730;&#x652F;&#x6301; RFC 6265 &#x5B9A;&#x4E49;&#x4E2D;&#x7684; HTTP Cookie &#x3002; Cookie &#x662F;&#x4E00;&#x79CD;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E76;&#x80FD;&#x8FFD;&#x8E2A;&#x6216;&#x8BC6;&#x522B;&#x518D;&#x6B21;&#x8BBF;&#x95EE;&#x7684;&#x7528;&#x6237;&#x7684;&#x673A;&#x5236;&#x3002;&#x53EF;&#x4EE5;&#x7528; <code>setcookie()</code> &#x51FD;&#x6570;&#x8BBE;&#x5B9A; Cookie &#x3002; Cookie &#x662F; HTTP &#x4FE1;&#x606F;&#x5934;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x56E0;&#x6B64; <code>setcookie()</code> &#x51FD;&#x6570;&#x5FC5;&#x987B;&#x5728;&#x5411;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+setcookie(<span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;foo&apos;</span>, time() + <span class="hljs-number">60</span> * <span class="hljs-number">60</span>);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="可变变量.html" class="navigation navigation-prev " aria-label="Previous page: 可变变量">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../常量.html" class="navigation navigation-next " aria-label="Next page: 常量">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"来自 PHP 之外的变量","level":"1.1.1.3.4","depth":4,"next":{"title":"常量","level":"1.1.1.4","depth":3,"path":"docs/语言参考/常量.md","ref":"docs/语言参考/常量.md","articles":[{"title":"基本语法","level":"1.1.1.4.1","depth":4,"path":"docs/语言参考/常量/基本语法.md","ref":"docs/语言参考/常量/基本语法.md","articles":[]},{"title":"魔术常量","level":"1.1.1.4.2","depth":4,"path":"docs/语言参考/常量/魔术常量.md","ref":"docs/语言参考/常量/魔术常量.md","articles":[]}]},"previous":{"title":"可变变量","level":"1.1.1.3.3","depth":4,"path":"docs/语言参考/变量/可变变量.md","ref":"docs/语言参考/变量/可变变量.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/语言参考/变量/来自 PHP 之外的变量.md","mtime":"2019-04-29T10:46:00.564Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-29T15:10:50.105Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
