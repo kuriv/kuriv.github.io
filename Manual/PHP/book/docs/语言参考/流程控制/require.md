@@ -52,6 +52,7 @@ var_dump($foo);
 function foo(): string
 {
     require __DIR__ . '/example.php';
+
     return $foo;
 }
 

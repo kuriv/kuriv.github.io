@@ -1352,6 +1352,265 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5BF9;&#x8C61;&#x590D;&#x5236;">&#x5BF9;&#x8C61;&#x590D;&#x5236;</h1>
+<p>&#x5728;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x5B8C;&#x5168;&#x590D;&#x5236;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6765;&#x83B7;&#x5F97;&#x5176;&#x4E2D;&#x5C5E;&#x6027;&#x3002;&#x4F46;&#x6709;&#x4E00;&#x4E2A;&#x60C5;&#x51B5;&#x4E0B;&#x786E;&#x5B9E;&#x9700;&#x8981;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E00;&#x4E2A; GTK &#x7A97;&#x53E3;&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x6301;&#x6709;&#x7A97;&#x53E3;&#x76F8;&#x5173;&#x7684;&#x8D44;&#x6E90;&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x60F3;&#x590D;&#x5236;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7A97;&#x53E3;&#xFF0C;&#x4FDD;&#x6301;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x4E0E;&#x539F;&#x6765;&#x7684;&#x7A97;&#x53E3;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x56E0;&#x4E3A;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x4E2D;&#x7684;&#x6539;&#x53D8;&#x5C31;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#xFF09;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#x4FDD;&#x5B58;&#x7740;&#x7B2C;&#x4E8C;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5F53;&#x4F60;&#x590D;&#x5236;&#x7B2C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x4F60;&#x60F3;&#x4F7F;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x4E0D;&#x518D;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x5BF9;&#x8C61;&#x800C;&#x662F;&#x5B83;&#x7684;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5FC5;&#x987B;&#x5F97;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#x3002;&#x5BF9;&#x8C61;&#x590D;&#x5236;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>clone</code> &#x5173;&#x952E;&#x5B57;&#x6765;&#x5B8C;&#x6210;&#xFF08;&#x5982;&#x679C;&#x53EF;&#x80FD;&#xFF0C;&#x8FD9;&#x5C06;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#x7684; <code>__clone()</code> &#x65B9;&#x6CD5;&#xFF09;&#x3002;&#x5BF9;&#x8C61;&#x4E2D;&#x7684; <code>__clone()</code> &#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x88AB;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x3002;&#x5F53;&#x5BF9;&#x8C61;&#x88AB;&#x590D;&#x5236;&#x540E;&#xFF0C; PHP &#x4F1A;&#x5BF9;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x6D45;&#x590D;&#x5236;&#x3002;&#x6240;&#x6709;&#x7684;&#x5F15;&#x7528;&#x5C5E;&#x6027;&#x4ECD;&#x7136;&#x4F1A;&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x539F;&#x6765;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x5F15;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of cat.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * The age of cat.
+     *
+     * <span class="hljs-doctag">@var</span> int
+     */</span>
+    <span class="hljs-keyword">public</span> $age;
+
+    <span class="hljs-comment">/**
+     * Store the name and age.
+     *
+     * <span class="hljs-doctag">@param</span>  string $name
+     * <span class="hljs-doctag">@param</span>  int    $age
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(string $name, int $age)</span>
+    </span>{
+        $this-&gt;name = $name;
+        $this-&gt;age = $age;
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of dog.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * Store an instance of cat.
+     *
+     * <span class="hljs-doctag">@var</span> Cat
+     */</span>
+    <span class="hljs-keyword">public</span> $cat;
+}
+
+$spike = <span class="hljs-keyword">new</span> Dog;
+$spike-&gt;name = <span class="hljs-string">&apos;Spike&apos;</span>;
+$spike-&gt;cat = <span class="hljs-keyword">new</span> Cat(<span class="hljs-string">&apos;Tom&apos;</span>, <span class="hljs-number">6</span>);
+$tyke = <span class="hljs-keyword">clone</span> $spike;
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(Dog)#3 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+
+$tyke-&gt;name = <span class="hljs-string">&apos;Tyke&apos;</span>;
+$tyke-&gt;cat-&gt;age = <span class="hljs-number">2</span>;
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(2) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(Dog)#3 (2) { [&quot;name&quot;]=&gt; string(4) &quot;Tyke&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(2) } }</span>
+</code></pre>
+<p>&#x5F53;&#x590D;&#x5236;&#x5B8C;&#x6210;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86; <code>__clone()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x590D;&#x5236;&#x751F;&#x6210;&#x7684;&#x5BF9;&#x8C61;&#xFF09;&#x4E2D;&#x7684; <code>__clone()</code> &#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4FEE;&#x6539;&#x5C5E;&#x6027;&#x7684;&#x503C;&#xFF08;&#x5982;&#x679C;&#x6709;&#x5FC5;&#x8981;&#x7684;&#x8BDD;&#xFF09;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of cat.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * The age of cat.
+     *
+     * <span class="hljs-doctag">@var</span> int
+     */</span>
+    <span class="hljs-keyword">public</span> $age;
+
+    <span class="hljs-comment">/**
+     * Store the name and age.
+     *
+     * <span class="hljs-doctag">@param</span>  string $name
+     * <span class="hljs-doctag">@param</span>  int    $age
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(string $name, int $age)</span>
+    </span>{
+        $this-&gt;name = $name;
+        $this-&gt;age = $age;
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of dog.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * Store an instance of cat.
+     *
+     * <span class="hljs-doctag">@var</span> Cat
+     */</span>
+    <span class="hljs-keyword">public</span> $cat;
+
+    <span class="hljs-comment">/**
+     * Complete deep copy.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span><span class="hljs-params">()</span>
+    </span>{
+        $this-&gt;cat = <span class="hljs-keyword">clone</span> $this-&gt;cat;
+    }
+}
+
+$spike = <span class="hljs-keyword">new</span> Dog;
+$spike-&gt;name = <span class="hljs-string">&apos;Spike&apos;</span>;
+$spike-&gt;cat = <span class="hljs-keyword">new</span> Cat(<span class="hljs-string">&apos;Tom&apos;</span>, <span class="hljs-number">6</span>);
+$tyke = <span class="hljs-keyword">clone</span> $spike;
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(Dog)#3 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#4 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+
+$tyke-&gt;name = <span class="hljs-string">&apos;Tyke&apos;</span>;
+$tyke-&gt;cat-&gt;age = <span class="hljs-number">2</span>;
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(Dog)#3 (2) { [&quot;name&quot;]=&gt; string(4) &quot;Tyke&quot; [&quot;cat&quot;]=&gt; object(Cat)#4 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(2) } }</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x5C06;&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x540E;&#x518D;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x6765;&#x5B8C;&#x6210;&#x5BF9;&#x8C61;&#x7684;&#x6DF1;&#x590D;&#x5236;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of cat.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * The age of cat.
+     *
+     * <span class="hljs-doctag">@var</span> int
+     */</span>
+    <span class="hljs-keyword">public</span> $age;
+
+    <span class="hljs-comment">/**
+     * Store the name and age.
+     *
+     * <span class="hljs-doctag">@param</span>  string $name
+     * <span class="hljs-doctag">@param</span>  int    $age
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(string $name, int $age)</span>
+    </span>{
+        $this-&gt;name = $name;
+        $this-&gt;age = $age;
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of dog.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * Store an instance of cat.
+     *
+     * <span class="hljs-doctag">@var</span> Cat
+     */</span>
+    <span class="hljs-keyword">public</span> $cat;
+}
+
+$spike = <span class="hljs-keyword">new</span> Dog;
+$spike-&gt;name = <span class="hljs-string">&apos;Spike&apos;</span>;
+$spike-&gt;cat = <span class="hljs-keyword">new</span> Cat(<span class="hljs-string">&apos;Tom&apos;</span>, <span class="hljs-number">6</span>);
+$tyke = unserialize(serialize($spike));
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(Dog)#3 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#4 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+
+$tyke-&gt;name = <span class="hljs-string">&apos;Tyke&apos;</span>;
+$tyke-&gt;cat-&gt;age = <span class="hljs-number">2</span>;
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(Dog)#3 (2) { [&quot;name&quot;]=&gt; string(4) &quot;Tyke&quot; [&quot;cat&quot;]=&gt; object(Cat)#4 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(2) } }</span>
+</code></pre>
+<p>&#x8FD8;&#x53EF;&#x4EE5;&#x5C06;&#x5BF9;&#x8C61;&#x8FDB;&#x884C; <code>JSON</code> &#x7F16;&#x7801;&#x540E;&#x518D;&#x89E3;&#x7801;&#x6765;&#x5B8C;&#x6210;&#x5BF9;&#x8C61;&#x7684;&#x6DF1;&#x590D;&#x5236;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of cat.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * The age of cat.
+     *
+     * <span class="hljs-doctag">@var</span> int
+     */</span>
+    <span class="hljs-keyword">public</span> $age;
+
+    <span class="hljs-comment">/**
+     * Store the name and age.
+     *
+     * <span class="hljs-doctag">@param</span>  string $name
+     * <span class="hljs-doctag">@param</span>  int    $age
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(string $name, int $age)</span>
+    </span>{
+        $this-&gt;name = $name;
+        $this-&gt;age = $age;
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of dog.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * Store an instance of cat.
+     *
+     * <span class="hljs-doctag">@var</span> Cat
+     */</span>
+    <span class="hljs-keyword">public</span> $cat;
+}
+
+$spike = <span class="hljs-keyword">new</span> Dog;
+$spike-&gt;name = <span class="hljs-string">&apos;Spike&apos;</span>;
+$spike-&gt;cat = <span class="hljs-keyword">new</span> Cat(<span class="hljs-string">&apos;Tom&apos;</span>, <span class="hljs-number">6</span>);
+$tyke = json_decode(json_encode($spike));
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(stdClass)#3 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(stdClass)#4 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+
+$tyke-&gt;name = <span class="hljs-string">&apos;Tyke&apos;</span>;
+$tyke-&gt;cat-&gt;age = <span class="hljs-number">2</span>;
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(stdClass)#3 (2) { [&quot;name&quot;]=&gt; string(4) &quot;Tyke&quot; [&quot;cat&quot;]=&gt; object(stdClass)#4 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(2) } }</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1395,7 +1654,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"对象复制","level":"1.1.1.9.18","depth":4,"next":{"title":"对象比较","level":"1.1.1.9.19","depth":4,"path":"docs/语言参考/类与对象/对象比较.md","ref":"docs/语言参考/类与对象/对象比较.md","articles":[]},"previous":{"title":"Final 关键字","level":"1.1.1.9.17","depth":4,"path":"docs/语言参考/类与对象/Final 关键字.md","ref":"docs/语言参考/类与对象/Final 关键字.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/语言参考/类与对象/对象复制.md","mtime":"2019-05-02T15:08:50.406Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-02T15:55:59.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"对象复制","level":"1.1.1.9.18","depth":4,"next":{"title":"对象比较","level":"1.1.1.9.19","depth":4,"path":"docs/语言参考/类与对象/对象比较.md","ref":"docs/语言参考/类与对象/对象比较.md","articles":[]},"previous":{"title":"Final 关键字","level":"1.1.1.9.17","depth":4,"path":"docs/语言参考/类与对象/Final 关键字.md","ref":"docs/语言参考/类与对象/Final 关键字.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/语言参考/类与对象/对象复制.md","mtime":"2019-05-03T04:29:32.330Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-03T15:57:54.287Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

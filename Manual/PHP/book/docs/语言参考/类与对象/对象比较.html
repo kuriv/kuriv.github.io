@@ -1352,6 +1352,86 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;">&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;</h1>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26; <code>==</code> &#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x6BD4;&#x8F83;&#x7684;&#x539F;&#x5219;&#x662F;&#xFF1A;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x5C5E;&#x6027;&#x503C;&#x90FD;&#x76F8;&#x7B49;&#xFF0C;&#x800C;&#x4E14;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x53D8;&#x91CF;&#x76F8;&#x7B49;&#x3002;&#x800C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26; <code>===</code> &#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x53D8;&#x91CF;&#x4E00;&#x5B9A;&#x8981;&#x6307;&#x5411;&#x67D0;&#x4E2A;&#x7C7B;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF08;&#x5373;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF09;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $property;
+
+    <span class="hljs-comment">/**
+     * Just a test method.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span><span class="hljs-params">()</span>
+    </span>{
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $property;
+
+    <span class="hljs-comment">/**
+     * Just a test method.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span><span class="hljs-params">()</span>
+    </span>{
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+$bar = <span class="hljs-keyword">new</span> Foo;
+var_dump($foo == $bar);  <span class="hljs-comment">// bool(true)</span>
+var_dump($foo != $bar);  <span class="hljs-comment">// bool(false)</span>
+var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
+var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+$bar = <span class="hljs-keyword">clone</span> $foo;
+var_dump($foo == $bar);  <span class="hljs-comment">// bool(true)</span>
+var_dump($foo != $bar);  <span class="hljs-comment">// bool(false)</span>
+var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
+var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+$foo-&gt;property = <span class="hljs-string">&apos;foo&apos;</span>;
+$bar = <span class="hljs-keyword">new</span> Foo;
+$bar-&gt;property = <span class="hljs-string">&apos;bar&apos;</span>;
+var_dump($foo == $bar);  <span class="hljs-comment">// bool(false)</span>
+var_dump($foo != $bar);  <span class="hljs-comment">// bool(true)</span>
+var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
+var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+$bar = <span class="hljs-keyword">new</span> Bar;
+var_dump($foo == $bar);  <span class="hljs-comment">// bool(false)</span>
+var_dump($foo != $bar);  <span class="hljs-comment">// bool(true)</span>
+var_dump($foo === $bar); <span class="hljs-comment">// bool(false)</span>
+var_dump($foo !== $bar); <span class="hljs-comment">// bool(true)</span>
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+$bar = $foo;
+var_dump($foo == $bar);  <span class="hljs-comment">// bool(true)</span>
+var_dump($foo != $bar);  <span class="hljs-comment">// bool(false)</span>
+var_dump($foo === $bar); <span class="hljs-comment">// bool(true)</span>
+var_dump($foo !== $bar); <span class="hljs-comment">// bool(false)</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1395,7 +1475,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"对象比较","level":"1.1.1.9.19","depth":4,"next":{"title":"类型约束","level":"1.1.1.9.20","depth":4,"path":"docs/语言参考/类与对象/类型约束.md","ref":"docs/语言参考/类与对象/类型约束.md","articles":[]},"previous":{"title":"对象复制","level":"1.1.1.9.18","depth":4,"path":"docs/语言参考/类与对象/对象复制.md","ref":"docs/语言参考/类与对象/对象复制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/语言参考/类与对象/对象比较.md","mtime":"2019-05-02T15:08:50.407Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-02T15:55:59.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"对象比较","level":"1.1.1.9.19","depth":4,"next":{"title":"类型约束","level":"1.1.1.9.20","depth":4,"path":"docs/语言参考/类与对象/类型约束.md","ref":"docs/语言参考/类与对象/类型约束.md","articles":[]},"previous":{"title":"对象复制","level":"1.1.1.9.18","depth":4,"path":"docs/语言参考/类与对象/对象复制.md","ref":"docs/语言参考/类与对象/对象复制.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/语言参考/类与对象/对象比较.md","mtime":"2019-05-03T04:30:03.970Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-03T15:57:54.287Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

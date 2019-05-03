@@ -1352,6 +1352,485 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x9B54;&#x672F;&#x65B9;&#x6CD5;">&#x9B54;&#x672F;&#x65B9;&#x6CD5;</h1>
+<p><code>__construct()</code> &#xFF0C; <code>__destruct()</code> &#xFF0C; <code>__call()</code> &#xFF0C; <code>__callStatic()</code> &#xFF0C; <code>__get()</code> &#xFF0C; <code>__set()</code> &#xFF0C; <code>__isset()</code> &#xFF0C; <code>__unset()</code> &#xFF0C; <code>__sleep()</code> &#xFF0C; <code>__wakeup()</code> &#xFF0C; <code>__toString()</code> &#xFF0C; <code>__invoke()</code> &#xFF0C; <code>__set_state()</code> &#xFF0C; <code>__clone()</code> &#x548C; <code>__debugInfo()</code> &#x7B49;&#x65B9;&#x6CD5;&#x5728; PHP &#x4E2D;&#x88AB;&#x79F0;&#x4E3A;&#x9B54;&#x672F;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>PHP &#x5141;&#x8BB8;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4F5C;&#x4E3A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x5177;&#x6709;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x4F1A;&#x5728;&#x6BCF;&#x6B21;&#x521B;&#x5EFA;&#x65B0;&#x5BF9;&#x8C61;&#x65F6;&#x5148;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x975E;&#x5E38;&#x9002;&#x5408;&#x5728;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x4E4B;&#x524D;&#x505A;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x5DE5;&#x4F5C;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $property;
+
+    <span class="hljs-comment">/**
+     * Initialize the value of the property.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+    </span>{
+        $this-&gt;property = <span class="hljs-string">&apos;foo&apos;</span>;
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+var_dump($foo-&gt;property); <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
+</code></pre>
+<p>PHP &#x5F15;&#x5165;&#x4E86;&#x6790;&#x6784;&#x51FD;&#x6570;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x6790;&#x6784;&#x51FD;&#x6570;&#x4F1A;&#x5728;&#x5230;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5F15;&#x7528;&#x90FD;&#x88AB;&#x5220;&#x9664;&#x6216;&#x8005;&#x5F53;&#x5BF9;&#x8C61;&#x88AB;&#x663E;&#x5F0F;&#x9500;&#x6BC1;&#x65F6;&#x6267;&#x884C;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test destructor.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span><span class="hljs-params">()</span>
+    </span>{
+        var_dump(<span class="hljs-string">&apos;foo&apos;</span>);
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+<span class="hljs-keyword">unset</span>($foo);
+<span class="hljs-comment">// string(3) &quot;foo&quot;</span>
+</code></pre>
+<p>&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C; <code>__call()</code> &#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Return the specified string.
+     *
+     * <span class="hljs-doctag">@param</span>  string $name
+     * <span class="hljs-doctag">@param</span>  array  $args
+     * <span class="hljs-doctag">@return</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__call</span><span class="hljs-params">(string $name, array $args)</span>: <span class="hljs-title">string</span>
+    </span>{
+        <span class="hljs-keyword">return</span> $name . <span class="hljs-string">&apos;+&apos;</span> . implode(<span class="hljs-string">&apos;+&apos;</span>, $args);
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+var_dump($foo-&gt;method(<span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;bar&apos;</span>)); <span class="hljs-comment">// string(14) &quot;method+foo+bar&quot;</span>
+</code></pre>
+<p>&#x5728;&#x9759;&#x6001;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C; <code>__callStatic()</code> &#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Return the specified string.
+     *
+     * <span class="hljs-doctag">@param</span>  string $name
+     * <span class="hljs-doctag">@param</span>  array  $args
+     * <span class="hljs-doctag">@return</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__callStatic</span><span class="hljs-params">(string $name, array $args)</span>: <span class="hljs-title">string</span>
+    </span>{
+        <span class="hljs-keyword">return</span> $name . <span class="hljs-string">&apos;+&apos;</span> . implode(<span class="hljs-string">&apos;+&apos;</span>, $args);
+    }
+}
+
+var_dump(Foo::method(<span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;bar&apos;</span>)); <span class="hljs-comment">// string(14) &quot;method+foo+bar&quot;</span>
+</code></pre>
+<p>&#x5728;&#x7ED9;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#x8D4B;&#x503C;&#x65F6;&#xFF0C; <code>__set()</code> &#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Set the value of the specified property.
+     *
+     * <span class="hljs-doctag">@param</span> string $name
+     * <span class="hljs-doctag">@param</span> string $value
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span><span class="hljs-params">(string $name, string $value)</span>
+    </span>{
+        $this-&gt;$name = $value;
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+$foo-&gt;property = <span class="hljs-string">&apos;foo&apos;</span>;
+var_dump($foo-&gt;property); <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
+</code></pre>
+<p>&#x8BFB;&#x53D6;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x65F6;&#xFF0C; <code>__get()</code> &#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Private property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">private</span> $property = <span class="hljs-string">&apos;foo&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Return the specified property.
+     *
+     * <span class="hljs-doctag">@param</span>  string $name
+     * <span class="hljs-doctag">@return</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__get</span><span class="hljs-params">(string $name)</span>: <span class="hljs-title">string</span>
+    </span>{
+        <span class="hljs-keyword">return</span> $this-&gt;$name;
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+var_dump($foo-&gt;property); <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
+</code></pre>
+<p>&#x5F53;&#x5BF9;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#x8C03;&#x7528; <code>isset()</code> &#x6216; <code>empty()</code> &#x65F6;&#xFF0C; <code>__isset()</code> &#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Private property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">private</span> $property = <span class="hljs-string">&apos;foo&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Check the specified property.
+     *
+     * <span class="hljs-doctag">@param</span>  string  $name
+     * <span class="hljs-doctag">@return</span> bool
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__isset</span><span class="hljs-params">(string $name)</span>: <span class="hljs-title">bool</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>($this-&gt;$name);
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+var_dump(<span class="hljs-keyword">isset</span>($foo-&gt;property)); <span class="hljs-comment">// bool(true)</span>
+</code></pre>
+<p>&#x5F53;&#x5BF9;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#x8C03;&#x7528; <code>unset()</code> &#x65F6;&#xFF0C; <code>__unset()</code> &#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Private property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">private</span> $property = <span class="hljs-string">&apos;foo&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Check the specified property.
+     *
+     * <span class="hljs-doctag">@param</span>  string  $name
+     * <span class="hljs-doctag">@return</span> bool
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__isset</span><span class="hljs-params">(string $name)</span>: <span class="hljs-title">bool</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>($this-&gt;$name);
+    }
+
+    <span class="hljs-comment">/**
+     * Unset the specified property.
+     *
+     * <span class="hljs-doctag">@param</span>  string $name
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__unset</span><span class="hljs-params">(string $name)</span>
+    </span>{
+        <span class="hljs-keyword">unset</span>($this-&gt;$name);
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+var_dump(<span class="hljs-keyword">isset</span>($foo-&gt;property)); <span class="hljs-comment">// bool(true)</span>
+<span class="hljs-keyword">unset</span>($foo-&gt;property);
+var_dump(<span class="hljs-keyword">isset</span>($foo-&gt;property)); <span class="hljs-comment">// bool(false)</span>
+</code></pre>
+<p><code>serialize()</code> &#x51FD;&#x6570;&#x4F1A;&#x68C0;&#x67E5;&#x7C7B;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x9B54;&#x672F;&#x65B9;&#x6CD5; <code>__sleep()</code> &#x3002;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x5148;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x6267;&#x884C;&#x5E8F;&#x5217;&#x5316;&#x64CD;&#x4F5C;&#x3002;&#x6B64;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6E05;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x5BF9;&#x8C61;&#x4E2D;&#x6240;&#x6709;&#x5E94;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x79F0;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x65B9;&#x6CD5;&#x672A;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#xFF0C;&#x5219; <code>NULL</code> &#x88AB;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x5E76;&#x4EA7;&#x751F;&#x4E00;&#x4E2A; <code>E_NOTICE</code> &#x7EA7;&#x522B;&#x7684;&#x9519;&#x8BEF;&#x3002; <code>__sleep()</code> &#x65B9;&#x6CD5;&#x5E38;&#x7528;&#x4E8E;&#x63D0;&#x4EA4;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6216;&#x7C7B;&#x4F3C;&#x7684;&#x6E05;&#x7406;&#x64CD;&#x4F5C;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E9B;&#x5F88;&#x5927;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x4E0D;&#x9700;&#x8981;&#x5168;&#x90E8;&#x4FDD;&#x5B58;&#xFF0C;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x5C31;&#x5F88;&#x597D;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Public property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $public = <span class="hljs-string">&apos;public&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Protected property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">protected</span> $protected = <span class="hljs-string">&apos;protected&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Private property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">private</span> $private = <span class="hljs-string">&apos;private&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Return an array of the specified properties.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> array
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__sleep</span><span class="hljs-params">()</span>: <span class="hljs-title">array</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [<span class="hljs-string">&apos;public&apos;</span>];
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+var_dump(serialize($foo)); <span class="hljs-comment">// string(40) &quot;O:3:&quot;Foo&quot;:1:{s:6:&quot;public&quot;;s:6:&quot;public&quot;;}&quot;</span>
+</code></pre>
+<p>&#x4E0E;&#x4E4B;&#x76F8;&#x53CD;&#xFF0C; <code>unserialize()</code> &#x4F1A;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E00;&#x4E2A; <code>__wakeup()</code> &#x65B9;&#x6CD5;&#x3002;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x4F1A;&#x5148;&#x8C03;&#x7528; <code>__wakeup()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x9884;&#x5148;&#x51C6;&#x5907;&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x7684;&#x8D44;&#x6E90;&#x3002; <code>__wakeup()</code> &#x7ECF;&#x5E38;&#x7528;&#x5728;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982;&#x91CD;&#x65B0;&#x5EFA;&#x7ACB;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#xFF0C;&#x6216;&#x6267;&#x884C;&#x5176;&#x5B83;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Public property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $public = <span class="hljs-string">&apos;public&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Protected property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">protected</span> $protected = <span class="hljs-string">&apos;protected&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Private property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">private</span> $private = <span class="hljs-string">&apos;private&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Set the value of the specified property.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__wakeup</span><span class="hljs-params">()</span>
+    </span>{
+        $this-&gt;property = <span class="hljs-string">&apos;foo&apos;</span>;
+    }
+}
+
+$foo = <span class="hljs-string">&apos;O:3:&quot;Foo&quot;:1:{s:6:&quot;public&quot;;s:6:&quot;public&quot;;}&apos;</span>;
+var_dump(unserialize($foo)); <span class="hljs-comment">// object(Foo)#1 (4) { [&quot;public&quot;]=&gt; string(6) &quot;public&quot; [&quot;protected&quot;:protected]=&gt; string(9) &quot;protected&quot; [&quot;private&quot;:&quot;Foo&quot;:private]=&gt; string(7) &quot;private&quot; [&quot;property&quot;]=&gt; string(3) &quot;foo&quot; }</span>
+</code></pre>
+<p><code>__toString()</code> &#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x7C7B;&#x88AB;&#x5F53;&#x6210;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#x5E94;&#x600E;&#x6837;&#x56DE;&#x5E94;&#x3002;&#x6B64;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5426;&#x5219;&#x5C06;&#x53D1;&#x51FA;&#x4E00;&#x6761; <code>E_RECOVERABLE_ERROR</code> &#x7EA7;&#x522B;&#x7684;&#x81F4;&#x547D;&#x9519;&#x8BEF;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Return a string.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span><span class="hljs-params">()</span>: <span class="hljs-title">string</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;foo&apos;</span>;
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+<span class="hljs-keyword">echo</span> $foo . <span class="hljs-string">&quot;\r\n&quot;</span>;  <span class="hljs-comment">// foo</span>
+<span class="hljs-keyword">print</span> $foo . <span class="hljs-string">&quot;\r\n&quot;</span>; <span class="hljs-comment">// foo</span>
+</code></pre>
+<p>&#x5F53;&#x5C1D;&#x8BD5;&#x4EE5;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C; <code>__invoke()</code> &#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Return a string.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__invoke</span><span class="hljs-params">()</span>: <span class="hljs-title">string</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;foo&apos;</span>;
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+var_dump($foo()); <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
+</code></pre>
+<p>&#x5F53;&#x8C03;&#x7528; <code>var_export()</code> &#x51FD;&#x6570;&#x5BFC;&#x51FA;&#x7C7B;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x65F6;&#xFF0C; <code>__set_state()</code> &#x9759;&#x6001;&#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x552F;&#x4E00;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x6309;&#x6570;&#x7EC4;&#x952E;&#x503C;&#x5BF9;&#x683C;&#x5F0F;&#x6392;&#x5217;&#x7684;&#x7C7B;&#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Just a test property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $property;
+
+    <span class="hljs-comment">/**
+     * Return an initialized object.
+     *
+     * <span class="hljs-doctag">@param</span>  array  $array
+     * <span class="hljs-doctag">@return</span> self
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set_state</span><span class="hljs-params">(array $array)</span>: <span class="hljs-title">self</span>
+    </span>{
+        $object = <span class="hljs-keyword">new</span> <span class="hljs-keyword">self</span>;
+        $object-&gt;property = $array[<span class="hljs-string">&apos;property&apos;</span>];
+        <span class="hljs-keyword">return</span> $object;
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+$foo-&gt;property = <span class="hljs-string">&apos;foo&apos;</span>;
+var_export($foo); <span class="hljs-comment">// Foo::__set_state(array( &apos;property&apos; =&gt; &apos;foo&apos;, ))</span>
+
+$bar = Foo::__set_state(<span class="hljs-keyword">array</span>( <span class="hljs-string">&apos;property&apos;</span> =&gt; <span class="hljs-string">&apos;foo&apos;</span>, ));
+var_dump($bar);   <span class="hljs-comment">// object(Foo)#2 (1) { [&quot;property&quot;]=&gt; string(3) &quot;foo&quot; }</span>
+</code></pre>
+<p>&#x5BF9;&#x8C61;&#x590D;&#x5236;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>clone</code> &#x5173;&#x952E;&#x5B57;&#x6765;&#x5B8C;&#x6210;&#xFF08;&#x5982;&#x679C;&#x53EF;&#x80FD;&#xFF0C;&#x8FD9;&#x5C06;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#x7684; <code>__clone()</code> &#x65B9;&#x6CD5;&#xFF09;&#x3002;&#x5BF9;&#x8C61;&#x4E2D;&#x7684; <code>__clone()</code> &#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x88AB;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x3002;&#x5F53;&#x5BF9;&#x8C61;&#x88AB;&#x590D;&#x5236;&#x540E;&#xFF0C; PHP &#x4F1A;&#x5BF9;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x6D45;&#x590D;&#x5236;&#x3002;&#x6240;&#x6709;&#x7684;&#x5F15;&#x7528;&#x5C5E;&#x6027;&#x4ECD;&#x7136;&#x4F1A;&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x539F;&#x6765;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x5F15;&#x7528;&#x3002;&#x5F53;&#x590D;&#x5236;&#x5B8C;&#x6210;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86; <code>__clone()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x590D;&#x5236;&#x751F;&#x6210;&#x7684;&#x5BF9;&#x8C61;&#xFF09;&#x4E2D;&#x7684; <code>__clone()</code> &#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4FEE;&#x6539;&#x5C5E;&#x6027;&#x7684;&#x503C;&#xFF08;&#x5982;&#x679C;&#x6709;&#x5FC5;&#x8981;&#x7684;&#x8BDD;&#xFF09;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of cat.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * The age of cat.
+     *
+     * <span class="hljs-doctag">@var</span> int
+     */</span>
+    <span class="hljs-keyword">public</span> $age;
+
+    <span class="hljs-comment">/**
+     * Store the name and age.
+     *
+     * <span class="hljs-doctag">@param</span>  string $name
+     * <span class="hljs-doctag">@param</span>  int    $age
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(string $name, int $age)</span>
+    </span>{
+        $this-&gt;name = $name;
+        $this-&gt;age = $age;
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span>
+</span>{
+    <span class="hljs-comment">/**
+     * The name of dog.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $name;
+
+    <span class="hljs-comment">/**
+     * Store an instance of cat.
+     *
+     * <span class="hljs-doctag">@var</span> Cat
+     */</span>
+    <span class="hljs-keyword">public</span> $cat;
+
+    <span class="hljs-comment">/**
+     * Complete deep copy.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span><span class="hljs-params">()</span>
+    </span>{
+        $this-&gt;cat = <span class="hljs-keyword">clone</span> $this-&gt;cat;
+    }
+}
+
+$spike = <span class="hljs-keyword">new</span> Dog;
+$spike-&gt;name = <span class="hljs-string">&apos;Spike&apos;</span>;
+$spike-&gt;cat = <span class="hljs-keyword">new</span> Cat(<span class="hljs-string">&apos;Tom&apos;</span>, <span class="hljs-number">6</span>);
+$tyke = <span class="hljs-keyword">clone</span> $spike;
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(Dog)#3 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#4 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+
+$tyke-&gt;name = <span class="hljs-string">&apos;Tyke&apos;</span>;
+$tyke-&gt;cat-&gt;age = <span class="hljs-number">2</span>;
+var_dump($spike); <span class="hljs-comment">// object(Dog)#1 (2) { [&quot;name&quot;]=&gt; string(5) &quot;Spike&quot; [&quot;cat&quot;]=&gt; object(Cat)#2 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(6) } }</span>
+var_dump($tyke);  <span class="hljs-comment">// object(Dog)#3 (2) { [&quot;name&quot;]=&gt; string(4) &quot;Tyke&quot; [&quot;cat&quot;]=&gt; object(Cat)#4 (2) { [&quot;name&quot;]=&gt; string(3) &quot;Tom&quot; [&quot;age&quot;]=&gt; int(2) } }</span>
+</code></pre>
+<p>&#x5F53;&#x8C03;&#x7528; <code>var_dump()</code> &#x51FD;&#x6570;&#x6253;&#x5370;&#x7C7B;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x65F6;&#xFF0C; <code>__debugInfo</code> &#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x5982;&#x679C;&#x672A;&#x5728;&#x5BF9;&#x8C61;&#x4E0A;&#x5B9A;&#x4E49;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x5C06;&#x663E;&#x793A;&#x6240;&#x6709;&#x516C;&#x5171;&#x5C5E;&#x6027;&#xFF0C;&#x53D7;&#x4FDD;&#x62A4;&#x5C5E;&#x6027;&#x548C;&#x79C1;&#x6709;&#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Public property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">public</span> $public = <span class="hljs-string">&apos;public&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Protected property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">protected</span> $protected = <span class="hljs-string">&apos;protected&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Private property.
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">private</span> $private = <span class="hljs-string">&apos;private&apos;</span>;
+
+    <span class="hljs-comment">/**
+     * Return all visibility properties.
+     *
+     * <span class="hljs-doctag">@param</span>  void
+     * <span class="hljs-doctag">@return</span> array
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__debugInfo</span><span class="hljs-params">()</span>: <span class="hljs-title">array</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">&apos;public&apos;</span>    =&gt; $this-&gt;public,
+            <span class="hljs-string">&apos;protected&apos;</span> =&gt; $this-&gt;protected,
+            <span class="hljs-string">&apos;private&apos;</span>   =&gt; $this-&gt;private
+        ];
+    }
+}
+
+$foo = <span class="hljs-keyword">new</span> Foo;
+var_dump($foo); <span class="hljs-comment">// object(Foo)#1 (3) { [&quot;public&quot;]=&gt; string(6) &quot;public&quot; [&quot;protected&quot;]=&gt; string(9) &quot;protected&quot; [&quot;private&quot;]=&gt; string(7) &quot;private&quot; }</span>
+</code></pre>
 
                                 
                                 </section>
@@ -1395,7 +1874,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"魔术方法","level":"1.1.1.9.16","depth":4,"next":{"title":"Final 关键字","level":"1.1.1.9.17","depth":4,"path":"docs/语言参考/类与对象/Final 关键字.md","ref":"docs/语言参考/类与对象/Final 关键字.md","articles":[]},"previous":{"title":"遍历对象","level":"1.1.1.9.15","depth":4,"path":"docs/语言参考/类与对象/遍历对象.md","ref":"docs/语言参考/类与对象/遍历对象.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/语言参考/类与对象/魔术方法.md","mtime":"2019-05-02T15:08:50.404Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-02T15:55:59.364Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"魔术方法","level":"1.1.1.9.16","depth":4,"next":{"title":"Final 关键字","level":"1.1.1.9.17","depth":4,"path":"docs/语言参考/类与对象/Final 关键字.md","ref":"docs/语言参考/类与对象/Final 关键字.md","articles":[]},"previous":{"title":"遍历对象","level":"1.1.1.9.15","depth":4,"path":"docs/语言参考/类与对象/遍历对象.md","ref":"docs/语言参考/类与对象/遍历对象.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/语言参考/类与对象/魔术方法.md","mtime":"2019-05-03T05:40:07.733Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-03T15:57:54.287Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
