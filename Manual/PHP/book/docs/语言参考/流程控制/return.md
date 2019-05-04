@@ -26,7 +26,6 @@ var_dump(foo()); // int(5)
 <?php
 
 $foo = require __DIR__ . '/example.php';
-
 var_dump($foo); // string(3) "foo"
 
 ```
