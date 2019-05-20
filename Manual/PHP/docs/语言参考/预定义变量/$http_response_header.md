@@ -1,6 +1,6 @@
 # $http_response_header
 
-`$http_response_header` 数组与 `get_headers()` 函数类似。当使用 HTTP 包装器时， `$http_response_header` 将会被 HTTP 响应头信息填充。
+当使用 HTTP 包装器时， `$http_response_header` 将会被 HTTP 响应头信息填充。与使用 `get_headers()` 函数类似。
 
 ```php
 <?php

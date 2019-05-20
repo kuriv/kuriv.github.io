@@ -20,7 +20,7 @@ array(5) {
   ["tmp_name"]=>
   string(0) ""
   ["error"]=>
-  int(4)
+  int(0)
   ["size"]=>
   int(0)
 }
