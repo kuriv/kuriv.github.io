@@ -187,7 +187,7 @@ class Bar
     /**
      * Private property.
      *
-     * @var NULL
+     * @var null
      */
     private $private;
 }

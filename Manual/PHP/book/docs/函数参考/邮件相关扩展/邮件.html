@@ -1380,7 +1380,7 @@
                 <a href="../../语言参考/命名空间/namespace 关键字和 __NAMESPACE__ 魔术常量.html">
             
                     
-                    namespace 关键字和 NAMESPACE 魔术常量
+                    namespace 关键字和 __NAMESPACE__ 魔术常量
             
                 </a>
             
@@ -3217,6 +3217,22 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x90AE;&#x4EF6;">&#x90AE;&#x4EF6;</h1>
+<ul>
+<li><a href="#ezmlmhash">ezmlm_hash - &#x8BA1;&#x7B97; EZMLM &#x6240;&#x9700;&#x7684;&#x6563;&#x5217;&#x503C;</a></li>
+<li><a href="#mail">mail - &#x53D1;&#x9001;&#x90AE;&#x4EF6;</a></li>
+</ul>
+<h2 id="ezmlmhash">ezmlm_hash</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(ezmlm_hash(<span class="hljs-string">&apos;user@example.com&apos;</span>));   <span class="hljs-comment">// int(44)</span>
+var_dump(ezmlm_hash(<span class="hljs-string">&apos;server@example.com&apos;</span>)); <span class="hljs-comment">// int(33)</span>
+</code></pre>
+<h2 id="mail">mail</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(mail(<span class="hljs-string">&apos;user@example.com&apos;</span>, <span class="hljs-string">&apos;subject&apos;</span>, wordwrap(<span class="hljs-string">&apos;message&apos;</span>, <span class="hljs-number">70</span>)));
+var_dump(mail(<span class="hljs-string">&apos;user@example.com&apos;</span>, <span class="hljs-string">&apos;subject&apos;</span>, wordwrap(<span class="hljs-string">&apos;message&apos;</span>, <span class="hljs-number">70</span>), <span class="hljs-string">&apos;From: server@example.com&apos;</span> . <span class="hljs-string">&quot;\r\n&quot;</span> . <span class="hljs-string">&apos;Reply-To: server@example.com&apos;</span>));
+</code></pre>
 
                                 
                                 </section>
@@ -3260,7 +3276,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"邮件","level":"1.1.2.8.1","depth":4,"next":{"title":"数学扩展","level":"1.1.2.9","depth":3,"path":"docs/函数参考/数学扩展.md","ref":"docs/函数参考/数学扩展.md","articles":[{"title":"任意精度数学","level":"1.1.2.9.1","depth":4,"path":"docs/函数参考/数学扩展/任意精度数学.md","ref":"docs/函数参考/数学扩展/任意精度数学.md","articles":[]},{"title":"数学","level":"1.1.2.9.2","depth":4,"path":"docs/函数参考/数学扩展/数学.md","ref":"docs/函数参考/数学扩展/数学.md","articles":[]}]},"previous":{"title":"邮件相关扩展","level":"1.1.2.8","depth":3,"path":"docs/函数参考/邮件相关扩展.md","ref":"docs/函数参考/邮件相关扩展.md","articles":[{"title":"邮件","level":"1.1.2.8.1","depth":4,"path":"docs/函数参考/邮件相关扩展/邮件.md","ref":"docs/函数参考/邮件相关扩展/邮件.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/邮件相关扩展/邮件.md","mtime":"2019-05-20T15:29:36.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-20T15:35:40.291Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"邮件","level":"1.1.2.8.1","depth":4,"next":{"title":"数学扩展","level":"1.1.2.9","depth":3,"path":"docs/函数参考/数学扩展.md","ref":"docs/函数参考/数学扩展.md","articles":[{"title":"任意精度数学","level":"1.1.2.9.1","depth":4,"path":"docs/函数参考/数学扩展/任意精度数学.md","ref":"docs/函数参考/数学扩展/任意精度数学.md","articles":[]},{"title":"数学","level":"1.1.2.9.2","depth":4,"path":"docs/函数参考/数学扩展/数学.md","ref":"docs/函数参考/数学扩展/数学.md","articles":[]}]},"previous":{"title":"邮件相关扩展","level":"1.1.2.8","depth":3,"path":"docs/函数参考/邮件相关扩展.md","ref":"docs/函数参考/邮件相关扩展.md","articles":[{"title":"邮件","level":"1.1.2.8.1","depth":4,"path":"docs/函数参考/邮件相关扩展/邮件.md","ref":"docs/函数参考/邮件相关扩展/邮件.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/邮件相关扩展/邮件.md","mtime":"2019-05-20T16:05:58.087Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-21T13:47:40.910Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1380,7 +1380,7 @@
                 <a href="../../语言参考/命名空间/namespace 关键字和 __NAMESPACE__ 魔术常量.html">
             
                     
-                    namespace 关键字和 NAMESPACE 魔术常量
+                    namespace 关键字和 __NAMESPACE__ 魔术常量
             
                 </a>
             
@@ -3217,6 +3217,93 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x6570;&#x5B66;">&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x6570;&#x5B66;</h1>
+<ul>
+<li><a href="#bcadd">bcadd - &#x4E24;&#x4E2A;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x6570;&#x5B57;&#x7684;&#x52A0;&#x6CD5;&#x8BA1;&#x7B97;</a></li>
+<li><a href="#bccomp">bccomp - &#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x7684;&#x6570;&#x5B57;</a></li>
+<li><a href="#bcdiv">bcdiv - &#x4E24;&#x4E2A;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x7684;&#x6570;&#x5B57;&#x9664;&#x6CD5;&#x8BA1;&#x7B97;</a></li>
+<li><a href="#bcmod">bcmod - &#x5BF9;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x6570;&#x5B57;&#x53D6;&#x6A21;</a></li>
+<li><a href="#bcmul">bcmul - &#x4E24;&#x4E2A;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x6570;&#x5B57;&#x4E58;&#x6CD5;&#x8BA1;&#x7B97;</a></li>
+<li><a href="#bcpow">bcpow - &#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x6570;&#x5B57;&#x7684;&#x4E58;&#x65B9;</a></li>
+<li><a href="#bcpowmod">bcpowmod - &#x5C06;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x6570;&#x63D0;&#x5347;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#xFF0C;&#x51CF;&#x53BB;&#x6307;&#x5B9A;&#x7684;&#x6A21;&#x6570;</a></li>
+<li><a href="#bcscale">bcscale - &#x8BBE;&#x7F6E;&#x6240;&#x6709; BC &#x6570;&#x5B66;&#x51FD;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x5C0F;&#x6570;&#x70B9;&#x4FDD;&#x7559;&#x4F4D;&#x6570;</a></li>
+<li><a href="#bcsqrt">bcsqrt - &#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x6570;&#x5B57;&#x7684;&#x5E73;&#x65B9;&#x6839;</a></li>
+<li><a href="#bcsub">bcsub - &#x4E24;&#x4E2A;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x6570;&#x5B57;&#x7684;&#x51CF;&#x6CD5;</a></li>
+</ul>
+<h2 id="bcadd">bcadd</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bcadd(<span class="hljs-string">&apos;1.234&apos;</span>, <span class="hljs-string">&apos;5&apos;</span>));     <span class="hljs-comment">// string(1) &quot;6&quot;</span>
+var_dump(bcadd(<span class="hljs-string">&apos;1.234&apos;</span>, <span class="hljs-string">&apos;5&apos;</span>, <span class="hljs-number">4</span>));  <span class="hljs-comment">// string(6) &quot;6.2340&quot;</span>
+var_dump(bcadd(<span class="hljs-string">&apos;1.234&apos;</span>, <span class="hljs-string">&apos;-5&apos;</span>, <span class="hljs-number">4</span>)); <span class="hljs-comment">// string(7) &quot;-3.7660&quot;</span>
+</code></pre>
+<h2 id="bccomp">bccomp</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bccomp(<span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>));          <span class="hljs-comment">// int(-1)</span>
+var_dump(bccomp(<span class="hljs-string">&apos;1.00001&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// int(0)</span>
+var_dump(bccomp(<span class="hljs-string">&apos;1.00001&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// int(1)</span>
+</code></pre>
+<h2 id="bcdiv">bcdiv</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bcdiv(<span class="hljs-string">&apos;105&apos;</span>, <span class="hljs-string">&apos;6.55957&apos;</span>));    <span class="hljs-comment">// string(2) &quot;16&quot;</span>
+var_dump(bcdiv(<span class="hljs-string">&apos;105&apos;</span>, <span class="hljs-string">&apos;6.55957&apos;</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// string(6) &quot;16.007&quot;</span>
+var_dump(bcdiv(<span class="hljs-string">&apos;105&apos;</span>, <span class="hljs-string">&apos;6.55957&apos;</span>, <span class="hljs-number">7</span>)); <span class="hljs-comment">// string(10) &quot;16.0071468&quot;</span>
+</code></pre>
+<h2 id="bcmod">bcmod</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bcmod(<span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-string">&apos;4&apos;</span>)); <span class="hljs-comment">// string(1) &quot;2&quot;</span>
+var_dump(bcmod(<span class="hljs-string">&apos;4&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>)); <span class="hljs-comment">// string(1) &quot;0&quot;</span>
+var_dump(bcmod(<span class="hljs-string">&apos;5&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>)); <span class="hljs-comment">// string(1) &quot;1&quot;</span>
+</code></pre>
+<h2 id="bcmul">bcmul</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bcmul(<span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-string">&apos;4&apos;</span>));                 <span class="hljs-comment">// string(1) &quot;8&quot;</span>
+var_dump(bcmul(<span class="hljs-string">&apos;1.34747474747&apos;</span>, <span class="hljs-string">&apos;35&apos;</span>));    <span class="hljs-comment">// string(2) &quot;47&quot;</span>
+var_dump(bcmul(<span class="hljs-string">&apos;1.34747474747&apos;</span>, <span class="hljs-string">&apos;35&apos;</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// string(6) &quot;47.161&quot;</span>
+</code></pre>
+<h2 id="bcpow">bcpow</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bcpow(<span class="hljs-string">&apos;0&apos;</span>, <span class="hljs-string">&apos;0&apos;</span>));      <span class="hljs-comment">// string(1) &quot;1&quot;</span>
+var_dump(bcpow(<span class="hljs-string">&apos;4.2&apos;</span>, <span class="hljs-string">&apos;3&apos;</span>, <span class="hljs-number">2</span>)); <span class="hljs-comment">// string(5) &quot;74.08&quot;</span>
+var_dump(bcpow(<span class="hljs-string">&apos;5&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-number">2</span>));   <span class="hljs-comment">// string(5) &quot;25.00&quot;</span>
+</code></pre>
+<h2 id="bcpowmod">bcpowmod</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bcpowmod(<span class="hljs-string">&apos;0&apos;</span>, <span class="hljs-string">&apos;0&apos;</span>, <span class="hljs-string">&apos;4&apos;</span>));    <span class="hljs-comment">// string(1) &quot;1&quot;</span>
+var_dump(bcpowmod(<span class="hljs-string">&apos;5&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-number">2</span>)); <span class="hljs-comment">// string(4) &quot;1.00&quot;</span>
+var_dump(bcpowmod(<span class="hljs-string">&apos;5&apos;</span>, <span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-string">&apos;5&apos;</span>, <span class="hljs-number">2</span>)); <span class="hljs-comment">// string(4) &quot;0.00&quot;</span>
+</code></pre>
+<h2 id="bcscale">bcscale</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bcscale(<span class="hljs-number">4</span>));                   <span class="hljs-comment">// int(0)</span>
+var_dump(bcadd(<span class="hljs-string">&apos;1.234&apos;</span>, <span class="hljs-string">&apos;-5&apos;</span>));         <span class="hljs-comment">// string(7) &quot;-3.7660&quot;</span>
+
+var_dump(bcscale(<span class="hljs-number">3</span>));                   <span class="hljs-comment">// int(4)</span>
+var_dump(bcdiv(<span class="hljs-string">&apos;105&apos;</span>, <span class="hljs-string">&apos;6.55957&apos;</span>));      <span class="hljs-comment">// string(6) &quot;16.007&quot;</span>
+
+var_dump(bcscale(<span class="hljs-number">3</span>));                   <span class="hljs-comment">// int(3)</span>
+var_dump(bcmul(<span class="hljs-string">&apos;1.34747474747&apos;</span>, <span class="hljs-string">&apos;35&apos;</span>)); <span class="hljs-comment">// string(6) &quot;47.161&quot;</span>
+</code></pre>
+<h2 id="bcsqrt">bcsqrt</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bcsqrt(<span class="hljs-string">&apos;2&apos;</span>));    <span class="hljs-comment">// string(1) &quot;1&quot;</span>
+var_dump(bcsqrt(<span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// string(5) &quot;1.414&quot;</span>
+var_dump(bcsqrt(<span class="hljs-string">&apos;4&apos;</span>));    <span class="hljs-comment">// string(1) &quot;2&quot;</span>
+</code></pre>
+<h2 id="bcsub">bcsub</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(bcsub(<span class="hljs-string">&apos;1.234&apos;</span>, <span class="hljs-string">&apos;5&apos;</span>));     <span class="hljs-comment">// string(2) &quot;-3&quot;</span>
+var_dump(bcsub(<span class="hljs-string">&apos;1.234&apos;</span>, <span class="hljs-string">&apos;5&apos;</span>, <span class="hljs-number">4</span>));  <span class="hljs-comment">// string(7) &quot;-3.7660&quot;</span>
+var_dump(bcsub(<span class="hljs-string">&apos;1.234&apos;</span>, <span class="hljs-string">&apos;-5&apos;</span>, <span class="hljs-number">4</span>)); <span class="hljs-comment">// string(6) &quot;6.2340&quot;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -3260,7 +3347,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"任意精度数学","level":"1.1.2.9.1","depth":4,"next":{"title":"数学","level":"1.1.2.9.2","depth":4,"path":"docs/函数参考/数学扩展/数学.md","ref":"docs/函数参考/数学扩展/数学.md","articles":[]},"previous":{"title":"数学扩展","level":"1.1.2.9","depth":3,"path":"docs/函数参考/数学扩展.md","ref":"docs/函数参考/数学扩展.md","articles":[{"title":"任意精度数学","level":"1.1.2.9.1","depth":4,"path":"docs/函数参考/数学扩展/任意精度数学.md","ref":"docs/函数参考/数学扩展/任意精度数学.md","articles":[]},{"title":"数学","level":"1.1.2.9.2","depth":4,"path":"docs/函数参考/数学扩展/数学.md","ref":"docs/函数参考/数学扩展/数学.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/数学扩展/任意精度数学.md","mtime":"2019-05-20T15:29:36.755Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-20T15:35:40.291Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"任意精度数学","level":"1.1.2.9.1","depth":4,"next":{"title":"数学","level":"1.1.2.9.2","depth":4,"path":"docs/函数参考/数学扩展/数学.md","ref":"docs/函数参考/数学扩展/数学.md","articles":[]},"previous":{"title":"数学扩展","level":"1.1.2.9","depth":3,"path":"docs/函数参考/数学扩展.md","ref":"docs/函数参考/数学扩展.md","articles":[{"title":"任意精度数学","level":"1.1.2.9.1","depth":4,"path":"docs/函数参考/数学扩展/任意精度数学.md","ref":"docs/函数参考/数学扩展/任意精度数学.md","articles":[]},{"title":"数学","level":"1.1.2.9.2","depth":4,"path":"docs/函数参考/数学扩展/数学.md","ref":"docs/函数参考/数学扩展/数学.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/数学扩展/任意精度数学.md","mtime":"2019-05-20T16:11:45.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-21T13:47:40.910Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

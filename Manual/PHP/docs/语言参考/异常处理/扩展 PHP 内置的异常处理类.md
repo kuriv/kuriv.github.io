@@ -12,7 +12,7 @@ class NewException extends Exception
      *
      * @param string         $message
      * @param int            $code
-     * @param Exception|NULL $previous
+     * @param Exception|null $previous
      */
     public function __construct(string $message, int $code, Exception $previous = null)
     {
