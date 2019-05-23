@@ -1,2 +1,0 @@
-# Boxy Theme
-
