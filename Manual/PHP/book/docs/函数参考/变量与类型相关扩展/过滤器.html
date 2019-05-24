@@ -3217,6 +3217,53 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x8FC7;&#x6EE4;&#x5668;">&#x8FC7;&#x6EE4;&#x5668;</h1>
+<ul>
+<li><a href="#filterhasvar">filter_has_var &#x2014; &#x68C0;&#x6D4B;&#x662F;&#x5426;&#x5B58;&#x5728;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;</a></li>
+<li><a href="#filterid">filter_id &#x2014; &#x8FD4;&#x56DE;&#x4E0E;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x76F8;&#x5173;&#x8054;&#x7684; ID </a></li>
+<li><a href="#filterinputarray">filter_input_array &#x2014; &#x83B7;&#x53D6;&#x4E00;&#x7CFB;&#x5217;&#x5916;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FC7;&#x6EE4;&#x5668;&#x5904;&#x7406;&#x5B83;&#x4EEC;</a></li>
+<li><a href="#filterinput">filter_input &#x2014; &#x901A;&#x8FC7;&#x540D;&#x79F0;&#x83B7;&#x53D6;&#x7279;&#x5B9A;&#x7684;&#x5916;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FC7;&#x6EE4;&#x5668;&#x5904;&#x7406;&#x5B83;</a></li>
+<li><a href="#filterlist">filter_list &#x2014; &#x8FD4;&#x56DE;&#x6240;&#x652F;&#x6301;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x5217;&#x8868;</a></li>
+<li><a href="#filtervararray">filter_var_array &#x2014; &#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x5E76;&#x4E14;&#x8FC7;&#x6EE4;&#x5B83;&#x4EEC;</a></li>
+<li><a href="#filtervar">filter_var &#x2014; &#x4F7F;&#x7528;&#x7279;&#x5B9A;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x8FC7;&#x6EE4;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;</a></li>
+</ul>
+<h2 id="filterhasvar">filter_has_var</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(filter_has_var(INPUT_GET, <span class="hljs-string">&apos;foo&apos;</span>));
+var_dump(filter_has_var(INPUT_POST, <span class="hljs-string">&apos;foo&apos;</span>));
+var_dump(filter_has_var(INPUT_COOKIE, <span class="hljs-string">&apos;foo&apos;</span>));
+var_dump(filter_has_var(INPUT_SERVER, <span class="hljs-string">&apos;foo&apos;</span>));
+var_dump(filter_has_var(INPUT_ENV, <span class="hljs-string">&apos;foo&apos;</span>));
+</code></pre>
+<h2 id="filterid">filter_id</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(filter_id(<span class="hljs-string">&apos;validate_regexp&apos;</span>)); <span class="hljs-comment">// int(272)</span>
+var_dump(filter_id(<span class="hljs-string">&apos;validate_url&apos;</span>));    <span class="hljs-comment">// int(273)</span>
+var_dump(filter_id(<span class="hljs-string">&apos;validate_email&apos;</span>));  <span class="hljs-comment">// int(274)</span>
+var_dump(filter_id(<span class="hljs-string">&apos;validate_ip&apos;</span>));     <span class="hljs-comment">// int(275)</span>
+</code></pre>
+<h2 id="filterinputarray">filter_input_array</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="filterinput">filter_input</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="filterlist">filter_list</h2>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+var_dump(filter_list());
+</code></pre>
+<h2 id="filtervararray">filter_var_array</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="filtervar">filter_var</h2>
+<pre><code class="lang-php">
+
+</code></pre>
 
                                 
                                 </section>
@@ -3260,7 +3307,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"过滤器","level":"1.1.2.15.4","depth":4,"next":{"title":"函数处理","level":"1.1.2.15.5","depth":4,"path":"docs/函数参考/变量与类型相关扩展/函数处理.md","ref":"docs/函数参考/变量与类型相关扩展/函数处理.md","articles":[]},"previous":{"title":"字符类型检测","level":"1.1.2.15.3","depth":4,"path":"docs/函数参考/变量与类型相关扩展/字符类型检测.md","ref":"docs/函数参考/变量与类型相关扩展/字符类型检测.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/变量与类型相关扩展/过滤器.md","mtime":"2019-05-20T15:29:36.763Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-21T13:47:40.910Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"过滤器","level":"1.1.2.15.4","depth":4,"next":{"title":"函数处理","level":"1.1.2.15.5","depth":4,"path":"docs/函数参考/变量与类型相关扩展/函数处理.md","ref":"docs/函数参考/变量与类型相关扩展/函数处理.md","articles":[]},"previous":{"title":"字符类型检测","level":"1.1.2.15.3","depth":4,"path":"docs/函数参考/变量与类型相关扩展/字符类型检测.md","ref":"docs/函数参考/变量与类型相关扩展/字符类型检测.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/变量与类型相关扩展/过滤器.md","mtime":"2019-05-24T13:27:18.419Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-24T13:36:15.974Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
