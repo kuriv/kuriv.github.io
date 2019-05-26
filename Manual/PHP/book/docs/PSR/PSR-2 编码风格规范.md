@@ -145,7 +145,7 @@ class ClassName
     /**
      * Just a test property.
      *
-     * @var NULL
+     * @var null
      */
     public $propertyName = null;
 }
@@ -251,7 +251,7 @@ abstract class ClassName
     /**
      * Just a test property.
      *
-     * @var NULL
+     * @var null
      */
     protected static $propertyName = null;
 

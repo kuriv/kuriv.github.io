@@ -47,9 +47,8 @@ var_dump($_SESSION['foo']); // string(3) "foo"
 ```php
 <?php
 
-var_dump(session_cache_expire(180)); // int(180)
-var_dump(session_cache_expire());    // int(180)
-session_start();
+var_dump(session_cache_expire(60));  // int(180)
+var_dump(session_cache_expire());    // int(60)
 
 ```
 
@@ -58,12 +57,8 @@ session_start();
 ```php
 <?php
 
-var_dump(session_cache_limiter('public'));            // string(7) "nocache"
-var_dump(session_cache_limiter('private_no_expire')); // string(6) "public"
-var_dump(session_cache_limiter('private'));           // string(17) "private_no_expire"
-var_dump(session_cache_limiter('no_cache'));          // string(7) "private"
-var_dump(session_cache_limiter());                    // string(8) "no_cache"
-session_start();
+var_dump(session_cache_limiter('private')); // string(7) "nocache"
+var_dump(session_cache_limiter());          // string(7) "private"
 
 ```
 
@@ -73,6 +68,8 @@ session_start();
 <?php
 
 session_start();
+$_SESSION['foo'] = 'foo';
+$_SESSION['bar'] = 'bar';
 var_dump(session_commit()); // bool(true)
 
 ```
@@ -93,104 +90,186 @@ var_dump(session_create_id('prefix-'));
 <?php
 
 session_start();
-var_dump(session_decode('foo|s:3:"foo";')); // bool(true)
-var_dump($_SESSION['foo']);                 // string(3) "foo"
+var_dump(session_decode('foo|s:3:"foo";bar|s:3:"bar";')); // bool(true)
+var_dump($_SESSION['foo']);                               // string(3) "foo"
+var_dump($_SESSION['bar']);                               // string(3) "bar"
 
 ```
 
 ## session_destory
 
 ```php
+<?php
+
+session_start();
+$_SESSION['foo'] = 'foo';
+$_SESSION['bar'] = 'bar';
+session_write_close();
+
+session_start();
+var_dump($_SESSION['foo']);  // string(3) "foo"
+var_dump($_SESSION['bar']);  // string(3) "bar"
+var_dump(session_destroy()); // bool(true)
+var_dump($_SESSION['foo']);  // string(3) "foo"
+var_dump($_SESSION['bar']);  // string(3) "bar"
 
 ```
 
 ## session_encode
 
 ```php
+<?php
+
+session_start();
+$_SESSION['foo'] = 'foo';
+$_SESSION['bar'] = 'bar';
+var_dump(session_encode()); // string(28) "foo|s:3:"foo";bar|s:3:"bar";"
 
 ```
 
 ## session_gc
 
 ```php
+<?php
+
+session_start();
+var_dump(session_gc());
 
 ```
 
 ## session_get_cookie_params
 
 ```php
+<?php
+
+var_dump(session_get_cookie_params());
 
 ```
 
 ## session_id
 
 ```php
+<?php
+
+var_dump(session_id(session_create_id()));
+var_dump(session_id());
 
 ```
 
 ## session_module_name
 
 ```php
+<?php
+
+var_dump(session_module_name('files')); // string(5) "files"
+var_dump(session_module_name());        // string(5) "files"
 
 ```
 
 ## session_name
 
 ```php
+<?php
+
+var_dump(session_name('PHPSESSID')); // string(9) "PHPSESSID"
+var_dump(session_name());            // string(9) "PHPSESSID"
 
 ```
 
 ## session_regenerate_id
 
 ```php
+<?php
+
+session_start();
+var_dump(session_regenerate_id());     // bool(true)
+var_dump(session_regenerate_id(true)); // bool(true)
 
 ```
 
 ## session_register_shutdown
 
 ```php
+<?php
+
+var_dump(session_register_shutdown());
 
 ```
 
 ## session_reset
 
 ```php
+<?php
+
+session_start();
+$_SESSION['foo'] = 'foo';
+session_write_close();
+
+session_start();
+$_SESSION['foo'] = 'bar';
+session_reset();
+var_dump($_SESSION['foo']); // string(3) "foo"
 
 ```
 
 ## session_save_path
 
 ```php
+<?php
+
+var_dump(session_save_path(__DIR__));
+var_dump(session_save_path());
 
 ```
 
 ## session_set_cookie_params
 
 ```php
+<?php
+
+var_dump(session_set_cookie_params(3600, '/', '.github.com', true, true)); // bool(true)
 
 ```
 
 ## session_set_save_handler
 
 ```php
+<?php
+
+$handle = new SessionHandler;
+var_dump(session_set_save_handler($handle, true)); // bool(true)
 
 ```
 
 ## session_start
 
 ```php
+<?php
+
+var_dump(session_start()); // bool(true)
 
 ```
 
 ## session_status
 
 ```php
+<?php
+
+var_dump(session_status());
 
 ```
 
 ## session_unset
 
 ```php
+<?php
+
+session_start();
+$_SESSION['foo'] = 'foo';
+$_SESSION['bar'] = 'bar';
+session_unset();
+var_dump($_SESSION['foo']); // NULL
+var_dump($_SESSION['bar']); // NULL
 
 ```
 
@@ -200,6 +279,8 @@ var_dump($_SESSION['foo']);                 // string(3) "foo"
 <?php
 
 session_start();
+$_SESSION['foo'] = 'foo';
+$_SESSION['bar'] = 'bar';
 var_dump(session_write_close()); // bool(true)
 
 ```

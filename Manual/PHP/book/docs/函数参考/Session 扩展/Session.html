@@ -3166,6 +3166,109 @@
             
         </li>
     
+        <li class="chapter " data-level="1.1.3" data-path="../../会话和安全.html">
+            
+                <a href="../../会话和安全.html">
+            
+                    
+                    会话和安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="../../会话和安全/会话管理基础.html">
+            
+                <a href="../../会话和安全/会话管理基础.html">
+            
+                    
+                    会话管理基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="../../会话和安全/和会话安全相关的配置项.html">
+            
+                <a href="../../会话和安全/和会话安全相关的配置项.html">
+            
+                    
+                    和会话安全相关的配置项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../PSR.html">
+            
+                <a href="../../PSR.html">
+            
+                    
+                    PSR
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="../../PSR/PSR-1 基础编码规范.html">
+            
+                <a href="../../PSR/PSR-1 基础编码规范.html">
+            
+                    
+                    PSR-1 基础编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="../../PSR/PSR-2 编码风格规范.html">
+            
+                <a href="../../PSR/PSR-2 编码风格规范.html">
+            
+                    
+                    PSR-2 编码风格规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.3" data-path="../../PSR/PSR-4 自动加载规范.html">
+            
+                <a href="../../PSR/PSR-4 自动加载规范.html">
+            
+                    
+                    PSR-4 自动加载规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -3259,24 +3362,21 @@ var_dump($_SESSION[<span class="hljs-string">&apos;foo&apos;</span>]); <span cla
 <h2 id="sessioncacheexpire">session_cache_expire</h2>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
-var_dump(session_cache_expire(<span class="hljs-number">180</span>)); <span class="hljs-comment">// int(180)</span>
-var_dump(session_cache_expire());    <span class="hljs-comment">// int(180)</span>
-session_start();
+var_dump(session_cache_expire(<span class="hljs-number">60</span>));  <span class="hljs-comment">// int(180)</span>
+var_dump(session_cache_expire());    <span class="hljs-comment">// int(60)</span>
 </code></pre>
 <h2 id="sessioncachelimiter">session_cache_limiter</h2>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
-var_dump(session_cache_limiter(<span class="hljs-string">&apos;public&apos;</span>));            <span class="hljs-comment">// string(7) &quot;nocache&quot;</span>
-var_dump(session_cache_limiter(<span class="hljs-string">&apos;private_no_expire&apos;</span>)); <span class="hljs-comment">// string(6) &quot;public&quot;</span>
-var_dump(session_cache_limiter(<span class="hljs-string">&apos;private&apos;</span>));           <span class="hljs-comment">// string(17) &quot;private_no_expire&quot;</span>
-var_dump(session_cache_limiter(<span class="hljs-string">&apos;no_cache&apos;</span>));          <span class="hljs-comment">// string(7) &quot;private&quot;</span>
-var_dump(session_cache_limiter());                    <span class="hljs-comment">// string(8) &quot;no_cache&quot;</span>
-session_start();
+var_dump(session_cache_limiter(<span class="hljs-string">&apos;private&apos;</span>)); <span class="hljs-comment">// string(7) &quot;nocache&quot;</span>
+var_dump(session_cache_limiter());          <span class="hljs-comment">// string(7) &quot;private&quot;</span>
 </code></pre>
 <h2 id="sessioncommit">session_commit</h2>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 session_start();
+$_SESSION[<span class="hljs-string">&apos;foo&apos;</span>] = <span class="hljs-string">&apos;foo&apos;</span>;
+$_SESSION[<span class="hljs-string">&apos;bar&apos;</span>] = <span class="hljs-string">&apos;bar&apos;</span>;
 var_dump(session_commit()); <span class="hljs-comment">// bool(true)</span>
 </code></pre>
 <h2 id="sessioncreateid">session_create_id</h2>
@@ -3289,77 +3389,129 @@ var_dump(session_create_id(<span class="hljs-string">&apos;prefix-&apos;</span>)
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 session_start();
-var_dump(session_decode(<span class="hljs-string">&apos;foo|s:3:&quot;foo&quot;;&apos;</span>)); <span class="hljs-comment">// bool(true)</span>
-var_dump($_SESSION[<span class="hljs-string">&apos;foo&apos;</span>]);                 <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
+var_dump(session_decode(<span class="hljs-string">&apos;foo|s:3:&quot;foo&quot;;bar|s:3:&quot;bar&quot;;&apos;</span>)); <span class="hljs-comment">// bool(true)</span>
+var_dump($_SESSION[<span class="hljs-string">&apos;foo&apos;</span>]);                               <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
+var_dump($_SESSION[<span class="hljs-string">&apos;bar&apos;</span>]);                               <span class="hljs-comment">// string(3) &quot;bar&quot;</span>
 </code></pre>
 <h2 id="sessiondestory">session_destory</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+session_start();
+$_SESSION[<span class="hljs-string">&apos;foo&apos;</span>] = <span class="hljs-string">&apos;foo&apos;</span>;
+$_SESSION[<span class="hljs-string">&apos;bar&apos;</span>] = <span class="hljs-string">&apos;bar&apos;</span>;
+session_write_close();
+
+session_start();
+var_dump($_SESSION[<span class="hljs-string">&apos;foo&apos;</span>]);  <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
+var_dump($_SESSION[<span class="hljs-string">&apos;bar&apos;</span>]);  <span class="hljs-comment">// string(3) &quot;bar&quot;</span>
+var_dump(session_destroy()); <span class="hljs-comment">// bool(true)</span>
+var_dump($_SESSION[<span class="hljs-string">&apos;foo&apos;</span>]);  <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
+var_dump($_SESSION[<span class="hljs-string">&apos;bar&apos;</span>]);  <span class="hljs-comment">// string(3) &quot;bar&quot;</span>
 </code></pre>
 <h2 id="sessionencode">session_encode</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+session_start();
+$_SESSION[<span class="hljs-string">&apos;foo&apos;</span>] = <span class="hljs-string">&apos;foo&apos;</span>;
+$_SESSION[<span class="hljs-string">&apos;bar&apos;</span>] = <span class="hljs-string">&apos;bar&apos;</span>;
+var_dump(session_encode()); <span class="hljs-comment">// string(28) &quot;foo|s:3:&quot;foo&quot;;bar|s:3:&quot;bar&quot;;&quot;</span>
 </code></pre>
 <h2 id="sessiongc">session_gc</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+session_start();
+var_dump(session_gc());
 </code></pre>
 <h2 id="sessiongetcookieparams">session_get_cookie_params</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(session_get_cookie_params());
 </code></pre>
 <h2 id="sessionid">session_id</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(session_id(session_create_id()));
+var_dump(session_id());
 </code></pre>
 <h2 id="sessionmodulename">session_module_name</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(session_module_name(<span class="hljs-string">&apos;files&apos;</span>)); <span class="hljs-comment">// string(5) &quot;files&quot;</span>
+var_dump(session_module_name());        <span class="hljs-comment">// string(5) &quot;files&quot;</span>
 </code></pre>
 <h2 id="sessionname">session_name</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(session_name(<span class="hljs-string">&apos;PHPSESSID&apos;</span>)); <span class="hljs-comment">// string(9) &quot;PHPSESSID&quot;</span>
+var_dump(session_name());            <span class="hljs-comment">// string(9) &quot;PHPSESSID&quot;</span>
 </code></pre>
 <h2 id="sessionregenerateid">session_regenerate_id</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+session_start();
+var_dump(session_regenerate_id());     <span class="hljs-comment">// bool(true)</span>
+var_dump(session_regenerate_id(<span class="hljs-keyword">true</span>)); <span class="hljs-comment">// bool(true)</span>
 </code></pre>
 <h2 id="sessionregistershutdown">session_register_shutdown</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(session_register_shutdown());
 </code></pre>
 <h2 id="sessionreset">session_reset</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+session_start();
+$_SESSION[<span class="hljs-string">&apos;foo&apos;</span>] = <span class="hljs-string">&apos;foo&apos;</span>;
+session_write_close();
+
+session_start();
+$_SESSION[<span class="hljs-string">&apos;foo&apos;</span>] = <span class="hljs-string">&apos;bar&apos;</span>;
+session_reset();
+var_dump($_SESSION[<span class="hljs-string">&apos;foo&apos;</span>]); <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
 </code></pre>
 <h2 id="sessionsavepath">session_save_path</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(session_save_path(<span class="hljs-keyword">__DIR__</span>));
+var_dump(session_save_path());
 </code></pre>
 <h2 id="sessionsetcookieparams">session_set_cookie_params</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(session_set_cookie_params(<span class="hljs-number">3600</span>, <span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-string">&apos;.github.com&apos;</span>, <span class="hljs-keyword">true</span>, <span class="hljs-keyword">true</span>)); <span class="hljs-comment">// bool(true)</span>
 </code></pre>
 <h2 id="sessionsetsavehandler">session_set_save_handler</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+$handle = <span class="hljs-keyword">new</span> SessionHandler;
+var_dump(session_set_save_handler($handle, <span class="hljs-keyword">true</span>)); <span class="hljs-comment">// bool(true)</span>
 </code></pre>
 <h2 id="sessionstart">session_start</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(session_start()); <span class="hljs-comment">// bool(true)</span>
 </code></pre>
 <h2 id="sessionstatus">session_status</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(session_status());
 </code></pre>
 <h2 id="sessionunset">session_unset</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+session_start();
+$_SESSION[<span class="hljs-string">&apos;foo&apos;</span>] = <span class="hljs-string">&apos;foo&apos;</span>;
+$_SESSION[<span class="hljs-string">&apos;bar&apos;</span>] = <span class="hljs-string">&apos;bar&apos;</span>;
+session_unset();
+var_dump($_SESSION[<span class="hljs-string">&apos;foo&apos;</span>]); <span class="hljs-comment">// NULL</span>
+var_dump($_SESSION[<span class="hljs-string">&apos;bar&apos;</span>]); <span class="hljs-comment">// NULL</span>
 </code></pre>
 <h2 id="sessionwriteclose">session_write_close</h2>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 session_start();
+$_SESSION[<span class="hljs-string">&apos;foo&apos;</span>] = <span class="hljs-string">&apos;foo&apos;</span>;
+$_SESSION[<span class="hljs-string">&apos;bar&apos;</span>] = <span class="hljs-string">&apos;bar&apos;</span>;
 var_dump(session_write_close()); <span class="hljs-comment">// bool(true)</span>
 </code></pre>
 
@@ -3405,7 +3557,7 @@ var_dump(session_write_close()); <span class="hljs-comment">// bool(true)</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Session","level":"1.1.2.13.1","depth":4,"next":{"title":"文本处理","level":"1.1.2.14","depth":3,"path":"docs/函数参考/文本处理.md","ref":"docs/函数参考/文本处理.md","articles":[{"title":"正则表达式","level":"1.1.2.14.1","depth":4,"path":"docs/函数参考/文本处理/正则表达式.md","ref":"docs/函数参考/文本处理/正则表达式.md","articles":[]},{"title":"字符串","level":"1.1.2.14.2","depth":4,"path":"docs/函数参考/文本处理/字符串.md","ref":"docs/函数参考/文本处理/字符串.md","articles":[]}]},"previous":{"title":"Session 扩展","level":"1.1.2.13","depth":3,"path":"docs/函数参考/Session 扩展.md","ref":"docs/函数参考/Session 扩展.md","articles":[{"title":"Session","level":"1.1.2.13.1","depth":4,"path":"docs/函数参考/Session 扩展/Session.md","ref":"docs/函数参考/Session 扩展/Session.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/Session 扩展/Session.md","mtime":"2019-05-25T14:13:29.839Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-25T14:13:43.204Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Session","level":"1.1.2.13.1","depth":4,"next":{"title":"文本处理","level":"1.1.2.14","depth":3,"path":"docs/函数参考/文本处理.md","ref":"docs/函数参考/文本处理.md","articles":[{"title":"正则表达式","level":"1.1.2.14.1","depth":4,"path":"docs/函数参考/文本处理/正则表达式.md","ref":"docs/函数参考/文本处理/正则表达式.md","articles":[]},{"title":"字符串","level":"1.1.2.14.2","depth":4,"path":"docs/函数参考/文本处理/字符串.md","ref":"docs/函数参考/文本处理/字符串.md","articles":[]}]},"previous":{"title":"Session 扩展","level":"1.1.2.13","depth":3,"path":"docs/函数参考/Session 扩展.md","ref":"docs/函数参考/Session 扩展.md","articles":[{"title":"Session","level":"1.1.2.13.1","depth":4,"path":"docs/函数参考/Session 扩展/Session.md","ref":"docs/函数参考/Session 扩展/Session.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/Session 扩展/Session.md","mtime":"2019-05-26T07:38:45.272Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-26T13:50:48.442Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
