@@ -2,7 +2,7 @@
 
 `$_SERVER` 是一个包含了诸如头信息，路径，以及脚本位置等等信息的数组。这个数组中的项目由 Web 服务器创建。不能保证每个服务器都提供全部项目，服务器可能会忽略一些，或者提供一些没有在这里列举出来的项目。
 
-`$_SERVER['PHP_SELF']` 是当前执行脚本的文件名，与根目录有关 。例如，在地址为 `http://localhost/foo/bar.php` 的脚本中使用 `$_SERVER['PHP_SELF']` 将得到 `/foo/bar.php` 。 `$_SERVER['PHP_SELF'] = $_SERVER['SCRIPT_NAME'] + $_SERVER['PATH_INFO']`
+`$_SERVER['PHP_SELF']` 是当前执行脚本的文件名，与根目录有关 。例如，在地址为 [http://localhost/foo/bar.php](http://localhost/foo/bar.php) 的脚本中使用 `$_SERVER['PHP_SELF']` 将得到 `/foo/bar.php` 。 `$_SERVER['PHP_SELF'] = $_SERVER['SCRIPT_NAME'] + $_SERVER['PATH_INFO']`
 
 ```php
 <?php
@@ -344,7 +344,7 @@ var_dump($_SERVER['AUTH_TYPE']);
 
 ```
 
-`$_SERVER['PATH_INFO']` 包含由客户端提供的，跟在真实脚本名称之后并且在查询字符串之前的路径信息，如果存在的话。例如，如果当前脚本是通过 `http://localhost/index.php/foo/bar?foo=foo` 被访问，那么 `$_SERVER['PATH_INFO']` 将包含 `/foo/bar` 。
+`$_SERVER['PATH_INFO']` 包含由客户端提供的，跟在真实脚本名称之后并且在查询字符串之前的路径信息，如果存在的话。例如，如果当前脚本是通过 [http://localhost/index.php/foo/bar?foo=foo](http://localhost/index.php/foo/bar?foo=foo) 被访问，那么 `$_SERVER['PATH_INFO']` 将包含 `/foo/bar` 。
 
 ```php
 <?php

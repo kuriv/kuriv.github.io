@@ -9,7 +9,7 @@ var_dump($_GET['foo']);
 
 ```
 
-当访问 `http://localhost/?foo=foo` 时，以上例程的输出类似于：
+当访问 [http://localhost/?foo=foo](http://localhost/?foo=foo) 时，以上例程的输出类似于：
 
 ```
 string(3) "foo"
