@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>会话和安全 · PHP</title>
+        <title>PHP 类型比较表 · PHP</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="会话和安全/会话管理基础.html" />
+    <link rel="next" href="PSR.html" />
     
     
-    <link rel="prev" href="函数参考/XML 操作/XML 解析器.html" />
+    <link rel="prev" href="PHP 的命令行模式/和命令行模式相关的配置项.html" />
     
 
     </head>
@@ -3166,7 +3166,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.3" data-path="会话和安全.html">
+        <li class="chapter " data-level="1.1.3" data-path="会话和安全.html">
             
                 <a href="会话和安全.html">
             
@@ -3256,7 +3256,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="PHP 类型比较表.html">
+        <li class="chapter active" data-level="1.1.5" data-path="PHP 类型比较表.html">
             
                 <a href="PHP 类型比较表.html">
             
@@ -3362,7 +3362,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >会话和安全</a>
+        <a href=".." >PHP 类型比较表</a>
     </h1>
 </div>
 
@@ -3377,11 +3377,567 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4F1A;&#x8BDD;&#x548C;&#x5B89;&#x5168;">&#x4F1A;&#x8BDD;&#x548C;&#x5B89;&#x5168;</h1>
+                                <h1 id="php-&#x7C7B;&#x578B;&#x6BD4;&#x8F83;&#x8868;">PHP &#x7C7B;&#x578B;&#x6BD4;&#x8F83;&#x8868;</h1>
 <ul>
-<li><a href="&#x4F1A;&#x8BDD;&#x548C;&#x5B89;&#x5168;/&#x4F1A;&#x8BDD;&#x7BA1;&#x7406;&#x57FA;&#x7840;.html">&#x4F1A;&#x8BDD;&#x7BA1;&#x7406;&#x57FA;&#x7840;</a></li>
-<li><a href="&#x4F1A;&#x8BDD;&#x548C;&#x5B89;&#x5168;/&#x548C;&#x4F1A;&#x8BDD;&#x5B89;&#x5168;&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;&#x9879;.html">&#x548C;&#x4F1A;&#x8BDD;&#x5B89;&#x5168;&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;&#x9879;</a></li>
+<li><a href="#&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x6BD4;&#x8F83;">&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x6BD4;&#x8F83;</a></li>
+<li><a href="#&#x4F7F;&#x7528;&#x677E;&#x6563;&#x6BD4;&#x8F83;">&#x4F7F;&#x7528;&#x677E;&#x6563;&#x6BD4;&#x8F83;</a></li>
+<li><a href="#&#x4F7F;&#x7528;&#x4E25;&#x683C;&#x6BD4;&#x8F83;">&#x4F7F;&#x7528;&#x4E25;&#x683C;&#x6BD4;&#x8F83;</a></li>
 </ul>
+<h2 id="&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x6BD4;&#x8F83;">&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x6BD4;&#x8F83;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x8868;&#x8FBE;&#x5F0F;</th>
+<th>gettype()</th>
+<th>empty()</th>
+<th>is_null()</th>
+<th>isset()</th>
+<th>if ($x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$x = &apos;&apos;;</td>
+<td><em>string</em></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>$x = null;</td>
+<td><em>NULL</em></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>$x;</td>
+<td><em>NULL</em></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>unset($x);</td>
+<td><em>NULL</em></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>$x = [];</td>
+<td><em>array</em></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>$x = false;</td>
+<td><em>boolean</em></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>$x = true;</td>
+<td><em>boolean</em></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>$x = 1;</td>
+<td><em>integer</em></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>$x = 42;</td>
+<td><em>integer</em></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>$x = 0;</td>
+<td><em>integer</em></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>$x = -1;</td>
+<td><em>integer</em></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>$x = &apos;1&apos;;</td>
+<td><em>string</em></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>$x = &apos;0&apos;;</td>
+<td><em>string</em></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>$x = &apos;-1&apos;;</td>
+<td><em>string</em></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>$x = &apos;php&apos;;</td>
+<td><em>string</em></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>$x = &apos;true&apos;;</td>
+<td><em>string</em></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>$x = &apos;false&apos;;</td>
+<td><em>string</em></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4F7F;&#x7528;&#x677E;&#x6563;&#x6BD4;&#x8F83;">&#x4F7F;&#x7528;&#x677E;&#x6563;&#x6BD4;&#x8F83;</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>true</th>
+<th>false</th>
+<th>1</th>
+<th>0</th>
+<th>-1</th>
+<th>&apos;1&apos;</th>
+<th>&apos;0&apos;</th>
+<th>&apos;-1&apos;</th>
+<th>NULL</th>
+<th>[]</th>
+<th>&apos;php&apos;</th>
+<th>&apos;&apos;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>false</td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>-1</td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;1&apos;</td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;0&apos;</td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;-1&apos;</td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>NULL</td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>[]</td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;php&apos;</td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;&apos;</td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4F7F;&#x7528;&#x4E25;&#x683C;&#x6BD4;&#x8F83;">&#x4F7F;&#x7528;&#x4E25;&#x683C;&#x6BD4;&#x8F83;</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>true</th>
+<th>false</th>
+<th>1</th>
+<th>0</th>
+<th>-1</th>
+<th>&apos;1&apos;</th>
+<th>&apos;0&apos;</th>
+<th>&apos;-1&apos;</th>
+<th>NULL</th>
+<th>[]</th>
+<th>&apos;php&apos;</th>
+<th>&apos;&apos;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>false</td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>0</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>-1</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;1&apos;</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;0&apos;</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;-1&apos;</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>NULL</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>[]</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;php&apos;</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>&apos;&apos;</td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -3409,12 +3965,12 @@
 
             
                 
-                <a href="函数参考/XML 操作/XML 解析器.html" class="navigation navigation-prev " aria-label="Previous page: XML 解析器">
+                <a href="PHP 的命令行模式/和命令行模式相关的配置项.html" class="navigation navigation-prev " aria-label="Previous page: 和命令行模式相关的配置项">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="会话和安全/会话管理基础.html" class="navigation navigation-next " aria-label="Next page: 会话管理基础">
+                <a href="PSR.html" class="navigation navigation-next " aria-label="Next page: PSR">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -3425,7 +3981,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"会话和安全","level":"1.1.3","depth":2,"next":{"title":"会话管理基础","level":"1.1.3.1","depth":3,"path":"docs/会话和安全/会话管理基础.md","ref":"docs/会话和安全/会话管理基础.md","articles":[]},"previous":{"title":"XML 解析器","level":"1.1.2.16.2","depth":4,"path":"docs/函数参考/XML 操作/XML 解析器.md","ref":"docs/函数参考/XML 操作/XML 解析器.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/会话和安全.md","mtime":"2019-05-26T08:09:12.965Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-28T05:59:16.111Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"PHP 类型比较表","level":"1.1.5","depth":2,"next":{"title":"PSR","level":"1.1.6","depth":2,"path":"docs/PSR.md","ref":"docs/PSR.md","articles":[{"title":"PSR-1 基础编码规范","level":"1.1.6.1","depth":3,"path":"docs/PSR/PSR-1 基础编码规范.md","ref":"docs/PSR/PSR-1 基础编码规范.md","articles":[]},{"title":"PSR-2 编码风格规范","level":"1.1.6.2","depth":3,"path":"docs/PSR/PSR-2 编码风格规范.md","ref":"docs/PSR/PSR-2 编码风格规范.md","articles":[]},{"title":"PSR-4 自动加载规范","level":"1.1.6.3","depth":3,"path":"docs/PSR/PSR-4 自动加载规范.md","ref":"docs/PSR/PSR-4 自动加载规范.md","articles":[]}]},"previous":{"title":"和命令行模式相关的配置项","level":"1.1.4.2","depth":3,"path":"docs/PHP 的命令行模式/和命令行模式相关的配置项.md","ref":"docs/PHP 的命令行模式/和命令行模式相关的配置项.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/PHP 类型比较表.md","mtime":"2019-05-28T03:40:33.829Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-28T05:59:16.111Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
