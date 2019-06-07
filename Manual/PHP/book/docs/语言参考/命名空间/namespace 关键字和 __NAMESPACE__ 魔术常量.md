@@ -35,9 +35,9 @@ class Bar
  * Return the specified instance.
  *
  * @param  string $name
- * @return Bar
+ * @return \Foo\Bar
  */
-function bar(string $name): Bar
+function bar(string $name): \Foo\Bar
 {
     $bar = __NAMESPACE__ . '\\' . $name;
     return new $bar;
