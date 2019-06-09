@@ -3405,12 +3405,27 @@ var_dump(filter_id(<span class="hljs-string">&apos;validate_email&apos;</span>))
 var_dump(filter_id(<span class="hljs-string">&apos;validate_ip&apos;</span>));     <span class="hljs-comment">// int(275)</span>
 </code></pre>
 <h2 id="filterinputarray">filter_input_array</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+$filter = [
+    <span class="hljs-string">&apos;int&apos;</span>     =&gt; FILTER_VALIDATE_INT,
+    <span class="hljs-string">&apos;boolean&apos;</span> =&gt; FILTER_VALIDATE_BOOLEAN,
+    <span class="hljs-string">&apos;float&apos;</span>   =&gt; FILTER_VALIDATE_FLOAT,
+    <span class="hljs-string">&apos;url&apos;</span>     =&gt; FILTER_VALIDATE_URL,
+    <span class="hljs-string">&apos;email&apos;</span>   =&gt; FILTER_VALIDATE_EMAIL,
+    <span class="hljs-string">&apos;ip&apos;</span>      =&gt; FILTER_VALIDATE_IP
+];
+var_dump(filter_input_array(INPUT_GET, $filter));
 </code></pre>
 <h2 id="filterinput">filter_input</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(filter_input(INPUT_GET, <span class="hljs-string">&apos;0755&apos;</span>, FILTER_VALIDATE_INT));
+var_dump(filter_input(INPUT_GET, <span class="hljs-string">&apos;true&apos;</span>, FILTER_VALIDATE_BOOLEAN));
+var_dump(filter_input(INPUT_GET, <span class="hljs-string">&apos;122.34343&apos;</span>, FILTER_VALIDATE_FLOAT));
+var_dump(filter_input(INPUT_GET, <span class="hljs-string">&apos;https://github.com/&apos;</span>, FILTER_VALIDATE_URL));
+var_dump(filter_input(INPUT_GET, <span class="hljs-string">&apos;user@example.com&apos;</span>, FILTER_VALIDATE_EMAIL));
+var_dump(filter_input(INPUT_GET, <span class="hljs-string">&apos;2130706433&apos;</span>, FILTER_VALIDATE_IP));
 </code></pre>
 <h2 id="filterlist">filter_list</h2>
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
@@ -3418,12 +3433,35 @@ var_dump(filter_id(<span class="hljs-string">&apos;validate_ip&apos;</span>));  
 var_dump(filter_list());
 </code></pre>
 <h2 id="filtervararray">filter_var_array</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+$data = [
+    <span class="hljs-string">&apos;int&apos;</span>     =&gt; <span class="hljs-string">&apos;0755&apos;</span>,
+    <span class="hljs-string">&apos;boolean&apos;</span> =&gt; <span class="hljs-string">&apos;true&apos;</span>,
+    <span class="hljs-string">&apos;float&apos;</span>   =&gt; <span class="hljs-string">&apos;122.34343&apos;</span>,
+    <span class="hljs-string">&apos;url&apos;</span>     =&gt; <span class="hljs-string">&apos;https://github.com/&apos;</span>,
+    <span class="hljs-string">&apos;email&apos;</span>   =&gt; <span class="hljs-string">&apos;user@example.com&apos;</span>,
+    <span class="hljs-string">&apos;ip&apos;</span>      =&gt; <span class="hljs-string">&apos;2130706433&apos;</span>
+];
+$filter = [
+    <span class="hljs-string">&apos;int&apos;</span>     =&gt; FILTER_VALIDATE_INT,
+    <span class="hljs-string">&apos;boolean&apos;</span> =&gt; FILTER_VALIDATE_BOOLEAN,
+    <span class="hljs-string">&apos;float&apos;</span>   =&gt; FILTER_VALIDATE_FLOAT,
+    <span class="hljs-string">&apos;url&apos;</span>     =&gt; FILTER_VALIDATE_URL,
+    <span class="hljs-string">&apos;email&apos;</span>   =&gt; FILTER_VALIDATE_EMAIL,
+    <span class="hljs-string">&apos;ip&apos;</span>      =&gt; FILTER_VALIDATE_IP
+];
+var_dump(filter_var_array($data, $filter)); <span class="hljs-comment">// array(6) { [&quot;int&quot;]=&gt; bool(false) [&quot;boolean&quot;]=&gt; bool(true) [&quot;float&quot;]=&gt; float(122.34343) [&quot;url&quot;]=&gt; string(19) &quot;https://github.com/&quot; [&quot;email&quot;]=&gt; string(16) &quot;user@example.com&quot; [&quot;ip&quot;]=&gt; bool(false) }</span>
 </code></pre>
 <h2 id="filtervar">filter_var</h2>
-<pre><code class="lang-php">
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
+var_dump(filter_var(<span class="hljs-string">&apos;0755&apos;</span>, FILTER_VALIDATE_INT));                <span class="hljs-comment">// bool(false)</span>
+var_dump(filter_var(<span class="hljs-string">&apos;true&apos;</span>, FILTER_VALIDATE_BOOLEAN));            <span class="hljs-comment">// bool(true)</span>
+var_dump(filter_var(<span class="hljs-string">&apos;122.34343&apos;</span>, FILTER_VALIDATE_FLOAT));         <span class="hljs-comment">// float(122.34343)</span>
+var_dump(filter_var(<span class="hljs-string">&apos;https://github.com/&apos;</span>, FILTER_VALIDATE_URL)); <span class="hljs-comment">// string(19) &quot;https://github.com/&quot;</span>
+var_dump(filter_var(<span class="hljs-string">&apos;user@example.com&apos;</span>, FILTER_VALIDATE_EMAIL));  <span class="hljs-comment">// string(16) &quot;user@example.com&quot;</span>
+var_dump(filter_var(<span class="hljs-string">&apos;2130706433&apos;</span>, FILTER_VALIDATE_IP));           <span class="hljs-comment">// bool(false)</span>
 </code></pre>
 
                                 
@@ -3468,7 +3506,7 @@ var_dump(filter_list());
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"过滤器","level":"1.1.2.15.4","depth":4,"next":{"title":"函数处理","level":"1.1.2.15.5","depth":4,"path":"docs/函数参考/变量与类型相关扩展/函数处理.md","ref":"docs/函数参考/变量与类型相关扩展/函数处理.md","articles":[]},"previous":{"title":"字符类型检测","level":"1.1.2.15.3","depth":4,"path":"docs/函数参考/变量与类型相关扩展/字符类型检测.md","ref":"docs/函数参考/变量与类型相关扩展/字符类型检测.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/变量与类型相关扩展/过滤器.md","mtime":"2019-05-24T13:27:18.419Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-08T13:21:42.999Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"过滤器","level":"1.1.2.15.4","depth":4,"next":{"title":"函数处理","level":"1.1.2.15.5","depth":4,"path":"docs/函数参考/变量与类型相关扩展/函数处理.md","ref":"docs/函数参考/变量与类型相关扩展/函数处理.md","articles":[]},"previous":{"title":"字符类型检测","level":"1.1.2.15.3","depth":4,"path":"docs/函数参考/变量与类型相关扩展/字符类型检测.md","ref":"docs/函数参考/变量与类型相关扩展/字符类型检测.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/变量与类型相关扩展/过滤器.md","mtime":"2019-06-09T01:48:54.837Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-09T01:49:08.252Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
