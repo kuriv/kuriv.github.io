@@ -3452,11 +3452,11 @@
 <li><a href="#rmdir">rmdir - &#x5220;&#x9664;&#x76EE;&#x5F55;</a></li>
 <li><a href="#setfilebuffer">set_file_buffer - &#x8BBE;&#x7F6E;&#x7ED9;&#x5B9A;&#x6D41;&#x4E0A;&#x7684;&#x5199;&#x6587;&#x4EF6;&#x7F13;&#x51B2;</a></li>
 <li><a href="#stat">stat - &#x7ED9;&#x51FA;&#x6587;&#x4EF6;&#x7684;&#x4FE1;&#x606F;</a></li>
-<li><a href="#symlinksymlink">symlink - &#x5EFA;&#x7ACB;&#x7B26;&#x53F7;&#x8FDE;&#x63A5;</a></li>
-<li><a href="#tempnamtempnam">tempnam - &#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x552F;&#x4E00;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x6587;&#x4EF6;</a></li>
-<li><a href="#tmpfiletmpfile">tmpfile - &#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6587;&#x4EF6;</a></li>
-<li><a href="#touchtouch">touch - &#x8BBE;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x548C;&#x4FEE;&#x6539;&#x65F6;&#x95F4;</a></li>
-<li><a href="#umaskumask">umask - &#x6539;&#x53D8;&#x5F53;&#x524D;&#x7684; umask</a></li>
+<li><a href="#symlink">symlink - &#x5EFA;&#x7ACB;&#x7B26;&#x53F7;&#x8FDE;&#x63A5;</a></li>
+<li><a href="#tempnam">tempnam - &#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x552F;&#x4E00;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x6587;&#x4EF6;</a></li>
+<li><a href="#tmpfile">tmpfile - &#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6587;&#x4EF6;</a></li>
+<li><a href="#touch">touch - &#x8BBE;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x548C;&#x4FEE;&#x6539;&#x65F6;&#x95F4;</a></li>
+<li><a href="#umask">umask - &#x6539;&#x53D8;&#x5F53;&#x524D;&#x7684; umask</a></li>
 <li><a href="#unlink">unlink - &#x5220;&#x9664;&#x6587;&#x4EF6;</a></li>
 </ul>
 <h2 id="basename">basename</h2>
@@ -3569,15 +3569,15 @@ $handle = fopen(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-st
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 $handle = fopen(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/example.csv&apos;</span>, <span class="hljs-string">&apos;r&apos;</span>);
-<span class="hljs-keyword">while</span> (($line = fgetcsv($handle)) !== <span class="hljs-keyword">false</span>) {
-    var_dump($line);
+<span class="hljs-keyword">while</span> (($data = fgetcsv($handle)) !== <span class="hljs-keyword">false</span>) {
+    var_dump($data);
 }
 <span class="hljs-comment">// array(2) { [0]=&gt; string(3) &quot;foo&quot; [1]=&gt; string(3) &quot;bar&quot; }</span>
 <span class="hljs-comment">// array(2) { [0]=&gt; string(3) &quot;baz&quot; [1]=&gt; string(3) &quot;qux&quot; }</span>
 
 rewind($handle);
-<span class="hljs-keyword">while</span> (($line = fgetcsv($handle, <span class="hljs-number">1024</span>, <span class="hljs-string">&apos;,&apos;</span>)) !== <span class="hljs-keyword">false</span>) {
-    var_dump($line);
+<span class="hljs-keyword">while</span> (($data = fgetcsv($handle, <span class="hljs-number">1024</span>, <span class="hljs-string">&apos;,&apos;</span>)) !== <span class="hljs-keyword">false</span>) {
+    var_dump($data);
 }
 <span class="hljs-comment">// array(2) { [0]=&gt; string(3) &quot;foo&quot; [1]=&gt; string(3) &quot;bar&quot; }</span>
 <span class="hljs-comment">// array(2) { [0]=&gt; string(3) &quot;baz&quot; [1]=&gt; string(3) &quot;qux&quot; }</span>
@@ -3589,15 +3589,15 @@ baz,qux
 <pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
 
 $handle = fopen(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/example.txt&apos;</span>, <span class="hljs-string">&apos;r&apos;</span>);
-<span class="hljs-keyword">while</span> (($line = fgets($handle)) !== <span class="hljs-keyword">false</span>) {
-    var_dump(trim($line));
+<span class="hljs-keyword">while</span> (($data = fgets($handle)) !== <span class="hljs-keyword">false</span>) {
+    var_dump(trim($data));
 }
 <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
 <span class="hljs-comment">// string(3) &quot;bar&quot;</span>
 
 rewind($handle);
-<span class="hljs-keyword">while</span> (($line = fgets($handle, <span class="hljs-number">1024</span>)) !== <span class="hljs-keyword">false</span>) {
-    var_dump(trim($line));
+<span class="hljs-keyword">while</span> (($data = fgets($handle, <span class="hljs-number">1024</span>)) !== <span class="hljs-keyword">false</span>) {
+    var_dump(trim($data));
 }
 <span class="hljs-comment">// string(3) &quot;foo&quot;</span>
 <span class="hljs-comment">// string(3) &quot;bar&quot;</span>
@@ -3610,6 +3610,254 @@ bar
 
 var_dump(file_exists(<span class="hljs-keyword">__DIR__</span>));
 var_dump(file_exists(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/example.txt&apos;</span>));
+</code></pre>
+<h2 id="filegetcontents">file_get_contents</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fileputcontents">file_put_contents</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="file">file</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fileatime">fileatime</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="filectime">filectime</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="filegroup">filegroup</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fileinode">fileinode</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="filemtime">filemtime</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fileowner">fileowner</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fileperms">fileperms</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="filesize">filesize</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="filetype">filetype</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="flock">flock</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fnmatch">fnmatch</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fopen">fopen</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fpassthru">fpassthru</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fputcsv">fputcsv</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fputs">fputs</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fread">fread</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fscanf">fscanf</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fseek">fseek</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fstat">fstat</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="ftell">ftell</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="ftruncate">ftruncate</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="fwrite">fwrite</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="glob">glob</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="isdir">is_dir</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="isexecutable">is_executable</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="isfile">is_file</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="islink">is_link</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="isreadable">is_readable</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="isuploadedfile">is_uploaded_file</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="iswritable">is_writable</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="iswriteable">is_writeable</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="lchgrp">lchgrp</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="lchown">lchown</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="link">link</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="linkinfo">linkinfo</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="lstat">lstat</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="mkdir">mkdir</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="moveuploadedfile">move_uploaded_file</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="parseinifile">parse_ini_file</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="parseinistring">parse_ini_string</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="pathinfo">pathinfo</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="pclose">pclose</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="popen">popen</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="readfile">readfile</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="readlink">readlink</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="realpathcacheget">realpath_cache_get</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="realpathcachesize">realpath_cache_size</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="realpath">realpath</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="rename">rename</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="rewind">rewind</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="rmdir">rmdir</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="setfilebuffer">set_file_buffer</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="stat">stat</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="symlink">symlink</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="tempnam">tempnam</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="tmpfile">tmpfile</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="touch">touch</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="umask">umask</h2>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="unlink">unlink</h2>
+<pre><code class="lang-php">
+
 </code></pre>
 
                                 
@@ -3654,7 +3902,7 @@ var_dump(file_exists(<span class="hljs-keyword">__DIR__</span> . <span class="hl
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"文件系统","level":"1.1.2.5.2","depth":4,"next":{"title":"国际化与字符编码支持","level":"1.1.2.6","depth":3,"path":"docs/函数参考/国际化与字符编码支持.md","ref":"docs/函数参考/国际化与字符编码支持.md","articles":[{"title":"iconv","level":"1.1.2.6.1","depth":4,"path":"docs/函数参考/国际化与字符编码支持/iconv.md","ref":"docs/函数参考/国际化与字符编码支持/iconv.md","articles":[]},{"title":"多字节字符串","level":"1.1.2.6.2","depth":4,"path":"docs/函数参考/国际化与字符编码支持/多字节字符串.md","ref":"docs/函数参考/国际化与字符编码支持/多字节字符串.md","articles":[]}]},"previous":{"title":"目录","level":"1.1.2.5.1","depth":4,"path":"docs/函数参考/文件系统相关扩展/目录.md","ref":"docs/函数参考/文件系统相关扩展/目录.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/文件系统相关扩展/文件系统.md","mtime":"2019-05-24T13:21:13.676Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-09T01:49:08.252Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"文件系统","level":"1.1.2.5.2","depth":4,"next":{"title":"国际化与字符编码支持","level":"1.1.2.6","depth":3,"path":"docs/函数参考/国际化与字符编码支持.md","ref":"docs/函数参考/国际化与字符编码支持.md","articles":[{"title":"iconv","level":"1.1.2.6.1","depth":4,"path":"docs/函数参考/国际化与字符编码支持/iconv.md","ref":"docs/函数参考/国际化与字符编码支持/iconv.md","articles":[]},{"title":"多字节字符串","level":"1.1.2.6.2","depth":4,"path":"docs/函数参考/国际化与字符编码支持/多字节字符串.md","ref":"docs/函数参考/国际化与字符编码支持/多字节字符串.md","articles":[]}]},"previous":{"title":"目录","level":"1.1.2.5.1","depth":4,"path":"docs/函数参考/文件系统相关扩展/目录.md","ref":"docs/函数参考/文件系统相关扩展/目录.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/文件系统相关扩展/文件系统.md","mtime":"2019-06-10T13:16:40.359Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-10T13:28:20.682Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
