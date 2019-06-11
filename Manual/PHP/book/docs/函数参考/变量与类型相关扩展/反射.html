@@ -3378,6 +3378,304 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x53CD;&#x5C04;">&#x53CD;&#x5C04;</h1>
+<ul>
+<li><a href="#reflection">Reflection &#x2014; Reflection &#x7C7B;</a><ul>
+<li><a href="#reflectionexport">Reflection::export &#x2014; &#x5BFC;&#x51FA;&#x4E00;&#x4E2A;&#x7C7B;</a></li>
+<li><a href="#reflectiongetmodifiernames">Reflection::getModifierNames &#x2014; &#x83B7;&#x53D6;&#x4FEE;&#x9970;&#x7B26;&#x7684;&#x540D;&#x79F0;</a></li>
+</ul>
+</li>
+<li><a href="#reflectionclass">ReflectionClass &#x2014; ReflectionClass &#x7C7B;</a><ul>
+<li><a href="#reflectionclassconstruct">ReflectionClass::__construct &#x2014; &#x521D;&#x59CB;&#x5316; ReflectionClass &#x7C7B;</a></li>
+<li><a href="#reflectionclassexport">ReflectionClass::export &#x2014; &#x5BFC;&#x51FA;&#x4E00;&#x4E2A;&#x7C7B;</a></li>
+<li><a href="#reflectionclassgetconstant">ReflectionClass::getConstant &#x2014; &#x83B7;&#x53D6;&#x5B9A;&#x4E49;&#x8FC7;&#x7684;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;</a></li>
+<li><a href="#reflectionclassgetconstants">ReflectionClass::getConstants &#x2014; &#x83B7;&#x53D6;&#x4E00;&#x7EC4;&#x5E38;&#x91CF;</a></li>
+<li><a href="#reflectionclassgetconstructor">ReflectionClass::getConstructor &#x2014; &#x83B7;&#x53D6;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</a></li>
+<li><a href="#reflectionclassgetdefaultproperties">ReflectionClass::getDefaultProperties &#x2014; &#x83B7;&#x53D6;&#x9ED8;&#x8BA4;&#x5C5E;&#x6027;</a></li>
+<li><a href="#reflectionclassgetdoccomment">ReflectionClass::getDocComment &#x2014; &#x83B7;&#x53D6;&#x6587;&#x6863;&#x6CE8;&#x91CA;</a></li>
+<li><a href="#reflectionclassgetendline">ReflectionClass::getEndLine &#x2014; &#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x884C;&#x7684;&#x884C;&#x6570;</a></li>
+<li><a href="#reflectionclassgetextension">ReflectionClass::getExtension &#x2014; &#x6839;&#x636E;&#x5DF2;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x83B7;&#x53D6;&#x6240;&#x5728;&#x6269;&#x5C55;&#x7684; ReflectionExtension &#x5BF9;&#x8C61;</a></li>
+<li><a href="#reflectionclassgetextensionname">ReflectionClass::getExtensionName &#x2014; &#x83B7;&#x53D6;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x6240;&#x5728;&#x7684;&#x6269;&#x5C55;&#x7684;&#x540D;&#x79F0;</a></li>
+<li><a href="#reflectionclassgetfilename">ReflectionClass::getFileName &#x2014; &#x83B7;&#x53D6;&#x5B9A;&#x4E49;&#x7C7B;&#x7684;&#x6587;&#x4EF6;&#x540D;</a></li>
+<li><a href="#reflectionclassgetinterfacenames">ReflectionClass::getInterfaceNames &#x2014; &#x83B7;&#x53D6;&#x63A5;&#x53E3;&#x540D;&#x79F0;</a></li>
+<li><a href="#reflectionclassgetinterfaces">ReflectionClass::getInterfaces &#x2014; &#x83B7;&#x53D6;&#x63A5;&#x53E3;</a></li>
+<li><a href="#reflectionclassgetmethod">ReflectionClass::getMethod &#x2014; &#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#reflectionclassgetmethods">ReflectionClass::getMethods &#x2014; &#x83B7;&#x53D6;&#x65B9;&#x6CD5;&#x7684;&#x6570;&#x7EC4;</a></li>
+<li><a href="#reflectionclassgetmodifiers">ReflectionClass::getModifiers &#x2014; &#x83B7;&#x53D6;&#x7C7B;&#x7684;&#x4FEE;&#x9970;&#x7B26;</a></li>
+<li><a href="#reflectionclassgetname">ReflectionClass::getName &#x2014; &#x83B7;&#x53D6;&#x7C7B;&#x540D;</a></li>
+<li><a href="#reflectionclassgetnamespacename">ReflectionClass::getNamespaceName &#x2014; &#x83B7;&#x53D6;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x540D;&#x79F0;</a></li>
+<li><a href="#reflectionclassgetparentclass">ReflectionClass::getParentClass &#x2014; &#x83B7;&#x53D6;&#x7236;&#x7C7B;</a></li>
+<li><a href="#reflectionclassgetproperties">ReflectionClass::getProperties &#x2014; &#x83B7;&#x53D6;&#x4E00;&#x7EC4;&#x5C5E;&#x6027;</a></li>
+<li><a href="#reflectionclassgetproperty">ReflectionClass::getProperty &#x2014; &#x83B7;&#x53D6;&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x7684; ReflectionProperty</a></li>
+<li><a href="#reflectionclassgetreflectionconstant">ReflectionClass::getReflectionConstant &#x2014; Gets a ReflectionClassConstant for a class&apos;s constant</a></li>
+<li><a href="#reflectionclassgetreflectionconstants">ReflectionClass::getReflectionConstants &#x2014; Gets class constants</a></li>
+<li><a href="#reflectionclassgetshortname">ReflectionClass::getShortName &#x2014; &#x83B7;&#x53D6;&#x77ED;&#x540D;</a></li>
+<li><a href="#reflectionclassgetstartline">ReflectionClass::getStartLine &#x2014; &#x83B7;&#x53D6;&#x8D77;&#x59CB;&#x884C;&#x53F7;</a></li>
+<li><a href="#reflectionclassgetstaticproperties">ReflectionClass::getStaticProperties &#x2014; &#x83B7;&#x53D6;&#x9759;&#x6001;&#xFF08;static&#xFF09;&#x5C5E;&#x6027;</a></li>
+<li><a href="#reflectionclassgetstaticpropertyvalue">ReflectionClass::getStaticPropertyValue &#x2014; &#x83B7;&#x53D6;&#x9759;&#x6001;&#xFF08;static&#xFF09;&#x5C5E;&#x6027;&#x7684;&#x503C;</a></li>
+<li><a href="#reflectionclassgettraitaliases">ReflectionClass::getTraitAliases &#x2014; &#x8FD4;&#x56DE; trait &#x522B;&#x540D;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;</a></li>
+<li><a href="#reflectionclassgettraitnames">ReflectionClass::getTraitNames &#x2014; &#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x7C7B;&#x6240;&#x4F7F;&#x7528; traits &#x7684;&#x540D;&#x79F0;&#x7684;&#x6570;&#x7EC4;</a></li>
+<li><a href="#reflectionclassgettraits">ReflectionClass::getTraits &#x2014; &#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x7C7B;&#x6240;&#x4F7F;&#x7528;&#x7684; traits &#x6570;&#x7EC4;</a></li>
+<li><a href="#reflectionclasshasconstant">ReflectionClass::hasConstant &#x2014; &#x68C0;&#x67E5;&#x5E38;&#x91CF;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;</a></li>
+<li><a href="#reflectionclasshasmethod">ReflectionClass::hasMethod &#x2014; &#x68C0;&#x67E5;&#x65B9;&#x6CD5;&#x662F;&#x5426;&#x5DF2;&#x5B9A;&#x4E49;</a></li>
+<li><a href="#reflectionclasshasproperty">ReflectionClass::hasProperty &#x2014; &#x68C0;&#x67E5;&#x5C5E;&#x6027;&#x662F;&#x5426;&#x5DF2;&#x5B9A;&#x4E49;</a></li>
+<li><a href="#reflectionclassimplementsinterface">ReflectionClass::implementsInterface &#x2014; &#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;</a></li>
+<li><a href="#reflectionclassinnamespace">ReflectionClass::inNamespace &#x2014; &#x68C0;&#x67E5;&#x662F;&#x5426;&#x4F4D;&#x4E8E;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;</a></li>
+<li><a href="#reflectionclassisabstract">ReflectionClass::isAbstract &#x2014; &#x68C0;&#x67E5;&#x7C7B;&#x662F;&#x5426;&#x662F;&#x62BD;&#x8C61;&#x7C7B;&#xFF08;abstract&#xFF09;</a></li>
+<li><a href="#reflectionclassisanonymous">ReflectionClass::isAnonymous &#x2014; &#x68C0;&#x67E5;&#x7C7B;&#x662F;&#x5426;&#x662F;&#x533F;&#x540D;&#x7C7B;</a></li>
+<li><a href="#reflectionclassiscloneable">ReflectionClass::isCloneable &#x2014; &#x8FD4;&#x56DE;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;&#x662F;&#x5426;&#x53EF;&#x590D;&#x5236;</a></li>
+<li><a href="#reflectionclassisfinal">ReflectionClass::isFinal &#x2014; &#x68C0;&#x67E5;&#x7C7B;&#x662F;&#x5426;&#x58F0;&#x660E;&#x4E3A; final</a></li>
+<li><a href="#reflectionclassisinstance">ReflectionClass::isInstance &#x2014; &#x68C0;&#x67E5;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;</a></li>
+<li><a href="#reflectionclassisinstantiable">ReflectionClass::isInstantiable &#x2014; &#x68C0;&#x67E5;&#x7C7B;&#x662F;&#x5426;&#x53EF;&#x5B9E;&#x4F8B;&#x5316;</a></li>
+<li><a href="#reflectionclassisinterface">ReflectionClass::isInterface &#x2014; &#x68C0;&#x67E5;&#x7C7B;&#x662F;&#x5426;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF08;interface&#xFF09;</a></li>
+<li><a href="#reflectionclassisinternal">ReflectionClass::isInternal &#x2014; &#x68C0;&#x67E5;&#x7C7B;&#x662F;&#x5426;&#x7531;&#x6269;&#x5C55;&#x6216;&#x6838;&#x5FC3;&#x5728;&#x5185;&#x90E8;&#x5B9A;&#x4E49;</a></li>
+<li><a href="#reflectionclassisiterable">ReflectionClass::isIterable &#x2014; Check whether this class is iterable</a></li>
+<li><a href="#reflectionclassisiterateable">ReflectionClass::isIterateable &#x2014; &#x68C0;&#x67E5;&#x662F;&#x5426;&#x53EF;&#x8FED;&#x4EE3;&#xFF08;iterateable&#xFF09;</a></li>
+<li><a href="#reflectionclassissubclassof">ReflectionClass::isSubclassOf &#x2014; &#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E3A;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;</a></li>
+<li><a href="#reflectionclassistrait">ReflectionClass::isTrait &#x2014; &#x8FD4;&#x56DE;&#x4E86;&#x662F;&#x5426;&#x4E3A;&#x4E00;&#x4E2A; trait</a></li>
+<li><a href="#reflectionclassisuserdefined">ReflectionClass::isUserDefined &#x2014; &#x68C0;&#x67E5;&#x662F;&#x5426;&#x7531;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;</a></li>
+<li><a href="#reflectionclassnewinstance">ReflectionClass::newInstance &#x2014; &#x4ECE;&#x6307;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7C7B;&#x5B9E;&#x4F8B;</a></li>
+<li><a href="#reflectionclassnewinstanceargs">ReflectionClass::newInstanceArgs &#x2014; &#x4ECE;&#x7ED9;&#x51FA;&#x7684;&#x53C2;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7C7B;&#x5B9E;&#x4F8B;&#x3002;</a></li>
+<li><a href="#reflectionclassnewinstancewithoutconstructor">ReflectionClass::newInstanceWithoutConstructor &#x2014; &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7C7B;&#x5B9E;&#x4F8B;&#x800C;&#x4E0D;&#x8C03;&#x7528;&#x5B83;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</a></li>
+<li><a href="#reflectionclasssetstaticpropertyvalue">ReflectionClass::setStaticPropertyValue &#x2014; &#x8BBE;&#x7F6E;&#x9759;&#x6001;&#x5C5E;&#x6027;&#x7684;&#x503C;</a></li>
+<li><a href="#reflectionclasstostring">ReflectionClass::__toString &#x2014; &#x8FD4;&#x56DE; ReflectionClass &#x5BF9;&#x8C61;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x3002;</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="reflection">Reflection</h2>
+<h3 id="reflectionexport">Reflection::export</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectiongetmodifiernames">Reflection::getModifierNames</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h2 id="reflectionclass">ReflectionClass</h2>
+<h3 id="reflectionclassconstruct">ReflectionClass::__construct</h3>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+}
+
+var_dump(<span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-string">&apos;Foo&apos;</span>));   <span class="hljs-comment">// object(ReflectionClass)#1 (1) { [&quot;name&quot;]=&gt; string(3) &quot;Foo&quot; }</span>
+var_dump(<span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-keyword">new</span> Foo)); <span class="hljs-comment">// object(ReflectionClass)#1 (1) { [&quot;name&quot;]=&gt; string(3) &quot;Foo&quot; }</span>
+</code></pre>
+<h3 id="reflectionclassexport">ReflectionClass::export</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetconstant">ReflectionClass::getConstant</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetconstants">ReflectionClass::getConstants</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetconstructor">ReflectionClass::getConstructor</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetdefaultproperties">ReflectionClass::getDefaultProperties</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetdoccomment">ReflectionClass::getDocComment</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetendline">ReflectionClass::getEndLine</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetextension">ReflectionClass::getExtension</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetextensionname">ReflectionClass::getExtensionName</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetfilename">ReflectionClass::getFileName</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetinterfacenames">ReflectionClass::getInterfaceNames</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetinterfaces">ReflectionClass::getInterfaces</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetmethod">ReflectionClass::getMethod</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetmethods">ReflectionClass::getMethods</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetmodifiers">ReflectionClass::getModifiers</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetname">ReflectionClass::getName</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetnamespacename">ReflectionClass::getNamespaceName</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetparentclass">ReflectionClass::getParentClass</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetproperties">ReflectionClass::getProperties</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetproperty">ReflectionClass::getProperty</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetreflectionconstant">ReflectionClass::getReflectionConstant</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetreflectionconstants">ReflectionClass::getReflectionConstants</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetshortname">ReflectionClass::getShortName</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetstartline">ReflectionClass::getStartLine</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetstaticproperties">ReflectionClass::getStaticProperties</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgetstaticpropertyvalue">ReflectionClass::getStaticPropertyValue</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgettraitaliases">ReflectionClass::getTraitAliases</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgettraitnames">ReflectionClass::getTraitNames</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassgettraits">ReflectionClass::getTraits</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclasshasconstant">ReflectionClass::hasConstant</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclasshasmethod">ReflectionClass::hasMethod</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclasshasproperty">ReflectionClass::hasProperty</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassimplementsinterface">ReflectionClass::implementsInterface</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassinnamespace">ReflectionClass::inNamespace</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisabstract">ReflectionClass::isAbstract</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisanonymous">ReflectionClass::isAnonymous</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassiscloneable">ReflectionClass::isCloneable</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisfinal">ReflectionClass::isFinal</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisinstance">ReflectionClass::isInstance</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisinstantiable">ReflectionClass::isInstantiable</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisinterface">ReflectionClass::isInterface</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisinternal">ReflectionClass::isInternal</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisiterable">ReflectionClass::isIterable</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisiterateable">ReflectionClass::isIterateable</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassissubclassof">ReflectionClass::isSubclassOf</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassistrait">ReflectionClass::isTrait</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassisuserdefined">ReflectionClass::isUserDefined</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassnewinstance">ReflectionClass::newInstance</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassnewinstanceargs">ReflectionClass::newInstanceArgs</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclassnewinstancewithoutconstructor">ReflectionClass::newInstanceWithoutConstructor</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclasssetstaticpropertyvalue">ReflectionClass::setStaticPropertyValue</h3>
+<pre><code class="lang-php">
+
+</code></pre>
+<h3 id="reflectionclasstostring">ReflectionClass::__toString</h3>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span>
+</span>{
+}
+
+$foo = <span class="hljs-keyword">new</span> ReflectionClass(<span class="hljs-string">&apos;Foo&apos;</span>);
+<span class="hljs-keyword">echo</span> $foo . <span class="hljs-string">&quot;\r\n&quot;</span>;
+<span class="hljs-keyword">print</span> $foo . <span class="hljs-string">&quot;\r\n&quot;</span>;
+</code></pre>
 
                                 
                                 </section>
@@ -3421,7 +3719,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"反射","level":"1.1.2.15.6","depth":4,"next":{"title":"变量","level":"1.1.2.15.7","depth":4,"path":"docs/函数参考/变量与类型相关扩展/变量.md","ref":"docs/函数参考/变量与类型相关扩展/变量.md","articles":[]},"previous":{"title":"函数处理","level":"1.1.2.15.5","depth":4,"path":"docs/函数参考/变量与类型相关扩展/函数处理.md","ref":"docs/函数参考/变量与类型相关扩展/函数处理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/变量与类型相关扩展/反射.md","mtime":"2019-05-20T15:29:36.766Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-10T13:28:20.682Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"反射","level":"1.1.2.15.6","depth":4,"next":{"title":"变量","level":"1.1.2.15.7","depth":4,"path":"docs/函数参考/变量与类型相关扩展/变量.md","ref":"docs/函数参考/变量与类型相关扩展/变量.md","articles":[]},"previous":{"title":"函数处理","level":"1.1.2.15.5","depth":4,"path":"docs/函数参考/变量与类型相关扩展/函数处理.md","ref":"docs/函数参考/变量与类型相关扩展/函数处理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"PHP","language":"zh-hans","gitbook":">=3.0.0","description":"PHP 教程","direction":"ltr"},"file":{"path":"docs/函数参考/变量与类型相关扩展/反射.md","mtime":"2019-06-11T14:06:10.525Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-11T14:10:56.859Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
