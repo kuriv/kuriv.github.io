@@ -7,23 +7,22 @@
         * [AutoFileName](docs/插件清单/AutoFileName.md)
         * [Babel]
         * [Boxy Theme](docs/插件清单/Boxy Theme.md)
-        * [CSS3]
+        * [CSS3](docs/插件清单/CSS3.md)
         * [ChineseLocalizations](docs/插件清单/ChineseLocalizations.md)
-        * [Color Highlighter]
-        * [ColorPicker]
+        * [Color Highlighter](docs/插件清单/Color Highlighter.md)
+        * [ColorPicker](docs/插件清单/ColorPicker.md)
         * [DocBlockr]
         * [Emmet]
         * [Git]
-        * [HTML5]
         * [HexViewer](docs/插件清单/HexViewer.md)
         * [JsFormat]
         * [LESS]
         * [Less2Css]
         * [Nodejs]
-        * [Phpcs]
+        * [Phpcs](docs/插件清单/Phpcs.md)
         * [Terminal]
         * [Theme - Brogrammer](docs/插件清单/Theme - Brogrammer.md)
-        * [TrailingSpaces]
+        * [TrailingSpaces](docs/插件清单/TrailingSpaces.md)
         * [jQuery]
     * [配置文件](docs/配置文件.md)
     * [编译系统](docs/编译系统.md)
