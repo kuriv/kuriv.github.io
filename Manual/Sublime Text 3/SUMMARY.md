@@ -11,19 +11,19 @@
         * [ChineseLocalizations](docs/插件清单/ChineseLocalizations.md)
         * [Color Highlighter](docs/插件清单/Color Highlighter.md)
         * [ColorPicker](docs/插件清单/ColorPicker.md)
-        * [DocBlockr]
+        * [DocBlockr](docs/插件清单/DocBlockr.md)
         * [Emmet]
         * [Git]
         * [HexViewer](docs/插件清单/HexViewer.md)
-        * [JsFormat]
+        * [JsFormat](docs/插件清单/JsFormat.md)
         * [LESS]
         * [Less2Css]
         * [Nodejs]
         * [Phpcs](docs/插件清单/Phpcs.md)
-        * [Terminal]
+        * [Terminal](docs/插件清单/Terminal.md)
         * [Theme - Brogrammer](docs/插件清单/Theme - Brogrammer.md)
         * [TrailingSpaces](docs/插件清单/TrailingSpaces.md)
-        * [jQuery]
+        * [jQuery](docs/插件清单/jQuery.md)
     * [配置文件](docs/配置文件.md)
     * [编译系统](docs/编译系统.md)
         * [PHP](docs/编译系统/PHP.md)
