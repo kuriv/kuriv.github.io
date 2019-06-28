@@ -17,3 +17,4 @@ composer global require squizlabs/php_codesniffer
 }
 ```
 
+重启 Sublime Text 3 ，每次保存 PHP 文件时就会自动修复不符合规范的代码。
