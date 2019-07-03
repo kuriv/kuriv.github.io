@@ -1,6 +1,6 @@
 # Less2Css
 
-推荐使用 Node.js 来安装，执行下面的命令，安装依赖包到全局目录下。
+推荐使用 npm 来安装，执行下面的命令，安装依赖包到全局目录下。
 
 ```shell
 npm install less -g

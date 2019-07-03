@@ -20,6 +20,8 @@
         * [LESS](docs/插件清单/LESS.md)
         * [Less2Css](docs/插件清单/Less2Css.md)
         * [Phpcs](docs/插件清单/Phpcs.md)
+        * [Sass](docs/插件清单/Sass.md)
+        * [SASS Build](docs/插件清单/SASS Build.md)
         * [Terminal](docs/插件清单/Terminal.md)
         * [Theme - Brogrammer](docs/插件清单/Theme - Brogrammer.md)
         * [TrailingSpaces](docs/插件清单/TrailingSpaces.md)
