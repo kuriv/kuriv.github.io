@@ -1,6 +1,7 @@
 # Summary
 
 * [Sublime Text 3](README.md)
+    * [安装 Sublime Text 3](docs/安装 Sublime Text 3.md)
     * [包管理器](docs/包管理器.md)
     * [插件清单](docs/插件清单.md)
         * [A File Icon](docs/插件清单/A File Icon.md)
