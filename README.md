@@ -1,1 +1,0 @@
-# kuriv.github.io
