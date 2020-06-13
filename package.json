@@ -1,0 +1,31 @@
+{
+  "name": "demo",
+  "version": "1.0.1",
+  "description": "Hello World!",
+  "main": "index.js",
+  "dependencies": {
+    "@kuriv/normalize": "^1.0.4",
+    "canvas-nest.js": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuriv/kuriv.github.io.git"
+  },
+  "keywords": [
+    "demo",
+    "demo-app",
+    "demo-apps",
+    "demo-application",
+    "demo-project"
+  ],
+  "author": "Kuriv Vesti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuriv/kuriv.github.io/issues"
+  },
+  "homepage": "https://github.com/kuriv/kuriv.github.io#readme"
+}
