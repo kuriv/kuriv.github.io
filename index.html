@@ -5,6 +5,7 @@
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <title>@Kuriv</title>
         <link rel="stylesheet" type="text/css" href="node_modules/@kuriv/normalize/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/aplayer/dist/APlayer.min.css">
         <style type="text/css">@font-face{font-family:'Roboto Mono';src:url(RobotoMono.ttf)}html{position:absolute;top:0;right:0;bottom:0;left:0;user-select:none}body{font-family:'Roboto Mono',monospace}main{position:absolute;top:50%;left:50%;margin-top:-10em;margin-left:-10em;width:20em;text-align:center}main hgroup{color:#fff}main h1{margin:.375em 0;letter-spacing:.2em;font-size:2em}main h2{letter-spacing:.15em;font-size:1em}main section{margin:2em 0}main a{display:block;color:#fff;text-decoration:none;letter-spacing:.1em;font-size:.875em;line-height:2em}</style>
     </head>
     <body>
@@ -17,7 +18,21 @@
                 <a href="https://github.com/kuriv" target="_blank">GitHub</a>
                 <a href="https://leetcode-cn.com/u/kuriv/" target="_blank">LeetCode</a>
             </section>
+            <section id="player"></section>
         </main>
         <script type="text/javascript" src="node_modules/@kuriv/ribbon/ribbon.min.js"></script>
+        <script type="text/javascript" src="node_modules/aplayer/dist/APlayer.min.js"></script>
+        <script type="text/javascript">
+            const player = new APlayer({
+                container: document.getElementById('player'),
+                fixed: true,
+                audio: [{
+                    name: 'A Way For Us (Valentin Remix)',
+                    artist: 'Valentin / Sergey Alekseev / 武川アイ',
+                    url: 'A Way For Us (Valentin Remix).mp3',
+                    cover: 'A Way For Us (Valentin Remix).jpg'
+                }]
+            });
+        </script>
     </body>
 </html>
